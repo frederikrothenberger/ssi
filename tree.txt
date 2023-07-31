@@ -1,957 +1,409 @@
-ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
-├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips)
-│   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk)
-│   │   ├── getrandom v0.2.10
-│   │   │   └── cfg-if feature "default"
-│   │   │       └── cfg-if v1.0.0
-│   │   ├── serde feature "default"
-│   │   │   ├── serde v1.0.179
-│   │   │   │   └── serde_derive feature "default"
-│   │   │   │       └── serde_derive v1.0.179 (proc-macro)
-│   │   │   │           ├── quote feature "default"
-│   │   │   │           │   ├── quote v1.0.32
-│   │   │   │           │   │   └── proc-macro2 v1.0.66
-│   │   │   │           │   │       └── unicode-ident feature "default"
-│   │   │   │           │   │           └── unicode-ident v1.0.11
-│   │   │   │           │   └── quote feature "proc-macro"
-│   │   │   │           │       ├── quote v1.0.32 (*)
-│   │   │   │           │       └── proc-macro2 feature "proc-macro"
-│   │   │   │           │           └── proc-macro2 v1.0.66 (*)
-│   │   │   │           ├── proc-macro2 feature "default"
-│   │   │   │           │   ├── proc-macro2 v1.0.66 (*)
-│   │   │   │           │   └── proc-macro2 feature "proc-macro" (*)
-│   │   │   │           └── syn feature "default"
-│   │   │   │               ├── syn v2.0.28
-│   │   │   │               │   ├── proc-macro2 v1.0.66 (*)
-│   │   │   │               │   ├── quote v1.0.32 (*)
-│   │   │   │               │   └── unicode-ident feature "default" (*)
-│   │   │   │               ├── syn feature "clone-impls"
-│   │   │   │               │   └── syn v2.0.28 (*)
-│   │   │   │               ├── syn feature "derive"
-│   │   │   │               │   └── syn v2.0.28 (*)
-│   │   │   │               ├── syn feature "parsing"
-│   │   │   │               │   └── syn v2.0.28 (*)
-│   │   │   │               ├── syn feature "printing"
-│   │   │   │               │   ├── syn v2.0.28 (*)
-│   │   │   │               │   └── syn feature "quote"
-│   │   │   │               │       └── syn v2.0.28 (*)
-│   │   │   │               └── syn feature "proc-macro"
-│   │   │   │                   ├── syn v2.0.28 (*)
-│   │   │   │                   ├── quote feature "proc-macro" (*)
-│   │   │   │                   ├── proc-macro2 feature "proc-macro" (*)
-│   │   │   │                   └── syn feature "quote" (*)
-│   │   │   └── serde feature "std"
-│   │   │       └── serde v1.0.179 (*)
-│   │   ├── serde feature "derive"
-│   │   │   ├── serde v1.0.179 (*)
-│   │   │   └── serde feature "serde_derive"
-│   │   │       └── serde v1.0.179 (*)
-│   │   ├── bs58 feature "check"
-│   │   │   ├── bs58 v0.4.0
-│   │   │   │   └── sha2 v0.9.9
-│   │   │   │       ├── cfg-if feature "default" (*)
-│   │   │   │       ├── block-buffer feature "default"
-│   │   │   │       │   └── block-buffer v0.9.0
-│   │   │   │       │       └── generic-array feature "default"
-│   │   │   │       │           └── generic-array v0.14.7
-│   │   │   │       │               └── typenum feature "default"
-│   │   │   │       │                   └── typenum v1.16.0
-│   │   │   │       │               [build-dependencies]
-│   │   │   │       │               └── version_check feature "default"
-│   │   │   │       │                   └── version_check v0.9.4
-│   │   │   │       ├── digest feature "default"
-│   │   │   │       │   └── digest v0.9.0
-│   │   │   │       │       └── generic-array feature "default" (*)
-│   │   │   │       └── opaque-debug feature "default"
-│   │   │   │           └── opaque-debug v0.3.0
-│   │   │   └── bs58 feature "sha2"
-│   │   │       └── bs58 v0.4.0 (*)
-│   │   ├── bs58 feature "default"
-│   │   │   ├── bs58 v0.4.0 (*)
-│   │   │   └── bs58 feature "std"
-│   │   │       ├── bs58 v0.4.0 (*)
-│   │   │       └── bs58 feature "alloc"
-│   │   │           └── bs58 v0.4.0 (*)
-│   │   ├── base64 feature "default"
-│   │   │   ├── base64 v0.12.3
-│   │   │   └── base64 feature "std"
-│   │   │       └── base64 v0.12.3
-│   │   ├── blake2b_simd feature "default"
-│   │   │   ├── blake2b_simd v0.5.11
-│   │   │   │   ├── arrayvec v0.5.2
-│   │   │   │   ├── arrayref feature "default"
-│   │   │   │   │   └── arrayref v0.3.7
-│   │   │   │   └── constant_time_eq feature "default"
-│   │   │   │       └── constant_time_eq v0.1.5
-│   │   │   └── blake2b_simd feature "std"
-│   │   │       └── blake2b_simd v0.5.11 (*)
-│   │   ├── ed25519-dalek feature "default"
-│   │   │   ├── ed25519-dalek v1.0.1
-│   │   │   │   ├── curve25519-dalek v3.2.0
-│   │   │   │   │   ├── digest v0.9.0 (*)
-│   │   │   │   │   ├── rand_core v0.5.1
-│   │   │   │   │   │   └── getrandom feature "default"
-│   │   │   │   │   │       └── getrandom v0.1.16
-│   │   │   │   │   │           └── cfg-if feature "default" (*)
-│   │   │   │   │   ├── subtle v2.5.0
-│   │   │   │   │   ├── zeroize v1.6.0
-│   │   │   │   │   │   └── zeroize_derive feature "default"
-│   │   │   │   │   │       └── zeroize_derive v1.4.2 (proc-macro)
-│   │   │   │   │   │           ├── quote feature "default" (*)
-│   │   │   │   │   │           ├── proc-macro2 feature "default" (*)
-│   │   │   │   │   │           ├── syn feature "default" (*)
-│   │   │   │   │   │           ├── syn feature "extra-traits"
-│   │   │   │   │   │           │   └── syn v2.0.28 (*)
-│   │   │   │   │   │           ├── syn feature "full"
-│   │   │   │   │   │           │   └── syn v2.0.28 (*)
-│   │   │   │   │   │           └── syn feature "visit"
-│   │   │   │   │   │               └── syn v2.0.28 (*)
-│   │   │   │   │   └── byteorder feature "i128"
-│   │   │   │   │       └── byteorder v1.4.3
-│   │   │   │   ├── ed25519 v1.5.3
-│   │   │   │   │   └── signature v1.6.4
-│   │   │   │   │       ├── digest v0.10.7
-│   │   │   │   │       │   ├── subtle v2.5.0
-│   │   │   │   │       │   ├── block-buffer feature "default"
-│   │   │   │   │       │   │   └── block-buffer v0.10.4
-│   │   │   │   │       │   │       └── generic-array feature "default" (*)
-│   │   │   │   │       │   └── crypto-common feature "default"
-│   │   │   │   │       │       └── crypto-common v0.1.6
-│   │   │   │   │       │           ├── generic-array feature "default" (*)
-│   │   │   │   │       │           ├── generic-array feature "more_lengths"
-│   │   │   │   │       │           │   └── generic-array v0.14.7 (*)
-│   │   │   │   │       │           └── typenum feature "default" (*)
-│   │   │   │   │       └── rand_core v0.6.4
-│   │   │   │   │           └── getrandom feature "default"
-│   │   │   │   │               └── getrandom v0.2.10 (*)
-│   │   │   │   ├── rand v0.7.3
-│   │   │   │   │   ├── rand_chacha v0.2.2
-│   │   │   │   │   │   ├── rand_core feature "default"
-│   │   │   │   │   │   │   └── rand_core v0.5.1 (*)
-│   │   │   │   │   │   └── ppv-lite86 feature "simd"
-│   │   │   │   │   │       └── ppv-lite86 v0.2.17
-│   │   │   │   │   ├── rand_core feature "default" (*)
-│   │   │   │   │   └── getrandom feature "default" (*)
-│   │   │   │   ├── serde v1.0.179 (*)
-│   │   │   │   ├── sha2 v0.9.9 (*)
-│   │   │   │   └── zeroize feature "zeroize_derive"
-│   │   │   │       └── zeroize v1.6.0 (*)
-│   │   │   ├── ed25519-dalek feature "rand"
-│   │   │   │   └── ed25519-dalek v1.0.1 (*)
-│   │   │   ├── ed25519-dalek feature "std"
-│   │   │   │   ├── ed25519-dalek v1.0.1 (*)
-│   │   │   │   ├── serde feature "std" (*)
-│   │   │   │   ├── sha2 feature "std"
-│   │   │   │   │   ├── sha2 v0.9.9 (*)
-│   │   │   │   │   └── digest feature "std"
-│   │   │   │   │       ├── digest v0.9.0 (*)
-│   │   │   │   │       └── digest feature "alloc"
-│   │   │   │   │           └── digest v0.9.0 (*)
-│   │   │   │   ├── ed25519-dalek feature "rand" (*)
-│   │   │   │   ├── ed25519-dalek feature "serde_crate"
-│   │   │   │   │   └── ed25519-dalek v1.0.1 (*)
-│   │   │   │   ├── curve25519-dalek feature "std"
-│   │   │   │   │   ├── curve25519-dalek v3.2.0 (*)
-│   │   │   │   │   ├── curve25519-dalek feature "alloc"
-│   │   │   │   │   │   ├── curve25519-dalek v3.2.0 (*)
-│   │   │   │   │   │   └── zeroize feature "alloc"
-│   │   │   │   │   │       └── zeroize v1.6.0 (*)
-│   │   │   │   │   ├── rand_core feature "std"
-│   │   │   │   │   │   ├── rand_core v0.5.1 (*)
-│   │   │   │   │   │   ├── rand_core feature "alloc"
-│   │   │   │   │   │   │   └── rand_core v0.5.1 (*)
-│   │   │   │   │   │   ├── rand_core feature "getrandom"
-│   │   │   │   │   │   │   └── rand_core v0.5.1 (*)
-│   │   │   │   │   │   └── getrandom feature "std"
-│   │   │   │   │   │       └── getrandom v0.1.16 (*)
-│   │   │   │   │   └── subtle feature "std"
-│   │   │   │   │       └── subtle v2.5.0
-│   │   │   │   ├── ed25519 feature "std"
-│   │   │   │   │   ├── ed25519 v1.5.3 (*)
-│   │   │   │   │   └── signature feature "std"
-│   │   │   │   │       └── signature v1.6.4 (*)
-│   │   │   │   └── rand feature "std"
-│   │   │   │       ├── rand v0.7.3 (*)
-│   │   │   │       ├── rand_core feature "std" (*)
-│   │   │   │       ├── rand feature "alloc"
-│   │   │   │       │   ├── rand v0.7.3 (*)
-│   │   │   │       │   └── rand_core feature "alloc" (*)
-│   │   │   │       ├── rand feature "getrandom"
-│   │   │   │       │   ├── rand v0.7.3 (*)
-│   │   │   │       │   ├── rand_core feature "getrandom" (*)
-│   │   │   │       │   └── rand feature "getrandom_package"
-│   │   │   │       │       └── rand v0.7.3 (*)
-│   │   │   │       ├── rand feature "libc"
-│   │   │   │       │   └── rand v0.7.3 (*)
-│   │   │   │       └── rand_chacha feature "std"
-│   │   │   │           ├── rand_chacha v0.2.2 (*)
-│   │   │   │           └── ppv-lite86 feature "std"
-│   │   │   │               └── ppv-lite86 v0.2.17
-│   │   │   └── ed25519-dalek feature "u64_backend"
-│   │   │       ├── ed25519-dalek v1.0.1 (*)
-│   │   │       └── curve25519-dalek feature "u64_backend"
-│   │   │           └── curve25519-dalek v3.2.0 (*)
-│   │   ├── zeroize feature "default"
-│   │   │   ├── zeroize v1.6.0 (*)
-│   │   │   └── zeroize feature "alloc" (*)
-│   │   ├── zeroize feature "zeroize_derive" (*)
-│   │   ├── rand feature "default"
-│   │   │   ├── rand v0.7.3 (*)
-│   │   │   └── rand feature "std" (*)
-│   │   ├── k256 feature "default"
-│   │   │   ├── k256 v0.11.6
-│   │   │   │   ├── sha2 v0.10.7
-│   │   │   │   │   ├── cfg-if feature "default" (*)
-│   │   │   │   │   └── digest feature "default"
-│   │   │   │   │       ├── digest v0.10.7 (*)
-│   │   │   │   │       └── digest feature "core-api"
-│   │   │   │   │           ├── digest v0.10.7 (*)
-│   │   │   │   │           └── digest feature "block-buffer"
-│   │   │   │   │               └── digest v0.10.7 (*)
-│   │   │   │   ├── sha3 v0.10.8
-│   │   │   │   │   ├── digest feature "default" (*)
-│   │   │   │   │   └── keccak feature "default"
-│   │   │   │   │       └── keccak v0.1.4
-│   │   │   │   ├── cfg-if feature "default" (*)
-│   │   │   │   ├── ecdsa feature "der"
-│   │   │   │   │   └── ecdsa v0.14.8
-│   │   │   │   │       ├── signature feature "hazmat-preview"
-│   │   │   │   │       │   └── signature v1.6.4 (*)
-│   │   │   │   │       ├── signature feature "rand-preview"
-│   │   │   │   │       │   ├── signature v1.6.4 (*)
-│   │   │   │   │       │   └── signature feature "rand_core"
-│   │   │   │   │       │       └── signature v1.6.4 (*)
-│   │   │   │   │       ├── der feature "default"
-│   │   │   │   │       │   └── der v0.6.1
-│   │   │   │   │       │       ├── zeroize feature "alloc" (*)
-│   │   │   │   │       │       └── const-oid feature "default"
-│   │   │   │   │       │           └── const-oid v0.9.4
-│   │   │   │   │       ├── elliptic-curve feature "digest"
-│   │   │   │   │       │   └── elliptic-curve v0.12.3
-│   │   │   │   │       │       ├── ff v0.12.1
-│   │   │   │   │       │       │   ├── rand_core v0.6.4 (*)
-│   │   │   │   │       │       │   └── subtle feature "i128"
-│   │   │   │   │       │       │       └── subtle v2.5.0
-│   │   │   │   │       │       ├── generic-array v0.14.7 (*)
-│   │   │   │   │       │       ├── group v0.12.1
-│   │   │   │   │       │       │   ├── ff v0.12.1 (*)
-│   │   │   │   │       │       │   ├── rand_core v0.6.4 (*)
-│   │   │   │   │       │       │   └── subtle v2.5.0
-│   │   │   │   │       │       ├── pkcs8 v0.9.0
-│   │   │   │   │       │       │   ├── der feature "default" (*)
-│   │   │   │   │       │       │   ├── der feature "oid"
-│   │   │   │   │       │       │   │   ├── der v0.6.1 (*)
-│   │   │   │   │       │       │   │   └── der feature "const-oid"
-│   │   │   │   │       │       │   │       └── der v0.6.1 (*)
-│   │   │   │   │       │       │   └── spki feature "default"
-│   │   │   │   │       │       │       └── spki v0.6.0
-│   │   │   │   │       │       │           ├── base64ct v1.6.0
-│   │   │   │   │       │       │           ├── der feature "default" (*)
-│   │   │   │   │       │       │           └── der feature "oid" (*)
-│   │   │   │   │       │       ├── rand_core v0.6.4 (*)
-│   │   │   │   │       │       ├── subtle v2.5.0
-│   │   │   │   │       │       ├── zeroize v1.6.0 (*)
-│   │   │   │   │       │       ├── digest feature "default" (*)
-│   │   │   │   │       │       ├── der feature "oid" (*)
-│   │   │   │   │       │       ├── base16ct feature "default"
-│   │   │   │   │       │       │   └── base16ct v0.1.1
-│   │   │   │   │       │       ├── crypto-bigint feature "generic-array"
-│   │   │   │   │       │       │   └── crypto-bigint v0.4.9
-│   │   │   │   │       │       │       ├── subtle v2.5.0
-│   │   │   │   │       │       │       ├── zeroize v1.6.0 (*)
-│   │   │   │   │       │       │       ├── generic-array feature "default" (*)
-│   │   │   │   │       │       │       └── rand_core feature "default"
-│   │   │   │   │       │       │           └── rand_core v0.6.4 (*)
-│   │   │   │   │       │       ├── crypto-bigint feature "rand_core"
-│   │   │   │   │       │       │   └── crypto-bigint v0.4.9 (*)
-│   │   │   │   │       │       ├── crypto-bigint feature "zeroize"
-│   │   │   │   │       │       │   └── crypto-bigint v0.4.9 (*)
-│   │   │   │   │       │       ├── sec1 feature "default"
-│   │   │   │   │       │       │   ├── sec1 v0.3.0
-│   │   │   │   │       │       │   │   ├── base16ct v0.1.1
-│   │   │   │   │       │       │   │   ├── generic-array v0.14.7 (*)
-│   │   │   │   │       │       │   │   ├── pkcs8 v0.9.0 (*)
-│   │   │   │   │       │       │   │   ├── subtle v2.5.0
-│   │   │   │   │       │       │   │   ├── zeroize v1.6.0 (*)
-│   │   │   │   │       │       │   │   ├── der feature "default" (*)
-│   │   │   │   │       │       │   │   └── der feature "oid" (*)
-│   │   │   │   │       │       │   ├── sec1 feature "der"
-│   │   │   │   │       │       │   │   └── sec1 v0.3.0 (*)
-│   │   │   │   │       │       │   └── sec1 feature "point"
-│   │   │   │   │       │       │       ├── sec1 v0.3.0 (*)
-│   │   │   │   │       │       │       ├── sec1 feature "base16ct"
-│   │   │   │   │       │       │       │   └── sec1 v0.3.0 (*)
-│   │   │   │   │       │       │       └── sec1 feature "generic-array"
-│   │   │   │   │       │       │           └── sec1 v0.3.0 (*)
-│   │   │   │   │       │       ├── sec1 feature "subtle"
-│   │   │   │   │       │       │   └── sec1 v0.3.0 (*)
-│   │   │   │   │       │       └── sec1 feature "zeroize"
-│   │   │   │   │       │           └── sec1 v0.3.0 (*)
-│   │   │   │   │       ├── elliptic-curve feature "sec1"
-│   │   │   │   │       │   └── elliptic-curve v0.12.3 (*)
-│   │   │   │   │       └── rfc6979 feature "default"
-│   │   │   │   │           └── rfc6979 v0.3.1
-│   │   │   │   │               ├── zeroize v1.6.0 (*)
-│   │   │   │   │               ├── crypto-bigint feature "generic-array" (*)
-│   │   │   │   │               ├── crypto-bigint feature "zeroize" (*)
-│   │   │   │   │               └── hmac feature "reset"
-│   │   │   │   │                   └── hmac v0.12.1
-│   │   │   │   │                       ├── digest feature "default" (*)
-│   │   │   │   │                       └── digest feature "mac"
-│   │   │   │   │                           ├── digest v0.10.7 (*)
-│   │   │   │   │                           └── digest feature "subtle"
-│   │   │   │   │                               └── digest v0.10.7 (*)
-│   │   │   │   ├── elliptic-curve feature "hazmat"
-│   │   │   │   │   └── elliptic-curve v0.12.3 (*)
-│   │   │   │   └── elliptic-curve feature "sec1" (*)
-│   │   │   ├── k256 feature "arithmetic"
-│   │   │   │   ├── k256 v0.11.6 (*)
-│   │   │   │   └── elliptic-curve feature "arithmetic"
-│   │   │   │       ├── elliptic-curve v0.12.3 (*)
-│   │   │   │       ├── elliptic-curve feature "ff"
-│   │   │   │       │   └── elliptic-curve v0.12.3 (*)
-│   │   │   │       └── elliptic-curve feature "group"
-│   │   │   │           └── elliptic-curve v0.12.3 (*)
-│   │   │   ├── k256 feature "ecdsa"
-│   │   │   │   ├── k256 v0.11.6 (*)
-│   │   │   │   ├── k256 feature "arithmetic" (*)
-│   │   │   │   ├── k256 feature "ecdsa-core"
-│   │   │   │   │   └── k256 v0.11.6 (*)
-│   │   │   │   ├── k256 feature "sha256"
-│   │   │   │   │   ├── k256 v0.11.6 (*)
-│   │   │   │   │   ├── k256 feature "digest"
-│   │   │   │   │   │   ├── k256 v0.11.6 (*)
-│   │   │   │   │   │   ├── k256 feature "ecdsa-core" (*)
-│   │   │   │   │   │   ├── ecdsa feature "digest"
-│   │   │   │   │   │   │   ├── ecdsa v0.14.8 (*)
-│   │   │   │   │   │   │   └── signature feature "digest-preview"
-│   │   │   │   │   │   │       ├── signature v1.6.4 (*)
-│   │   │   │   │   │   │       └── signature feature "digest"
-│   │   │   │   │   │   │           └── signature v1.6.4 (*)
-│   │   │   │   │   │   └── ecdsa feature "hazmat"
-│   │   │   │   │   │       └── ecdsa v0.14.8 (*)
-│   │   │   │   │   └── k256 feature "sha2"
-│   │   │   │   │       └── k256 v0.11.6 (*)
-│   │   │   │   ├── ecdsa feature "sign"
-│   │   │   │   │   ├── ecdsa v0.14.8 (*)
-│   │   │   │   │   ├── ecdsa feature "arithmetic"
-│   │   │   │   │   │   ├── ecdsa v0.14.8 (*)
-│   │   │   │   │   │   └── elliptic-curve feature "arithmetic" (*)
-│   │   │   │   │   ├── ecdsa feature "digest" (*)
-│   │   │   │   │   ├── ecdsa feature "hazmat" (*)
-│   │   │   │   │   └── ecdsa feature "rfc6979"
-│   │   │   │   │       └── ecdsa v0.14.8 (*)
-│   │   │   │   └── ecdsa feature "verify"
-│   │   │   │       ├── ecdsa v0.14.8 (*)
-│   │   │   │       ├── ecdsa feature "arithmetic" (*)
-│   │   │   │       ├── ecdsa feature "digest" (*)
-│   │   │   │       └── ecdsa feature "hazmat" (*)
-│   │   │   ├── k256 feature "pkcs8"
-│   │   │   │   ├── k256 v0.11.6 (*)
-│   │   │   │   ├── k256 feature "ecdsa-core" (*)
-│   │   │   │   ├── ecdsa feature "pkcs8"
-│   │   │   │   │   ├── ecdsa v0.14.8 (*)
-│   │   │   │   │   ├── ecdsa feature "der" (*)
-│   │   │   │   │   └── elliptic-curve feature "pkcs8"
-│   │   │   │   │       └── elliptic-curve v0.12.3 (*)
-│   │   │   │   └── elliptic-curve feature "pkcs8" (*)
-│   │   │   ├── k256 feature "schnorr"
-│   │   │   │   ├── k256 v0.11.6 (*)
-│   │   │   │   ├── k256 feature "arithmetic" (*)
-│   │   │   │   └── k256 feature "sha256" (*)
-│   │   │   └── k256 feature "std"
-│   │   │       ├── k256 v0.11.6 (*)
-│   │   │       ├── k256 feature "ecdsa-core" (*)
-│   │   │       ├── ecdsa feature "std"
-│   │   │       │   ├── ecdsa v0.14.8 (*)
-│   │   │       │   ├── signature feature "std" (*)
-│   │   │       │   ├── ecdsa feature "alloc"
-│   │   │       │   │   └── ecdsa v0.14.8 (*)
-│   │   │       │   └── elliptic-curve feature "std"
-│   │   │       │       ├── elliptic-curve v0.12.3 (*)
-│   │   │       │       ├── rand_core feature "std"
-│   │   │       │       │   ├── rand_core v0.6.4 (*)
-│   │   │       │       │   ├── rand_core feature "alloc"
-│   │   │       │       │   │   └── rand_core v0.6.4 (*)
-│   │   │       │       │   ├── rand_core feature "getrandom"
-│   │   │       │       │   │   └── rand_core v0.6.4 (*)
-│   │   │       │       │   └── getrandom feature "std"
-│   │   │       │       │       └── getrandom v0.2.10 (*)
-│   │   │       │       └── elliptic-curve feature "alloc"
-│   │   │       │           ├── elliptic-curve v0.12.3 (*)
-│   │   │       │           ├── zeroize feature "alloc" (*)
-│   │   │       │           ├── der feature "alloc"
-│   │   │       │           │   └── der v0.6.1 (*)
-│   │   │       │           ├── elliptic-curve feature "sec1" (*)
-│   │   │       │           ├── base16ct feature "alloc"
-│   │   │       │           │   └── base16ct v0.1.1
-│   │   │       │           └── sec1 feature "alloc"
-│   │   │       │               ├── sec1 v0.3.0 (*)
-│   │   │       │               ├── zeroize feature "alloc" (*)
-│   │   │       │               ├── der feature "alloc" (*)
-│   │   │       │               ├── pkcs8 feature "alloc"
-│   │   │       │               │   ├── pkcs8 v0.9.0 (*)
-│   │   │       │               │   ├── der feature "alloc" (*)
-│   │   │       │               │   ├── der feature "zeroize"
-│   │   │       │               │   │   └── der v0.6.1 (*)
-│   │   │       │               │   └── spki feature "alloc"
-│   │   │       │               │       ├── spki v0.6.0 (*)
-│   │   │       │               │       ├── der feature "alloc" (*)
-│   │   │       │               │       ├── spki feature "base64ct"
-│   │   │       │               │       │   └── spki v0.6.0 (*)
-│   │   │       │               │       └── base64ct feature "alloc"
-│   │   │       │               │           └── base64ct v1.6.0
-│   │   │       │               ├── sec1 feature "der" (*)
-│   │   │       │               ├── sec1 feature "pkcs8"
-│   │   │       │               │   └── sec1 v0.3.0 (*)
-│   │   │       │               └── sec1 feature "zeroize" (*)
-│   │   │       └── elliptic-curve feature "std" (*)
-│   │   ├── k256 feature "ecdsa" (*)
-│   │   ├── lazy_static feature "default"
-│   │   │   └── lazy_static v1.4.0
-│   │   │       └── spin feature "default"
-│   │   │           └── spin v0.5.2
-│   │   ├── multibase feature "default"
-│   │   │   ├── multibase v0.9.1
-│   │   │   │   ├── base-x v0.2.11
-│   │   │   │   ├── data-encoding feature "alloc"
-│   │   │   │   │   └── data-encoding v2.4.0
-│   │   │   │   └── data-encoding-macro feature "default"
-│   │   │   │       └── data-encoding-macro v0.1.13
-│   │   │   │           ├── data-encoding v2.4.0
-│   │   │   │           └── data-encoding-macro-internal feature "default"
-│   │   │   │               └── data-encoding-macro-internal v0.1.11 (proc-macro)
-│   │   │   │                   ├── syn feature "parsing"
-│   │   │   │                   │   └── syn v1.0.109
-│   │   │   │                   │       ├── proc-macro2 v1.0.66 (*)
-│   │   │   │                   │       ├── quote v1.0.32 (*)
-│   │   │   │                   │       └── unicode-ident feature "default" (*)
-│   │   │   │                   ├── syn feature "proc-macro"
-│   │   │   │                   │   ├── syn v1.0.109 (*)
-│   │   │   │                   │   ├── quote feature "proc-macro" (*)
-│   │   │   │                   │   ├── proc-macro2 feature "proc-macro" (*)
-│   │   │   │                   │   └── syn feature "quote"
-│   │   │   │                   │       └── syn v1.0.109 (*)
-│   │   │   │                   └── data-encoding feature "alloc"
-│   │   │   │                       └── data-encoding v2.4.0
-│   │   │   └── multibase feature "std"
-│   │   │       ├── multibase v0.9.1 (*)
-│   │   │       └── data-encoding feature "std"
-│   │   │           ├── data-encoding v2.4.0
-│   │   │           └── data-encoding feature "alloc" (*)
-│   │   ├── num-bigint feature "default"
-│   │   │   ├── num-bigint v0.4.3
-│   │   │   │   ├── num-integer feature "i128"
-│   │   │   │   │   ├── num-integer v0.1.45
-│   │   │   │   │   │   └── num-traits v0.2.16
-│   │   │   │   │   │       └── libm feature "default"
-│   │   │   │   │   │           └── libm v0.2.7
-│   │   │   │   │   │       [build-dependencies]
-│   │   │   │   │   │       └── autocfg feature "default"
-│   │   │   │   │   │           └── autocfg v1.1.0
-│   │   │   │   │   │   [build-dependencies]
-│   │   │   │   │   │   └── autocfg feature "default" (*)
-│   │   │   │   │   └── num-traits feature "i128"
-│   │   │   │   │       └── num-traits v0.2.16 (*)
-│   │   │   │   └── num-traits feature "i128" (*)
-│   │   │   │   [build-dependencies]
-│   │   │   │   └── autocfg feature "default" (*)
-│   │   │   └── num-bigint feature "std"
-│   │   │       ├── num-bigint v0.4.3 (*)
-│   │   │       ├── num-integer feature "std"
-│   │   │       │   ├── num-integer v0.1.45 (*)
-│   │   │       │   └── num-traits feature "std"
-│   │   │       │       └── num-traits v0.2.16 (*)
-│   │   │       └── num-traits feature "std" (*)
-│   │   ├── num-traits feature "default"
-│   │   │   ├── num-traits v0.2.16 (*)
-│   │   │   └── num-traits feature "std" (*)
-│   │   ├── num-derive feature "default"
-│   │   │   └── num-derive v0.3.3 (proc-macro)
-│   │   │       ├── quote feature "default" (*)
-│   │   │       ├── proc-macro2 feature "default" (*)
-│   │   │       └── syn feature "default"
-│   │   │           ├── syn v1.0.109 (*)
-│   │   │           ├── syn feature "clone-impls"
-│   │   │           │   └── syn v1.0.109 (*)
-│   │   │           ├── syn feature "derive"
-│   │   │           │   └── syn v1.0.109 (*)
-│   │   │           ├── syn feature "parsing" (*)
-│   │   │           ├── syn feature "printing"
-│   │   │           │   ├── syn v1.0.109 (*)
-│   │   │           │   └── syn feature "quote" (*)
-│   │   │           └── syn feature "proc-macro" (*)
-│   │   ├── p256 feature "default"
-│   │   │   ├── p256 v0.11.1
-│   │   │   │   ├── sha2 v0.10.7 (*)
-│   │   │   │   ├── ecdsa feature "der" (*)
-│   │   │   │   ├── elliptic-curve feature "hazmat" (*)
-│   │   │   │   └── elliptic-curve feature "sec1" (*)
-│   │   │   ├── p256 feature "arithmetic"
-│   │   │   │   ├── p256 v0.11.1 (*)
-│   │   │   │   └── elliptic-curve feature "arithmetic" (*)
-│   │   │   ├── p256 feature "ecdsa"
-│   │   │   │   ├── p256 v0.11.1 (*)
-│   │   │   │   ├── ecdsa feature "sign" (*)
-│   │   │   │   ├── ecdsa feature "verify" (*)
-│   │   │   │   ├── p256 feature "arithmetic" (*)
-│   │   │   │   ├── p256 feature "ecdsa-core"
-│   │   │   │   │   └── p256 v0.11.1 (*)
-│   │   │   │   └── p256 feature "sha256"
-│   │   │   │       ├── p256 v0.11.1 (*)
-│   │   │   │       ├── p256 feature "digest"
-│   │   │   │       │   ├── p256 v0.11.1 (*)
-│   │   │   │       │   ├── ecdsa feature "digest" (*)
-│   │   │   │       │   ├── ecdsa feature "hazmat" (*)
-│   │   │   │       │   └── p256 feature "ecdsa-core" (*)
-│   │   │   │       └── p256 feature "sha2"
-│   │   │   │           └── p256 v0.11.1 (*)
-│   │   │   ├── p256 feature "pkcs8"
-│   │   │   │   ├── p256 v0.11.1 (*)
-│   │   │   │   ├── ecdsa feature "pkcs8" (*)
-│   │   │   │   ├── elliptic-curve feature "pkcs8" (*)
-│   │   │   │   └── p256 feature "ecdsa-core" (*)
-│   │   │   └── p256 feature "std"
-│   │   │       ├── p256 v0.11.1 (*)
-│   │   │       ├── ecdsa feature "std" (*)
-│   │   │       ├── elliptic-curve feature "std" (*)
-│   │   │       └── p256 feature "ecdsa-core" (*)
-│   │   ├── p256 feature "ecdsa" (*)
-│   │   ├── rand feature "default"
-│   │   │   ├── rand v0.8.5
-│   │   │   │   ├── rand_chacha v0.3.1
-│   │   │   │   │   ├── rand_core feature "default" (*)
-│   │   │   │   │   └── ppv-lite86 feature "simd" (*)
-│   │   │   │   └── rand_core feature "default" (*)
-│   │   │   ├── rand feature "std"
-│   │   │   │   ├── rand v0.8.5 (*)
-│   │   │   │   ├── rand_core feature "std" (*)
-│   │   │   │   ├── rand feature "alloc"
-│   │   │   │   │   ├── rand v0.8.5 (*)
-│   │   │   │   │   └── rand_core feature "alloc" (*)
-│   │   │   │   ├── rand feature "getrandom"
-│   │   │   │   │   ├── rand v0.8.5 (*)
-│   │   │   │   │   └── rand_core feature "getrandom" (*)
-│   │   │   │   ├── rand feature "libc"
-│   │   │   │   │   └── rand v0.8.5 (*)
-│   │   │   │   ├── rand feature "rand_chacha"
-│   │   │   │   │   └── rand v0.8.5 (*)
-│   │   │   │   └── rand_chacha feature "std"
-│   │   │   │       ├── rand_chacha v0.3.1 (*)
-│   │   │   │       └── ppv-lite86 feature "std" (*)
-│   │   │   └── rand feature "std_rng"
-│   │   │       ├── rand v0.8.5 (*)
-│   │   │       └── rand feature "rand_chacha" (*)
-│   │   ├── rsa feature "default"
-│   │   │   ├── rsa v0.6.1
-│   │   │   │   ├── byteorder v1.4.3
-│   │   │   │   ├── num-integer v0.1.45 (*)
-│   │   │   │   ├── num-iter v0.1.43
-│   │   │   │   │   ├── num-integer v0.1.45 (*)
-│   │   │   │   │   └── num-traits v0.2.16 (*)
-│   │   │   │   │   [build-dependencies]
-│   │   │   │   │   └── autocfg feature "default" (*)
-│   │   │   │   ├── rand_core v0.6.4 (*)
-│   │   │   │   ├── smallvec v1.11.0
-│   │   │   │   ├── subtle v2.5.0
-│   │   │   │   ├── zeroize feature "alloc" (*)
-│   │   │   │   ├── zeroize feature "default" (*)
-│   │   │   │   ├── digest feature "alloc"
-│   │   │   │   │   └── digest v0.10.7 (*)
-│   │   │   │   ├── num-traits feature "libm"
-│   │   │   │   │   └── num-traits v0.2.16 (*)
-│   │   │   │   ├── num-bigint-dig feature "i128"
-│   │   │   │   │   └── num-bigint-dig v0.8.4
-│   │   │   │   │       ├── byteorder v1.4.3
-│   │   │   │   │       ├── num-iter v0.1.43 (*)
-│   │   │   │   │       ├── rand v0.8.5 (*)
-│   │   │   │   │       ├── smallvec v1.11.0
-│   │   │   │   │       ├── zeroize v1.6.0 (*)
-│   │   │   │   │       ├── lazy_static feature "spin_no_std"
-│   │   │   │   │       │   ├── lazy_static v1.4.0 (*)
-│   │   │   │   │       │   └── lazy_static feature "spin"
-│   │   │   │   │       │       └── lazy_static v1.4.0 (*)
-│   │   │   │   │       ├── num-integer feature "i128" (*)
-│   │   │   │   │       ├── num-traits feature "i128" (*)
-│   │   │   │   │       └── libm feature "default" (*)
-│   │   │   │   ├── num-bigint-dig feature "prime"
-│   │   │   │   │   ├── num-bigint-dig v0.8.4 (*)
-│   │   │   │   │   ├── rand feature "std_rng" (*)
-│   │   │   │   │   └── num-bigint-dig feature "rand"
-│   │   │   │   │       └── num-bigint-dig v0.8.4 (*)
-│   │   │   │   ├── num-bigint-dig feature "u64_digit"
-│   │   │   │   │   └── num-bigint-dig v0.8.4 (*)
-│   │   │   │   ├── num-bigint-dig feature "zeroize"
-│   │   │   │   │   └── num-bigint-dig v0.8.4 (*)
-│   │   │   │   ├── pkcs1 feature "alloc"
-│   │   │   │   │   ├── pkcs1 v0.3.3
-│   │   │   │   │   │   ├── pkcs8 v0.8.0
-│   │   │   │   │   │   │   ├── zeroize feature "alloc" (*)
-│   │   │   │   │   │   │   ├── der feature "default"
-│   │   │   │   │   │   │   │   └── der v0.5.1
-│   │   │   │   │   │   │   │       ├── const-oid feature "default"
-│   │   │   │   │   │   │   │       │   └── const-oid v0.7.1
-│   │   │   │   │   │   │   │       ├── crypto-bigint feature "generic-array"
-│   │   │   │   │   │   │   │       │   └── crypto-bigint v0.3.2
-│   │   │   │   │   │   │   │       │       ├── subtle v2.5.0
-│   │   │   │   │   │   │   │       │       └── generic-array feature "default" (*)
-│   │   │   │   │   │   │   │       └── pem-rfc7468 feature "default"
-│   │   │   │   │   │   │   │           └── pem-rfc7468 v0.3.1
-│   │   │   │   │   │   │   │               └── base64ct feature "default"
-│   │   │   │   │   │   │   │                   └── base64ct v1.6.0
-│   │   │   │   │   │   │   ├── der feature "oid"
-│   │   │   │   │   │   │   │   ├── der v0.5.1 (*)
-│   │   │   │   │   │   │   │   └── der feature "const-oid"
-│   │   │   │   │   │   │   │       └── der v0.5.1 (*)
-│   │   │   │   │   │   │   └── spki feature "default"
-│   │   │   │   │   │   │       └── spki v0.5.4
-│   │   │   │   │   │   │           ├── base64ct v1.6.0
-│   │   │   │   │   │   │           ├── der feature "default" (*)
-│   │   │   │   │   │   │           └── der feature "oid" (*)
-│   │   │   │   │   │   ├── zeroize v1.6.0 (*)
-│   │   │   │   │   │   ├── der feature "bigint"
-│   │   │   │   │   │   │   ├── der v0.5.1 (*)
-│   │   │   │   │   │   │   └── der feature "crypto-bigint"
-│   │   │   │   │   │   │       └── der v0.5.1 (*)
-│   │   │   │   │   │   ├── der feature "default" (*)
-│   │   │   │   │   │   └── der feature "oid" (*)
-│   │   │   │   │   ├── zeroize feature "alloc" (*)
-│   │   │   │   │   ├── pkcs1 feature "pkcs8"
-│   │   │   │   │   │   └── pkcs1 v0.3.3 (*)
-│   │   │   │   │   ├── pkcs1 feature "zeroize"
-│   │   │   │   │   │   └── pkcs1 v0.3.3 (*)
-│   │   │   │   │   ├── der feature "alloc"
-│   │   │   │   │   │   └── der v0.5.1 (*)
-│   │   │   │   │   └── pkcs8 feature "alloc"
-│   │   │   │   │       ├── pkcs8 v0.8.0 (*)
-│   │   │   │   │       ├── der feature "alloc" (*)
-│   │   │   │   │       ├── pkcs8 feature "zeroize"
-│   │   │   │   │       │   └── pkcs8 v0.8.0 (*)
-│   │   │   │   │       └── spki feature "alloc"
-│   │   │   │   │           ├── spki v0.5.4 (*)
-│   │   │   │   │           ├── base64ct feature "alloc" (*)
-│   │   │   │   │           ├── der feature "alloc" (*)
-│   │   │   │   │           └── spki feature "base64ct"
-│   │   │   │   │               └── spki v0.5.4 (*)
-│   │   │   │   ├── pkcs1 feature "pkcs8" (*)
-│   │   │   │   └── pkcs8 feature "alloc" (*)
-│   │   │   ├── rsa feature "pem"
-│   │   │   │   ├── rsa v0.6.1 (*)
-│   │   │   │   ├── pkcs1 feature "pem"
-│   │   │   │   │   ├── pkcs1 v0.3.3 (*)
-│   │   │   │   │   ├── pkcs1 feature "alloc" (*)
-│   │   │   │   │   ├── pkcs1 feature "pkcs8" (*)
-│   │   │   │   │   ├── der feature "pem"
-│   │   │   │   │   │   ├── der v0.5.1 (*)
-│   │   │   │   │   │   ├── der feature "alloc" (*)
-│   │   │   │   │   │   ├── der feature "pem-rfc7468"
-│   │   │   │   │   │   │   └── der v0.5.1 (*)
-│   │   │   │   │   │   └── pem-rfc7468 feature "alloc"
-│   │   │   │   │   │       └── pem-rfc7468 v0.3.1 (*)
-│   │   │   │   │   └── pkcs8 feature "pem"
-│   │   │   │   │       ├── pkcs8 v0.8.0 (*)
-│   │   │   │   │       ├── der feature "pem" (*)
-│   │   │   │   │       ├── pkcs8 feature "alloc" (*)
-│   │   │   │   │       └── spki feature "pem"
-│   │   │   │   │           ├── spki v0.5.4 (*)
-│   │   │   │   │           ├── der feature "pem" (*)
-│   │   │   │   │           └── spki feature "alloc" (*)
-│   │   │   │   └── pkcs8 feature "pem" (*)
-│   │   │   └── rsa feature "std"
-│   │   │       ├── rsa v0.6.1 (*)
-│   │   │       ├── digest feature "std"
-│   │   │       │   ├── digest v0.10.7 (*)
-│   │   │       │   ├── digest feature "alloc" (*)
-│   │   │       │   └── crypto-common feature "std"
-│   │   │       │       └── crypto-common v0.1.6 (*)
-│   │   │       ├── rand_core feature "std" (*)
-│   │   │       ├── pkcs1 feature "std"
-│   │   │       │   ├── pkcs1 v0.3.3 (*)
-│   │   │       │   └── der feature "std"
-│   │   │       │       ├── der v0.5.1 (*)
-│   │   │       │       └── der feature "alloc" (*)
-│   │   │       └── pkcs8 feature "std"
-│   │   │           ├── pkcs8 v0.8.0 (*)
-│   │   │           ├── der feature "std" (*)
-│   │   │           ├── pkcs8 feature "alloc" (*)
-│   │   │           └── spki feature "std"
-│   │   │               ├── spki v0.5.4 (*)
-│   │   │               └── der feature "std" (*)
-│   │   ├── simple_asn1 feature "default"
-│   │   │   └── simple_asn1 v0.6.2
-│   │   │       ├── num-bigint v0.4.3 (*)
-│   │   │       ├── num-traits v0.2.16 (*)
-│   │   │       ├── thiserror v1.0.44
-│   │   │       │   └── thiserror-impl feature "default"
-│   │   │       │       └── thiserror-impl v1.0.44 (proc-macro)
-│   │   │       │           ├── quote feature "default" (*)
-│   │   │       │           ├── proc-macro2 feature "default" (*)
-│   │   │       │           └── syn feature "default" (*)
-│   │   │       ├── time feature "formatting"
-│   │   │       │   ├── time v0.3.24
-│   │   │       │   │   ├── deranged v0.3.6
-│   │   │       │   │   ├── itoa feature "default"
-│   │   │       │   │   │   └── itoa v1.0.9
-│   │   │       │   │   ├── time-core feature "default"
-│   │   │       │   │   │   └── time-core v0.1.1
-│   │   │       │   │   └── time-macros feature "default"
-│   │   │       │   │       └── time-macros v0.2.11 (proc-macro)
-│   │   │       │   │           └── time-core feature "default"
-│   │   │       │   │               └── time-core v0.1.1
-│   │   │       │   ├── time feature "std"
-│   │   │       │   │   ├── time v0.3.24 (*)
-│   │   │       │   │   ├── time feature "alloc"
-│   │   │       │   │   │   └── time v0.3.24 (*)
-│   │   │       │   │   └── deranged feature "std"
-│   │   │       │   │       ├── deranged v0.3.6
-│   │   │       │   │       └── deranged feature "alloc"
-│   │   │       │   │           └── deranged v0.3.6
-│   │   │       │   └── time-macros feature "formatting"
-│   │   │       │       └── time-macros v0.2.11 (proc-macro) (*)
-│   │   │       ├── time feature "macros"
-│   │   │       │   └── time v0.3.24 (*)
-│   │   │       └── time feature "parsing"
-│   │   │           ├── time v0.3.24 (*)
-│   │   │           └── time-macros feature "parsing"
-│   │   │               └── time-macros v0.2.11 (proc-macro) (*)
-│   │   ├── thiserror feature "default"
-│   │   │   └── thiserror v1.0.44 (*)
-│   │   ├── ssi-crypto feature "default"
-│   │   │   ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto)
-│   │   │   │   ├── bs58 feature "check" (*)
-│   │   │   │   ├── bs58 feature "default" (*)
-│   │   │   │   ├── digest feature "default" (*)
-│   │   │   │   ├── zeroize feature "default" (*)
-│   │   │   │   ├── zeroize feature "zeroize_derive" (*)
-│   │   │   │   ├── k256 feature "default" (*)
-│   │   │   │   ├── k256 feature "ecdsa" (*)
-│   │   │   │   ├── sha2 feature "default"
-│   │   │   │   │   ├── sha2 v0.10.7 (*)
-│   │   │   │   │   └── sha2 feature "std"
-│   │   │   │   │       ├── sha2 v0.10.7 (*)
-│   │   │   │   │       └── digest feature "std" (*)
-│   │   │   │   ├── thiserror feature "default" (*)
-│   │   │   │   ├── keccak-hash feature "default"
-│   │   │   │   │   ├── keccak-hash v0.7.0
-│   │   │   │   │   │   ├── primitive-types v0.9.1
-│   │   │   │   │   │   │   ├── fixed-hash v0.7.0
-│   │   │   │   │   │   │   │   └── static_assertions feature "default"
-│   │   │   │   │   │   │   │       └── static_assertions v1.1.0
-│   │   │   │   │   │   │   └── uint v0.9.5
-│   │   │   │   │   │   │       ├── byteorder v1.4.3
-│   │   │   │   │   │   │       ├── crunchy v0.2.2
-│   │   │   │   │   │   │       ├── hex v0.4.3
-│   │   │   │   │   │   │       └── static_assertions feature "default" (*)
-│   │   │   │   │   │   ├── tiny-keccak feature "default"
-│   │   │   │   │   │   │   └── tiny-keccak v2.0.2
-│   │   │   │   │   │   │       └── crunchy feature "default"
-│   │   │   │   │   │   │           ├── crunchy v0.2.2
-│   │   │   │   │   │   │           └── crunchy feature "limit_128"
-│   │   │   │   │   │   │               └── crunchy v0.2.2
-│   │   │   │   │   │   └── tiny-keccak feature "keccak"
-│   │   │   │   │   │       └── tiny-keccak v2.0.2 (*)
-│   │   │   │   │   └── keccak-hash feature "std"
-│   │   │   │   │       └── keccak-hash v0.7.0 (*)
-│   │   │   │   └── ripemd160 feature "default"
-│   │   │   │       ├── ripemd160 v0.9.1
-│   │   │   │       │   ├── block-buffer feature "default" (*)
-│   │   │   │       │   ├── digest feature "default" (*)
-│   │   │   │       │   └── opaque-debug feature "default" (*)
-│   │   │   │       └── ripemd160 feature "std"
-│   │   │   │           ├── ripemd160 v0.9.1 (*)
-│   │   │   │           └── digest feature "std" (*)
-│   │   │   ├── ssi-crypto feature "ripemd-160"
-│   │   │   │   ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
-│   │   │   │   ├── ssi-crypto feature "bs58"
-│   │   │   │   │   └── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
-│   │   │   │   ├── ssi-crypto feature "ripemd160"
-│   │   │   │   │   └── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
-│   │   │   │   └── ssi-crypto feature "secp256k1"
-│   │   │   │       ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
-│   │   │   │       ├── k256 feature "keccak256"
-│   │   │   │       │   ├── k256 v0.11.6 (*)
-│   │   │   │       │   ├── k256 feature "digest" (*)
-│   │   │   │       │   └── k256 feature "sha3"
-│   │   │   │       │       └── k256 v0.11.6 (*)
-│   │   │   │       ├── ssi-crypto feature "k256"
-│   │   │   │       │   └── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
-│   │   │   │       └── ssi-crypto feature "keccak"
-│   │   │   │           ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
-│   │   │   │           └── ssi-crypto feature "keccak-hash"
-│   │   │   │               └── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
-│   │   │   └── ssi-crypto feature "secp256k1" (*)
-│   │   └── unsigned-varint feature "default"
-│   │       └── unsigned-varint v0.7.1
-│   ├── bs58 feature "check" (*)
-│   ├── bs58 feature "default" (*)
-│   └── thiserror feature "default" (*)
-├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+ssi-vc v0.2.0 (/Users/frederik/repos/ssi-fork/ssi-vc)
 ├── ssi-json-ld v0.2.2 (/Users/frederik/repos/ssi-fork/ssi-json-ld)
 │   ├── async-std v1.12.0
-│   │   ├── futures-core v0.3.28
-│   │   ├── async-attributes feature "default"
-│   │   │   └── async-attributes v1.1.2 (proc-macro)
-│   │   │       ├── quote feature "default" (*)
-│   │   │       ├── syn feature "default" (*)
-│   │   │       └── syn feature "full"
-│   │   │           └── syn v1.0.109 (*)
-│   │   ├── async-channel feature "default"
-│   │   │   └── async-channel v1.9.0
-│   │   │       ├── concurrent-queue feature "default"
-│   │   │       │   ├── concurrent-queue v2.2.0
-│   │   │       │   │   └── crossbeam-utils v0.8.16
-│   │   │       │   │       └── cfg-if feature "default" (*)
-│   │   │       │   └── concurrent-queue feature "std"
-│   │   │       │       └── concurrent-queue v2.2.0 (*)
-│   │   │       ├── event-listener feature "default"
-│   │   │       │   └── event-listener v2.5.3
-│   │   │       └── futures-core feature "default"
-│   │   │           ├── futures-core v0.3.28
-│   │   │           └── futures-core feature "std"
-│   │   │               ├── futures-core v0.3.28
-│   │   │               └── futures-core feature "alloc"
-│   │   │                   └── futures-core v0.3.28
-│   │   ├── crossbeam-utils feature "default"
-│   │   │   ├── crossbeam-utils v0.8.16 (*)
-│   │   │   └── crossbeam-utils feature "std"
-│   │   │       └── crossbeam-utils v0.8.16 (*)
-│   │   ├── async-lock feature "default"
-│   │   │   └── async-lock v2.7.0
-│   │   │       └── event-listener feature "default" (*)
-│   │   ├── futures-channel feature "default"
-│   │   │   ├── futures-channel v0.3.28
-│   │   │   │   ├── futures-core v0.3.28
-│   │   │   │   └── futures-sink v0.3.28
-│   │   │   └── futures-channel feature "std"
-│   │   │       ├── futures-channel v0.3.28 (*)
-│   │   │       ├── futures-core feature "std" (*)
-│   │   │       └── futures-channel feature "alloc"
-│   │   │           ├── futures-channel v0.3.28 (*)
-│   │   │           └── futures-core feature "alloc" (*)
-│   │   ├── futures-io feature "default"
-│   │   │   ├── futures-io v0.3.28
-│   │   │   └── futures-io feature "std"
-│   │   │       └── futures-io v0.3.28
-│   │   ├── gloo-timers feature "default"
-│   │   │   └── gloo-timers v0.2.6
-│   │   │       ├── futures-core feature "default" (*)
-│   │   │       ├── futures-channel feature "default" (*)
-│   │   │       ├── js-sys feature "default"
-│   │   │       │   └── js-sys v0.3.64
-│   │   │       │       └── wasm-bindgen feature "default"
-│   │   │       │           ├── wasm-bindgen v0.2.87
-│   │   │       │           │   ├── cfg-if feature "default" (*)
-│   │   │       │           │   └── wasm-bindgen-macro feature "default"
-│   │   │       │           │       └── wasm-bindgen-macro v0.2.87 (proc-macro)
-│   │   │       │           │           ├── quote feature "default" (*)
-│   │   │       │           │           └── wasm-bindgen-macro-support feature "default"
-│   │   │       │           │               └── wasm-bindgen-macro-support v0.2.87
-│   │   │       │           │                   ├── quote feature "default" (*)
-│   │   │       │           │                   ├── proc-macro2 feature "default" (*)
-│   │   │       │           │                   ├── syn feature "default" (*)
-│   │   │       │           │                   ├── syn feature "full" (*)
-│   │   │       │           │                   ├── syn feature "visit" (*)
-│   │   │       │           │                   ├── wasm-bindgen-backend feature "default"
-│   │   │       │           │                   │   └── wasm-bindgen-backend v0.2.87
-│   │   │       │           │                   │       ├── quote feature "default" (*)
-│   │   │       │           │                   │       ├── proc-macro2 feature "default" (*)
-│   │   │       │           │                   │       ├── syn feature "default" (*)
-│   │   │       │           │                   │       ├── syn feature "full" (*)
-│   │   │       │           │                   │       ├── bumpalo feature "default"
-│   │   │       │           │                   │       │   └── bumpalo v3.13.0
-│   │   │       │           │                   │       ├── log feature "default"
-│   │   │       │           │                   │       │   └── log v0.4.19
-│   │   │       │           │                   │       ├── once_cell feature "default"
-│   │   │       │           │                   │       │   ├── once_cell v1.18.0
-│   │   │       │           │                   │       │   └── once_cell feature "std"
-│   │   │       │           │                   │       │       ├── once_cell v1.18.0
-│   │   │       │           │                   │       │       └── once_cell feature "alloc"
-│   │   │       │           │                   │       │           ├── once_cell v1.18.0
-│   │   │       │           │                   │       │           └── once_cell feature "race"
-│   │   │       │           │                   │       │               └── once_cell v1.18.0
-│   │   │       │           │                   │       └── wasm-bindgen-shared feature "default"
-│   │   │       │           │                   │           └── wasm-bindgen-shared v0.2.87
-│   │   │       │           │                   └── wasm-bindgen-shared feature "default" (*)
-│   │   │       │           ├── wasm-bindgen feature "spans"
-│   │   │       │           │   ├── wasm-bindgen v0.2.87 (*)
-│   │   │       │           │   └── wasm-bindgen-macro feature "spans"
-│   │   │       │           │       ├── wasm-bindgen-macro v0.2.87 (proc-macro) (*)
-│   │   │       │           │       └── wasm-bindgen-macro-support feature "spans"
-│   │   │       │           │           ├── wasm-bindgen-macro-support v0.2.87 (*)
-│   │   │       │           │           └── wasm-bindgen-backend feature "spans"
-│   │   │       │           │               └── wasm-bindgen-backend v0.2.87 (*)
-│   │   │       │           └── wasm-bindgen feature "std"
-│   │   │       │               └── wasm-bindgen v0.2.87 (*)
-│   │   │       └── wasm-bindgen feature "default" (*)
-│   │   ├── gloo-timers feature "futures"
-│   │   │   ├── gloo-timers v0.2.6 (*)
-│   │   │   ├── gloo-timers feature "futures-channel"
-│   │   │   │   └── gloo-timers v0.2.6 (*)
-│   │   │   └── gloo-timers feature "futures-core"
-│   │   │       └── gloo-timers v0.2.6 (*)
-│   │   ├── kv-log-macro feature "default"
-│   │   │   └── kv-log-macro v1.0.7
-│   │   │       ├── log feature "default"
-│   │   │       │   └── log v0.4.19
-│   │   │       │       └── value-bag v1.4.1
-│   │   │       └── log feature "kv_unstable"
-│   │   │           ├── log v0.4.19 (*)
-│   │   │           └── log feature "value-bag"
-│   │   │               └── log v0.4.19 (*)
-│   │   ├── log feature "default" (*)
-│   │   ├── log feature "kv_unstable" (*)
-│   │   ├── memchr feature "default"
-│   │   │   ├── memchr v2.5.0
-│   │   │   └── memchr feature "std"
-│   │   │       └── memchr v2.5.0
-│   │   ├── once_cell feature "default"
-│   │   │   ├── once_cell v1.18.0
-│   │   │   └── once_cell feature "std"
-│   │   │       ├── once_cell v1.18.0
-│   │   │       └── once_cell feature "alloc"
-│   │   │           ├── once_cell v1.18.0
-│   │   │           └── once_cell feature "race"
-│   │   │               └── once_cell v1.18.0
-│   │   ├── pin-project-lite feature "default"
-│   │   │   └── pin-project-lite v0.2.10
-│   │   ├── pin-utils feature "default"
-│   │   │   └── pin-utils v0.1.0
-│   │   ├── slab feature "default"
-│   │   │   ├── slab v0.4.8
-│   │   │   │   [build-dependencies]
-│   │   │   │   └── autocfg feature "default" (*)
-│   │   │   └── slab feature "std"
-│   │   │       └── slab v0.4.8 (*)
-│   │   └── wasm-bindgen-futures feature "default"
-│   │       └── wasm-bindgen-futures v0.4.37
-│   │           ├── cfg-if feature "default" (*)
-│   │           ├── js-sys feature "default" (*)
-│   │           └── wasm-bindgen feature "default" (*)
-│   ├── lazy_static feature "default" (*)
-│   ├── thiserror feature "default" (*)
-│   ├── ssi-crypto feature "default" (*)
 │   ├── iref feature "default"
 │   │   └── iref v2.2.3
-│   │       ├── serde feature "default" (*)
-│   │       ├── smallvec feature "default"
-│   │       │   └── smallvec v1.11.0
+│   │       ├── serde feature "default"
+│   │       │   ├── serde v1.0.179
+│   │       │   │   └── serde_derive feature "default"
+│   │       │   │       └── serde_derive v1.0.179 (proc-macro)
+│   │       │   │           ├── proc-macro2 feature "default"
+│   │       │   │           │   ├── proc-macro2 v1.0.66
+│   │       │   │           │   │   └── unicode-ident feature "default"
+│   │       │   │           │   │       └── unicode-ident v1.0.11
+│   │       │   │           │   └── proc-macro2 feature "proc-macro"
+│   │       │   │           │       └── proc-macro2 v1.0.66 (*)
+│   │       │   │           ├── quote feature "default"
+│   │       │   │           │   ├── quote v1.0.32
+│   │       │   │           │   │   └── proc-macro2 v1.0.66 (*)
+│   │       │   │           │   └── quote feature "proc-macro"
+│   │       │   │           │       ├── quote v1.0.32 (*)
+│   │       │   │           │       └── proc-macro2 feature "proc-macro" (*)
+│   │       │   │           └── syn feature "default"
+│   │       │   │               ├── syn v2.0.28
+│   │       │   │               │   ├── proc-macro2 v1.0.66 (*)
+│   │       │   │               │   ├── quote v1.0.32 (*)
+│   │       │   │               │   └── unicode-ident feature "default" (*)
+│   │       │   │               ├── syn feature "clone-impls"
+│   │       │   │               │   └── syn v2.0.28 (*)
+│   │       │   │               ├── syn feature "derive"
+│   │       │   │               │   └── syn v2.0.28 (*)
+│   │       │   │               ├── syn feature "parsing"
+│   │       │   │               │   └── syn v2.0.28 (*)
+│   │       │   │               ├── syn feature "printing"
+│   │       │   │               │   ├── syn v2.0.28 (*)
+│   │       │   │               │   └── syn feature "quote"
+│   │       │   │               │       └── syn v2.0.28 (*)
+│   │       │   │               └── syn feature "proc-macro"
+│   │       │   │                   ├── syn v2.0.28 (*)
+│   │       │   │                   ├── proc-macro2 feature "proc-macro" (*)
+│   │       │   │                   ├── quote feature "proc-macro" (*)
+│   │       │   │                   └── syn feature "quote" (*)
+│   │       │   └── serde feature "std"
+│   │       │       └── serde v1.0.179 (*)
 │   │       ├── hashbrown feature "default"
 │   │       │   ├── hashbrown v0.13.2
 │   │       │   │   └── ahash v0.8.3
-│   │       │   │       ├── cfg-if feature "default" (*)
-│   │       │   │       ├── once_cell feature "alloc" (*)
+│   │       │   │       ├── cfg-if feature "default"
+│   │       │   │       │   └── cfg-if v1.0.0
+│   │       │   │       ├── once_cell feature "alloc"
+│   │       │   │       │   ├── once_cell v1.18.0
+│   │       │   │       │   └── once_cell feature "race"
+│   │       │   │       │       └── once_cell v1.18.0
 │   │       │   │       └── once_cell feature "unstable"
 │   │       │   │           └── once_cell v1.18.0
-│   │       │   │       [build-dependencies]
-│   │       │   │       └── version_check feature "default" (*)
 │   │       │   ├── hashbrown feature "ahash"
 │   │       │   │   └── hashbrown v0.13.2 (*)
 │   │       │   └── hashbrown feature "inline-more"
 │   │       │       └── hashbrown v0.13.2 (*)
-│   │       └── pct-str feature "default"
-│   │           └── pct-str v1.2.0
-│   │               └── utf8-decode feature "default"
-│   │                   └── utf8-decode v1.0.1
+│   │       ├── pct-str feature "default"
+│   │       │   └── pct-str v1.2.0
+│   │       │       └── utf8-decode feature "default"
+│   │       │           └── utf8-decode v1.0.1
+│   │       └── smallvec feature "default"
+│   │           └── smallvec v1.11.0
+│   ├── thiserror feature "default"
+│   │   └── thiserror v1.0.44
+│   │       └── thiserror-impl feature "default"
+│   │           └── thiserror-impl v1.0.44 (proc-macro)
+│   │               ├── proc-macro2 feature "default" (*)
+│   │               ├── quote feature "default" (*)
+│   │               └── syn feature "default" (*)
+│   ├── lazy_static feature "default"
+│   │   └── lazy_static v1.4.0
+│   │       └── spin feature "default"
+│   │           └── spin v0.5.2
+│   ├── ssi-crypto feature "default"
+│   │   ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto)
+│   │   │   ├── thiserror feature "default" (*)
+│   │   │   ├── bs58 feature "check"
+│   │   │   │   ├── bs58 v0.4.0
+│   │   │   │   │   └── sha2 v0.9.9
+│   │   │   │   │       ├── cfg-if feature "default" (*)
+│   │   │   │   │       ├── block-buffer feature "default"
+│   │   │   │   │       │   └── block-buffer v0.9.0
+│   │   │   │   │       │       └── generic-array feature "default"
+│   │   │   │   │       │           └── generic-array v0.14.7
+│   │   │   │   │       │               └── typenum feature "default"
+│   │   │   │   │       │                   └── typenum v1.16.0
+│   │   │   │   │       ├── digest feature "default"
+│   │   │   │   │       │   └── digest v0.9.0
+│   │   │   │   │       │       └── generic-array feature "default" (*)
+│   │   │   │   │       └── opaque-debug feature "default"
+│   │   │   │   │           └── opaque-debug v0.3.0
+│   │   │   │   └── bs58 feature "sha2"
+│   │   │   │       └── bs58 v0.4.0 (*)
+│   │   │   ├── bs58 feature "default"
+│   │   │   │   ├── bs58 v0.4.0 (*)
+│   │   │   │   └── bs58 feature "std"
+│   │   │   │       ├── bs58 v0.4.0 (*)
+│   │   │   │       └── bs58 feature "alloc"
+│   │   │   │           └── bs58 v0.4.0 (*)
+│   │   │   ├── digest feature "default" (*)
+│   │   │   ├── zeroize feature "default"
+│   │   │   │   ├── zeroize v1.6.0
+│   │   │   │   │   └── zeroize_derive feature "default"
+│   │   │   │   │       └── zeroize_derive v1.4.2 (proc-macro)
+│   │   │   │   │           ├── proc-macro2 feature "default" (*)
+│   │   │   │   │           ├── quote feature "default" (*)
+│   │   │   │   │           ├── syn feature "default" (*)
+│   │   │   │   │           ├── syn feature "extra-traits"
+│   │   │   │   │           │   └── syn v2.0.28 (*)
+│   │   │   │   │           ├── syn feature "full"
+│   │   │   │   │           │   └── syn v2.0.28 (*)
+│   │   │   │   │           └── syn feature "visit"
+│   │   │   │   │               └── syn v2.0.28 (*)
+│   │   │   │   └── zeroize feature "alloc"
+│   │   │   │       └── zeroize v1.6.0 (*)
+│   │   │   ├── zeroize feature "zeroize_derive"
+│   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   ├── k256 feature "default"
+│   │   │   │   ├── k256 v0.11.6
+│   │   │   │   │   ├── sha2 v0.10.7
+│   │   │   │   │   │   ├── cfg-if feature "default" (*)
+│   │   │   │   │   │   └── digest feature "default"
+│   │   │   │   │   │       ├── digest v0.10.7
+│   │   │   │   │   │       │   ├── subtle v2.5.0
+│   │   │   │   │   │       │   ├── block-buffer feature "default"
+│   │   │   │   │   │       │   │   └── block-buffer v0.10.4
+│   │   │   │   │   │       │   │       └── generic-array feature "default" (*)
+│   │   │   │   │   │       │   └── crypto-common feature "default"
+│   │   │   │   │   │       │       └── crypto-common v0.1.6
+│   │   │   │   │   │       │           ├── generic-array feature "default" (*)
+│   │   │   │   │   │       │           ├── generic-array feature "more_lengths"
+│   │   │   │   │   │       │           │   └── generic-array v0.14.7 (*)
+│   │   │   │   │   │       │           └── typenum feature "default" (*)
+│   │   │   │   │   │       └── digest feature "core-api"
+│   │   │   │   │   │           ├── digest v0.10.7 (*)
+│   │   │   │   │   │           └── digest feature "block-buffer"
+│   │   │   │   │   │               └── digest v0.10.7 (*)
+│   │   │   │   │   ├── sha3 v0.10.8
+│   │   │   │   │   │   ├── digest feature "default" (*)
+│   │   │   │   │   │   └── keccak feature "default"
+│   │   │   │   │   │       └── keccak v0.1.4
+│   │   │   │   │   ├── cfg-if feature "default" (*)
+│   │   │   │   │   ├── ecdsa feature "der"
+│   │   │   │   │   │   └── ecdsa v0.14.8
+│   │   │   │   │   │       ├── signature feature "hazmat-preview"
+│   │   │   │   │   │       │   └── signature v1.6.4
+│   │   │   │   │   │       │       ├── digest v0.10.7 (*)
+│   │   │   │   │   │       │       └── rand_core v0.6.4
+│   │   │   │   │   │       │           └── getrandom feature "default"
+│   │   │   │   │   │       │               └── getrandom v0.2.10
+│   │   │   │   │   │       │                   └── cfg-if feature "default" (*)
+│   │   │   │   │   │       ├── signature feature "rand-preview"
+│   │   │   │   │   │       │   ├── signature v1.6.4 (*)
+│   │   │   │   │   │       │   └── signature feature "rand_core"
+│   │   │   │   │   │       │       └── signature v1.6.4 (*)
+│   │   │   │   │   │       ├── der feature "default"
+│   │   │   │   │   │       │   └── der v0.6.1
+│   │   │   │   │   │       │       ├── zeroize feature "alloc" (*)
+│   │   │   │   │   │       │       └── const-oid feature "default"
+│   │   │   │   │   │       │           └── const-oid v0.9.4
+│   │   │   │   │   │       ├── elliptic-curve feature "digest"
+│   │   │   │   │   │       │   └── elliptic-curve v0.12.3
+│   │   │   │   │   │       │       ├── ff v0.12.1
+│   │   │   │   │   │       │       │   ├── rand_core v0.6.4 (*)
+│   │   │   │   │   │       │       │   └── subtle feature "i128"
+│   │   │   │   │   │       │       │       └── subtle v2.5.0
+│   │   │   │   │   │       │       ├── generic-array v0.14.7 (*)
+│   │   │   │   │   │       │       ├── group v0.12.1
+│   │   │   │   │   │       │       │   ├── ff v0.12.1 (*)
+│   │   │   │   │   │       │       │   ├── rand_core v0.6.4 (*)
+│   │   │   │   │   │       │       │   └── subtle v2.5.0
+│   │   │   │   │   │       │       ├── pkcs8 v0.9.0
+│   │   │   │   │   │       │       │   ├── der feature "default" (*)
+│   │   │   │   │   │       │       │   ├── der feature "oid"
+│   │   │   │   │   │       │       │   │   ├── der v0.6.1 (*)
+│   │   │   │   │   │       │       │   │   └── der feature "const-oid"
+│   │   │   │   │   │       │       │   │       └── der v0.6.1 (*)
+│   │   │   │   │   │       │       │   └── spki feature "default"
+│   │   │   │   │   │       │       │       └── spki v0.6.0
+│   │   │   │   │   │       │       │           ├── base64ct v1.6.0
+│   │   │   │   │   │       │       │           ├── der feature "default" (*)
+│   │   │   │   │   │       │       │           └── der feature "oid" (*)
+│   │   │   │   │   │       │       ├── rand_core v0.6.4 (*)
+│   │   │   │   │   │       │       ├── subtle v2.5.0
+│   │   │   │   │   │       │       ├── zeroize v1.6.0 (*)
+│   │   │   │   │   │       │       ├── digest feature "default" (*)
+│   │   │   │   │   │       │       ├── der feature "oid" (*)
+│   │   │   │   │   │       │       ├── base16ct feature "default"
+│   │   │   │   │   │       │       │   └── base16ct v0.1.1
+│   │   │   │   │   │       │       ├── crypto-bigint feature "generic-array"
+│   │   │   │   │   │       │       │   └── crypto-bigint v0.4.9
+│   │   │   │   │   │       │       │       ├── subtle v2.5.0
+│   │   │   │   │   │       │       │       ├── zeroize v1.6.0 (*)
+│   │   │   │   │   │       │       │       ├── generic-array feature "default" (*)
+│   │   │   │   │   │       │       │       └── rand_core feature "default"
+│   │   │   │   │   │       │       │           └── rand_core v0.6.4 (*)
+│   │   │   │   │   │       │       ├── crypto-bigint feature "rand_core"
+│   │   │   │   │   │       │       │   └── crypto-bigint v0.4.9 (*)
+│   │   │   │   │   │       │       ├── crypto-bigint feature "zeroize"
+│   │   │   │   │   │       │       │   └── crypto-bigint v0.4.9 (*)
+│   │   │   │   │   │       │       ├── sec1 feature "default"
+│   │   │   │   │   │       │       │   ├── sec1 v0.3.0
+│   │   │   │   │   │       │       │   │   ├── base16ct v0.1.1
+│   │   │   │   │   │       │       │   │   ├── generic-array v0.14.7 (*)
+│   │   │   │   │   │       │       │   │   ├── pkcs8 v0.9.0 (*)
+│   │   │   │   │   │       │       │   │   ├── subtle v2.5.0
+│   │   │   │   │   │       │       │   │   ├── zeroize v1.6.0 (*)
+│   │   │   │   │   │       │       │   │   ├── der feature "default" (*)
+│   │   │   │   │   │       │       │   │   └── der feature "oid" (*)
+│   │   │   │   │   │       │       │   ├── sec1 feature "der"
+│   │   │   │   │   │       │       │   │   └── sec1 v0.3.0 (*)
+│   │   │   │   │   │       │       │   └── sec1 feature "point"
+│   │   │   │   │   │       │       │       ├── sec1 v0.3.0 (*)
+│   │   │   │   │   │       │       │       ├── sec1 feature "base16ct"
+│   │   │   │   │   │       │       │       │   └── sec1 v0.3.0 (*)
+│   │   │   │   │   │       │       │       └── sec1 feature "generic-array"
+│   │   │   │   │   │       │       │           └── sec1 v0.3.0 (*)
+│   │   │   │   │   │       │       ├── sec1 feature "subtle"
+│   │   │   │   │   │       │       │   └── sec1 v0.3.0 (*)
+│   │   │   │   │   │       │       └── sec1 feature "zeroize"
+│   │   │   │   │   │       │           └── sec1 v0.3.0 (*)
+│   │   │   │   │   │       ├── elliptic-curve feature "sec1"
+│   │   │   │   │   │       │   └── elliptic-curve v0.12.3 (*)
+│   │   │   │   │   │       └── rfc6979 feature "default"
+│   │   │   │   │   │           └── rfc6979 v0.3.1
+│   │   │   │   │   │               ├── zeroize v1.6.0 (*)
+│   │   │   │   │   │               ├── crypto-bigint feature "generic-array" (*)
+│   │   │   │   │   │               ├── crypto-bigint feature "zeroize" (*)
+│   │   │   │   │   │               └── hmac feature "reset"
+│   │   │   │   │   │                   └── hmac v0.12.1
+│   │   │   │   │   │                       ├── digest feature "default" (*)
+│   │   │   │   │   │                       └── digest feature "mac"
+│   │   │   │   │   │                           ├── digest v0.10.7 (*)
+│   │   │   │   │   │                           └── digest feature "subtle"
+│   │   │   │   │   │                               └── digest v0.10.7 (*)
+│   │   │   │   │   ├── elliptic-curve feature "hazmat"
+│   │   │   │   │   │   └── elliptic-curve v0.12.3 (*)
+│   │   │   │   │   └── elliptic-curve feature "sec1" (*)
+│   │   │   │   ├── k256 feature "arithmetic"
+│   │   │   │   │   ├── k256 v0.11.6 (*)
+│   │   │   │   │   └── elliptic-curve feature "arithmetic"
+│   │   │   │   │       ├── elliptic-curve v0.12.3 (*)
+│   │   │   │   │       ├── elliptic-curve feature "ff"
+│   │   │   │   │       │   └── elliptic-curve v0.12.3 (*)
+│   │   │   │   │       └── elliptic-curve feature "group"
+│   │   │   │   │           └── elliptic-curve v0.12.3 (*)
+│   │   │   │   ├── k256 feature "ecdsa"
+│   │   │   │   │   ├── k256 v0.11.6 (*)
+│   │   │   │   │   ├── k256 feature "arithmetic" (*)
+│   │   │   │   │   ├── k256 feature "ecdsa-core"
+│   │   │   │   │   │   └── k256 v0.11.6 (*)
+│   │   │   │   │   ├── k256 feature "sha256"
+│   │   │   │   │   │   ├── k256 v0.11.6 (*)
+│   │   │   │   │   │   ├── k256 feature "digest"
+│   │   │   │   │   │   │   ├── k256 v0.11.6 (*)
+│   │   │   │   │   │   │   ├── k256 feature "ecdsa-core" (*)
+│   │   │   │   │   │   │   ├── ecdsa feature "digest"
+│   │   │   │   │   │   │   │   ├── ecdsa v0.14.8 (*)
+│   │   │   │   │   │   │   │   └── signature feature "digest-preview"
+│   │   │   │   │   │   │   │       ├── signature v1.6.4 (*)
+│   │   │   │   │   │   │   │       └── signature feature "digest"
+│   │   │   │   │   │   │   │           └── signature v1.6.4 (*)
+│   │   │   │   │   │   │   └── ecdsa feature "hazmat"
+│   │   │   │   │   │   │       └── ecdsa v0.14.8 (*)
+│   │   │   │   │   │   └── k256 feature "sha2"
+│   │   │   │   │   │       └── k256 v0.11.6 (*)
+│   │   │   │   │   ├── ecdsa feature "sign"
+│   │   │   │   │   │   ├── ecdsa v0.14.8 (*)
+│   │   │   │   │   │   ├── ecdsa feature "arithmetic"
+│   │   │   │   │   │   │   ├── ecdsa v0.14.8 (*)
+│   │   │   │   │   │   │   └── elliptic-curve feature "arithmetic" (*)
+│   │   │   │   │   │   ├── ecdsa feature "digest" (*)
+│   │   │   │   │   │   ├── ecdsa feature "hazmat" (*)
+│   │   │   │   │   │   └── ecdsa feature "rfc6979"
+│   │   │   │   │   │       └── ecdsa v0.14.8 (*)
+│   │   │   │   │   └── ecdsa feature "verify"
+│   │   │   │   │       ├── ecdsa v0.14.8 (*)
+│   │   │   │   │       ├── ecdsa feature "arithmetic" (*)
+│   │   │   │   │       ├── ecdsa feature "digest" (*)
+│   │   │   │   │       └── ecdsa feature "hazmat" (*)
+│   │   │   │   ├── k256 feature "pkcs8"
+│   │   │   │   │   ├── k256 v0.11.6 (*)
+│   │   │   │   │   ├── k256 feature "ecdsa-core" (*)
+│   │   │   │   │   ├── ecdsa feature "pkcs8"
+│   │   │   │   │   │   ├── ecdsa v0.14.8 (*)
+│   │   │   │   │   │   ├── ecdsa feature "der" (*)
+│   │   │   │   │   │   └── elliptic-curve feature "pkcs8"
+│   │   │   │   │   │       └── elliptic-curve v0.12.3 (*)
+│   │   │   │   │   └── elliptic-curve feature "pkcs8" (*)
+│   │   │   │   ├── k256 feature "schnorr"
+│   │   │   │   │   ├── k256 v0.11.6 (*)
+│   │   │   │   │   ├── k256 feature "arithmetic" (*)
+│   │   │   │   │   └── k256 feature "sha256" (*)
+│   │   │   │   └── k256 feature "std"
+│   │   │   │       ├── k256 v0.11.6 (*)
+│   │   │   │       ├── k256 feature "ecdsa-core" (*)
+│   │   │   │       ├── ecdsa feature "std"
+│   │   │   │       │   ├── ecdsa v0.14.8 (*)
+│   │   │   │       │   ├── signature feature "std"
+│   │   │   │       │   │   └── signature v1.6.4 (*)
+│   │   │   │       │   ├── ecdsa feature "alloc"
+│   │   │   │       │   │   └── ecdsa v0.14.8 (*)
+│   │   │   │       │   └── elliptic-curve feature "std"
+│   │   │   │       │       ├── elliptic-curve v0.12.3 (*)
+│   │   │   │       │       ├── rand_core feature "std"
+│   │   │   │       │       │   ├── rand_core v0.6.4 (*)
+│   │   │   │       │       │   ├── rand_core feature "alloc"
+│   │   │   │       │       │   │   └── rand_core v0.6.4 (*)
+│   │   │   │       │       │   ├── rand_core feature "getrandom"
+│   │   │   │       │       │   │   └── rand_core v0.6.4 (*)
+│   │   │   │       │       │   └── getrandom feature "std"
+│   │   │   │       │       │       └── getrandom v0.2.10 (*)
+│   │   │   │       │       └── elliptic-curve feature "alloc"
+│   │   │   │       │           ├── elliptic-curve v0.12.3 (*)
+│   │   │   │       │           ├── zeroize feature "alloc" (*)
+│   │   │   │       │           ├── der feature "alloc"
+│   │   │   │       │           │   └── der v0.6.1 (*)
+│   │   │   │       │           ├── elliptic-curve feature "sec1" (*)
+│   │   │   │       │           ├── base16ct feature "alloc"
+│   │   │   │       │           │   └── base16ct v0.1.1
+│   │   │   │       │           └── sec1 feature "alloc"
+│   │   │   │       │               ├── sec1 v0.3.0 (*)
+│   │   │   │       │               ├── zeroize feature "alloc" (*)
+│   │   │   │       │               ├── der feature "alloc" (*)
+│   │   │   │       │               ├── pkcs8 feature "alloc"
+│   │   │   │       │               │   ├── pkcs8 v0.9.0 (*)
+│   │   │   │       │               │   ├── der feature "alloc" (*)
+│   │   │   │       │               │   ├── der feature "zeroize"
+│   │   │   │       │               │   │   └── der v0.6.1 (*)
+│   │   │   │       │               │   └── spki feature "alloc"
+│   │   │   │       │               │       ├── spki v0.6.0 (*)
+│   │   │   │       │               │       ├── der feature "alloc" (*)
+│   │   │   │       │               │       ├── spki feature "base64ct"
+│   │   │   │       │               │       │   └── spki v0.6.0 (*)
+│   │   │   │       │               │       └── base64ct feature "alloc"
+│   │   │   │       │               │           └── base64ct v1.6.0
+│   │   │   │       │               ├── sec1 feature "der" (*)
+│   │   │   │       │               ├── sec1 feature "pkcs8"
+│   │   │   │       │               │   └── sec1 v0.3.0 (*)
+│   │   │   │       │               └── sec1 feature "zeroize" (*)
+│   │   │   │       └── elliptic-curve feature "std" (*)
+│   │   │   ├── k256 feature "ecdsa" (*)
+│   │   │   ├── sha2 feature "default"
+│   │   │   │   ├── sha2 v0.10.7 (*)
+│   │   │   │   └── sha2 feature "std"
+│   │   │   │       ├── sha2 v0.10.7 (*)
+│   │   │   │       └── digest feature "std"
+│   │   │   │           ├── digest v0.10.7 (*)
+│   │   │   │           ├── digest feature "alloc"
+│   │   │   │           │   └── digest v0.10.7 (*)
+│   │   │   │           └── crypto-common feature "std"
+│   │   │   │               └── crypto-common v0.1.6 (*)
+│   │   │   ├── keccak-hash feature "default"
+│   │   │   │   ├── keccak-hash v0.7.0
+│   │   │   │   │   ├── primitive-types v0.9.1
+│   │   │   │   │   │   ├── fixed-hash v0.7.0
+│   │   │   │   │   │   │   └── static_assertions feature "default"
+│   │   │   │   │   │   │       └── static_assertions v1.1.0
+│   │   │   │   │   │   └── uint v0.9.5
+│   │   │   │   │   │       ├── byteorder v1.4.3
+│   │   │   │   │   │       ├── crunchy v0.2.2
+│   │   │   │   │   │       ├── hex v0.4.3
+│   │   │   │   │   │       └── static_assertions feature "default" (*)
+│   │   │   │   │   ├── tiny-keccak feature "default"
+│   │   │   │   │   │   └── tiny-keccak v2.0.2
+│   │   │   │   │   │       └── crunchy feature "default"
+│   │   │   │   │   │           ├── crunchy v0.2.2
+│   │   │   │   │   │           └── crunchy feature "limit_128"
+│   │   │   │   │   │               └── crunchy v0.2.2
+│   │   │   │   │   └── tiny-keccak feature "keccak"
+│   │   │   │   │       └── tiny-keccak v2.0.2 (*)
+│   │   │   │   └── keccak-hash feature "std"
+│   │   │   │       └── keccak-hash v0.7.0 (*)
+│   │   │   └── ripemd160 feature "default"
+│   │   │       ├── ripemd160 v0.9.1
+│   │   │       │   ├── block-buffer feature "default" (*)
+│   │   │       │   ├── digest feature "default" (*)
+│   │   │       │   └── opaque-debug feature "default" (*)
+│   │   │       └── ripemd160 feature "std"
+│   │   │           ├── ripemd160 v0.9.1 (*)
+│   │   │           └── digest feature "std"
+│   │   │               ├── digest v0.9.0 (*)
+│   │   │               └── digest feature "alloc"
+│   │   │                   └── digest v0.9.0 (*)
+│   │   ├── ssi-crypto feature "ripemd-160"
+│   │   │   ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   │   │   ├── ssi-crypto feature "bs58"
+│   │   │   │   └── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   │   │   ├── ssi-crypto feature "ripemd160"
+│   │   │   │   └── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   │   │   └── ssi-crypto feature "secp256k1"
+│   │   │       ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   │   │       ├── k256 feature "keccak256"
+│   │   │       │   ├── k256 v0.11.6 (*)
+│   │   │       │   ├── k256 feature "digest" (*)
+│   │   │       │   └── k256 feature "sha3"
+│   │   │       │       └── k256 v0.11.6 (*)
+│   │   │       ├── ssi-crypto feature "k256"
+│   │   │       │   └── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   │   │       └── ssi-crypto feature "keccak"
+│   │   │           ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   │   │           └── ssi-crypto feature "keccak-hash"
+│   │   │               └── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   │   └── ssi-crypto feature "secp256k1" (*)
 │   ├── combination feature "default"
 │   │   └── combination v0.1.5
 │   ├── futures feature "default"
@@ -963,18 +415,37 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │   │   │   └── futures-util v0.3.28
 │   │   │   │       ├── futures-core v0.3.28
 │   │   │   │       ├── futures-macro v0.3.28 (proc-macro)
-│   │   │   │       │   ├── quote feature "default" (*)
 │   │   │   │       │   ├── proc-macro2 feature "default" (*)
+│   │   │   │       │   ├── quote feature "default" (*)
 │   │   │   │       │   ├── syn feature "default" (*)
 │   │   │   │       │   └── syn feature "full" (*)
 │   │   │   │       ├── futures-sink v0.3.28
 │   │   │   │       ├── futures-task v0.3.28
-│   │   │   │       ├── futures-channel feature "std" (*)
-│   │   │   │       ├── futures-io feature "std" (*)
-│   │   │   │       ├── memchr feature "default" (*)
-│   │   │   │       ├── pin-project-lite feature "default" (*)
-│   │   │   │       ├── pin-utils feature "default" (*)
-│   │   │   │       └── slab feature "default" (*)
+│   │   │   │       ├── memchr feature "default"
+│   │   │   │       │   ├── memchr v2.5.0
+│   │   │   │       │   └── memchr feature "std"
+│   │   │   │       │       └── memchr v2.5.0
+│   │   │   │       ├── futures-channel feature "std"
+│   │   │   │       │   ├── futures-channel v0.3.28
+│   │   │   │       │   │   ├── futures-core v0.3.28
+│   │   │   │       │   │   └── futures-sink v0.3.28
+│   │   │   │       │   ├── futures-channel feature "alloc"
+│   │   │   │       │   │   ├── futures-channel v0.3.28 (*)
+│   │   │   │       │   │   └── futures-core feature "alloc"
+│   │   │   │       │   │       └── futures-core v0.3.28
+│   │   │   │       │   └── futures-core feature "std"
+│   │   │   │       │       ├── futures-core v0.3.28
+│   │   │   │       │       └── futures-core feature "alloc" (*)
+│   │   │   │       ├── futures-io feature "std"
+│   │   │   │       │   └── futures-io v0.3.28
+│   │   │   │       ├── pin-project-lite feature "default"
+│   │   │   │       │   └── pin-project-lite v0.2.10
+│   │   │   │       ├── pin-utils feature "default"
+│   │   │   │       │   └── pin-utils v0.1.0
+│   │   │   │       └── slab feature "default"
+│   │   │   │           ├── slab v0.4.8
+│   │   │   │           └── slab feature "std"
+│   │   │   │               └── slab v0.4.8
 │   │   │   ├── futures-io v0.3.28
 │   │   │   ├── futures-sink v0.3.28
 │   │   │   ├── futures-task v0.3.28
@@ -1001,23 +472,22 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │   │   │   └── futures v0.3.28 (*)
 │   │   │   ├── futures feature "std"
 │   │   │   │   ├── futures v0.3.28 (*)
-│   │   │   │   ├── futures-core feature "std" (*)
-│   │   │   │   ├── futures-sink feature "std"
-│   │   │   │   │   ├── futures-sink v0.3.28
-│   │   │   │   │   └── futures-sink feature "alloc"
-│   │   │   │   │       └── futures-sink v0.3.28
-│   │   │   │   ├── futures-io feature "std" (*)
 │   │   │   │   ├── futures feature "alloc"
 │   │   │   │   │   ├── futures v0.3.28 (*)
-│   │   │   │   │   ├── futures-core feature "alloc" (*)
 │   │   │   │   │   ├── futures-channel feature "alloc" (*)
-│   │   │   │   │   ├── futures-sink feature "alloc" (*)
+│   │   │   │   │   ├── futures-core feature "alloc" (*)
+│   │   │   │   │   ├── futures-sink feature "alloc"
+│   │   │   │   │   │   └── futures-sink v0.3.28
 │   │   │   │   │   ├── futures-task feature "alloc"
 │   │   │   │   │   │   └── futures-task v0.3.28
 │   │   │   │   │   └── futures-util feature "alloc"
 │   │   │   │   │       ├── futures-util v0.3.28 (*)
 │   │   │   │   │       ├── futures-core feature "alloc" (*)
 │   │   │   │   │       └── futures-task feature "alloc" (*)
+│   │   │   │   ├── futures-core feature "std" (*)
+│   │   │   │   ├── futures-sink feature "std"
+│   │   │   │   │   ├── futures-sink v0.3.28
+│   │   │   │   │   └── futures-sink feature "alloc" (*)
 │   │   │   │   ├── futures-task feature "std"
 │   │   │   │   │   ├── futures-task v0.3.28
 │   │   │   │   │   └── futures-task feature "alloc" (*)
@@ -1039,7 +509,8 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │   │   │   │   ├── futures-util feature "memchr"
 │   │   │   │   │   │   └── futures-util v0.3.28 (*)
 │   │   │   │   │   └── futures-util feature "std" (*)
-│   │   │   │   └── futures-util feature "std" (*)
+│   │   │   │   ├── futures-util feature "std" (*)
+│   │   │   │   └── futures-io feature "std" (*)
 │   │   │   └── futures-executor feature "std"
 │   │   │       ├── futures-executor v0.3.28 (*)
 │   │   │       ├── futures-core feature "std" (*)
@@ -1052,9 +523,28 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       ├── hashbrown feature "default" (*)
 │   │       ├── derivative feature "default"
 │   │       │   └── derivative v2.2.0 (proc-macro)
-│   │       │       ├── quote feature "default" (*)
 │   │       │       ├── proc-macro2 feature "default" (*)
-│   │       │       ├── syn feature "default" (*)
+│   │       │       ├── quote feature "default" (*)
+│   │       │       ├── syn feature "default"
+│   │       │       │   ├── syn v1.0.109
+│   │       │       │   │   ├── proc-macro2 v1.0.66 (*)
+│   │       │       │   │   ├── quote v1.0.32 (*)
+│   │       │       │   │   └── unicode-ident feature "default" (*)
+│   │       │       │   ├── syn feature "clone-impls"
+│   │       │       │   │   └── syn v1.0.109 (*)
+│   │       │       │   ├── syn feature "derive"
+│   │       │       │   │   └── syn v1.0.109 (*)
+│   │       │       │   ├── syn feature "parsing"
+│   │       │       │   │   └── syn v1.0.109 (*)
+│   │       │       │   ├── syn feature "printing"
+│   │       │       │   │   ├── syn v1.0.109 (*)
+│   │       │       │   │   └── syn feature "quote"
+│   │       │       │   │       └── syn v1.0.109 (*)
+│   │       │       │   └── syn feature "proc-macro"
+│   │       │       │       ├── syn v1.0.109 (*)
+│   │       │       │       ├── proc-macro2 feature "proc-macro" (*)
+│   │       │       │       ├── quote feature "proc-macro" (*)
+│   │       │       │       └── syn feature "quote" (*)
 │   │       │       ├── syn feature "extra-traits"
 │   │       │       │   └── syn v1.0.109 (*)
 │   │       │       └── syn feature "visit"
@@ -1072,22 +562,18 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │               │       └── contextual feature "default" (*)
 │   │               └── locspan-derive feature "default"
 │   │                   └── locspan-derive v0.6.0 (proc-macro)
-│   │                       ├── quote feature "default" (*)
 │   │                       ├── proc-macro2 feature "default" (*)
+│   │                       ├── quote feature "default" (*)
 │   │                       ├── syn feature "default" (*)
 │   │                       └── proc-macro-error feature "default"
 │   │                           ├── proc-macro-error v1.0.4
 │   │                           │   ├── syn v1.0.109 (*)
-│   │                           │   ├── quote feature "default" (*)
 │   │                           │   ├── proc-macro2 feature "default" (*)
+│   │                           │   ├── quote feature "default" (*)
 │   │                           │   └── proc-macro-error-attr feature "default"
 │   │                           │       └── proc-macro-error-attr v1.0.4 (proc-macro)
-│   │                           │           ├── quote feature "default" (*)
-│   │                           │           └── proc-macro2 feature "default" (*)
-│   │                           │           [build-dependencies]
-│   │                           │           └── version_check feature "default" (*)
-│   │                           │   [build-dependencies]
-│   │                           │   └── version_check feature "default" (*)
+│   │                           │           ├── proc-macro2 feature "default" (*)
+│   │                           │           └── quote feature "default" (*)
 │   │                           └── proc-macro-error feature "syn-error"
 │   │                               ├── proc-macro-error v1.0.4 (*)
 │   │                               └── proc-macro-error feature "syn"
@@ -1103,8 +589,8 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       ├── locspan feature "default" (*)
 │   │       ├── json-ld-compaction feature "default"
 │   │       │   └── json-ld-compaction v0.12.1
-│   │       │       ├── thiserror feature "default" (*)
 │   │       │       ├── iref feature "default" (*)
+│   │       │       ├── thiserror feature "default" (*)
 │   │       │       ├── futures feature "default" (*)
 │   │       │       ├── derivative feature "default" (*)
 │   │       │       ├── rdf-types feature "default" (*)
@@ -1113,20 +599,25 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       │       ├── locspan feature "default" (*)
 │   │       │       ├── json-ld-context-processing feature "default"
 │   │       │       │   └── json-ld-context-processing v0.12.1
-│   │       │       │       ├── thiserror feature "default" (*)
 │   │       │       │       ├── iref feature "default" (*)
+│   │       │       │       ├── thiserror feature "default" (*)
 │   │       │       │       ├── futures feature "default" (*)
 │   │       │       │       ├── rdf-types feature "default" (*)
 │   │       │       │       ├── contextual feature "default" (*)
 │   │       │       │       ├── locspan feature "default" (*)
 │   │       │       │       ├── json-ld-core feature "default"
 │   │       │       │       │   └── json-ld-core v0.12.1
-│   │       │       │       │       ├── log feature "default" (*)
-│   │       │       │       │       ├── once_cell feature "default" (*)
-│   │       │       │       │       ├── smallvec feature "default" (*)
-│   │       │       │       │       ├── thiserror feature "default" (*)
 │   │       │       │       │       ├── iref feature "default" (*)
 │   │       │       │       │       ├── hashbrown feature "default" (*)
+│   │       │       │       │       ├── once_cell feature "default"
+│   │       │       │       │       │   ├── once_cell v1.18.0
+│   │       │       │       │       │   └── once_cell feature "std"
+│   │       │       │       │       │       ├── once_cell v1.18.0
+│   │       │       │       │       │       └── once_cell feature "alloc" (*)
+│   │       │       │       │       ├── smallvec feature "default" (*)
+│   │       │       │       │       ├── thiserror feature "default" (*)
+│   │       │       │       │       ├── log feature "default"
+│   │       │       │       │       │   └── log v0.4.19
 │   │       │       │       │       ├── futures feature "default" (*)
 │   │       │       │       │       ├── derivative feature "default" (*)
 │   │       │       │       │       ├── rdf-types feature "contextual"
@@ -1146,10 +637,10 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       │       │       │       ├── locspan-derive feature "default" (*)
 │   │       │       │       │       ├── json-ld-syntax feature "default"
 │   │       │       │       │       │   └── json-ld-syntax v0.12.1
-│   │       │       │       │       │       ├── smallvec feature "default" (*)
-│   │       │       │       │       │       ├── thiserror feature "default" (*)
 │   │       │       │       │       │       ├── iref feature "default" (*)
 │   │       │       │       │       │       ├── hashbrown feature "default" (*)
+│   │       │       │       │       │       ├── smallvec feature "default" (*)
+│   │       │       │       │       │       ├── thiserror feature "default" (*)
 │   │       │       │       │       │       ├── derivative feature "default" (*)
 │   │       │       │       │       │       ├── rdf-types feature "default" (*)
 │   │       │       │       │       │       ├── contextual feature "default" (*)
@@ -1164,10 +655,6 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       │       │       │       │       │           └── hashbrown v0.12.3
 │   │       │       │       │       │       │               └── ahash v0.7.6
 │   │       │       │       │       │       │                   └── once_cell feature "alloc" (*)
-│   │       │       │       │       │       │                   [build-dependencies]
-│   │       │       │       │       │       │                   └── version_check feature "default" (*)
-│   │       │       │       │       │       │       [build-dependencies]
-│   │       │       │       │       │       │       └── autocfg feature "default" (*)
 │   │       │       │       │       │       └── json-syntax feature "default"
 │   │       │       │       │       │           └── json-syntax v0.9.4
 │   │       │       │       │       │               ├── serde feature "default" (*)
@@ -1370,8 +857,8 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       │       ├── mown feature "default" (*)
 │   │       │       └── json-ld-expansion feature "default"
 │   │       │           └── json-ld-expansion v0.12.1
-│   │       │               ├── thiserror feature "default" (*)
 │   │       │               ├── iref feature "default" (*)
+│   │       │               ├── thiserror feature "default" (*)
 │   │       │               ├── futures feature "default" (*)
 │   │       │               ├── derivative feature "default" (*)
 │   │       │               ├── rdf-types feature "default" (*)
@@ -1394,8 +881,374 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   ├── static-iref feature "default" (*)
 │   └── ssi-contexts feature "default"
 │       └── ssi-contexts v0.1.5 (/Users/frederik/repos/ssi-fork/contexts)
-├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
+├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk)
+│   ├── getrandom v0.2.10 (*)
+│   ├── base64 feature "default"
+│   │   ├── base64 v0.12.3
+│   │   └── base64 feature "std"
+│   │       └── base64 v0.12.3
+│   ├── num-traits feature "default"
+│   │   ├── num-traits v0.2.16
+│   │   │   └── libm feature "default"
+│   │   │       └── libm v0.2.7
+│   │   └── num-traits feature "std"
+│   │       └── num-traits v0.2.16 (*)
+│   ├── serde feature "default" (*)
+│   ├── serde feature "derive"
+│   │   ├── serde v1.0.179 (*)
+│   │   └── serde feature "serde_derive"
+│   │       └── serde v1.0.179 (*)
+│   ├── multibase feature "default"
+│   │   ├── multibase v0.9.1
+│   │   │   ├── base-x v0.2.11
+│   │   │   ├── data-encoding feature "alloc"
+│   │   │   │   └── data-encoding v2.4.0
+│   │   │   └── data-encoding-macro feature "default"
+│   │   │       └── data-encoding-macro v0.1.13
+│   │   │           ├── data-encoding v2.4.0
+│   │   │           └── data-encoding-macro-internal feature "default"
+│   │   │               └── data-encoding-macro-internal v0.1.11 (proc-macro)
+│   │   │                   ├── data-encoding feature "alloc"
+│   │   │                   │   └── data-encoding v2.4.0
+│   │   │                   ├── syn feature "parsing" (*)
+│   │   │                   └── syn feature "proc-macro" (*)
+│   │   └── multibase feature "std"
+│   │       ├── multibase v0.9.1 (*)
+│   │       └── data-encoding feature "std"
+│   │           ├── data-encoding v2.4.0
+│   │           └── data-encoding feature "alloc" (*)
+│   ├── unsigned-varint feature "default"
+│   │   └── unsigned-varint v0.7.1
+│   ├── thiserror feature "default" (*)
+│   ├── ed25519-dalek feature "default"
+│   │   ├── ed25519-dalek v1.0.1
+│   │   │   ├── curve25519-dalek v3.2.0
+│   │   │   │   ├── digest v0.9.0 (*)
+│   │   │   │   ├── rand_core v0.5.1
+│   │   │   │   │   └── getrandom feature "default"
+│   │   │   │   │       └── getrandom v0.1.16
+│   │   │   │   │           └── cfg-if feature "default" (*)
+│   │   │   │   ├── subtle v2.5.0
+│   │   │   │   ├── zeroize v1.6.0 (*)
+│   │   │   │   └── byteorder feature "i128"
+│   │   │   │       └── byteorder v1.4.3
+│   │   │   ├── ed25519 v1.5.3
+│   │   │   │   └── signature v1.6.4 (*)
+│   │   │   ├── rand v0.7.3
+│   │   │   │   ├── rand_chacha v0.2.2
+│   │   │   │   │   ├── rand_core feature "default"
+│   │   │   │   │   │   └── rand_core v0.5.1 (*)
+│   │   │   │   │   └── ppv-lite86 feature "simd"
+│   │   │   │   │       └── ppv-lite86 v0.2.17
+│   │   │   │   ├── rand_core feature "default" (*)
+│   │   │   │   └── getrandom feature "default" (*)
+│   │   │   ├── serde v1.0.179 (*)
+│   │   │   ├── sha2 v0.9.9 (*)
+│   │   │   └── zeroize feature "zeroize_derive" (*)
+│   │   ├── ed25519-dalek feature "rand"
+│   │   │   └── ed25519-dalek v1.0.1 (*)
+│   │   ├── ed25519-dalek feature "std"
+│   │   │   ├── ed25519-dalek v1.0.1 (*)
+│   │   │   ├── serde feature "std" (*)
+│   │   │   ├── sha2 feature "std"
+│   │   │   │   ├── sha2 v0.9.9 (*)
+│   │   │   │   └── digest feature "std" (*)
+│   │   │   ├── ed25519-dalek feature "rand" (*)
+│   │   │   ├── ed25519-dalek feature "serde_crate"
+│   │   │   │   └── ed25519-dalek v1.0.1 (*)
+│   │   │   ├── curve25519-dalek feature "std"
+│   │   │   │   ├── curve25519-dalek v3.2.0 (*)
+│   │   │   │   ├── curve25519-dalek feature "alloc"
+│   │   │   │   │   ├── curve25519-dalek v3.2.0 (*)
+│   │   │   │   │   └── zeroize feature "alloc" (*)
+│   │   │   │   ├── rand_core feature "std"
+│   │   │   │   │   ├── rand_core v0.5.1 (*)
+│   │   │   │   │   ├── rand_core feature "alloc"
+│   │   │   │   │   │   └── rand_core v0.5.1 (*)
+│   │   │   │   │   ├── rand_core feature "getrandom"
+│   │   │   │   │   │   └── rand_core v0.5.1 (*)
+│   │   │   │   │   └── getrandom feature "std"
+│   │   │   │   │       └── getrandom v0.1.16 (*)
+│   │   │   │   └── subtle feature "std"
+│   │   │   │       └── subtle v2.5.0
+│   │   │   ├── ed25519 feature "std"
+│   │   │   │   ├── ed25519 v1.5.3 (*)
+│   │   │   │   └── signature feature "std" (*)
+│   │   │   └── rand feature "std"
+│   │   │       ├── rand v0.7.3 (*)
+│   │   │       ├── rand_core feature "std" (*)
+│   │   │       ├── rand feature "alloc"
+│   │   │       │   ├── rand v0.7.3 (*)
+│   │   │       │   └── rand_core feature "alloc" (*)
+│   │   │       ├── rand feature "getrandom"
+│   │   │       │   ├── rand v0.7.3 (*)
+│   │   │       │   ├── rand_core feature "getrandom" (*)
+│   │   │       │   └── rand feature "getrandom_package"
+│   │   │       │       └── rand v0.7.3 (*)
+│   │   │       ├── rand feature "libc"
+│   │   │       │   └── rand v0.7.3 (*)
+│   │   │       └── rand_chacha feature "std"
+│   │   │           ├── rand_chacha v0.2.2 (*)
+│   │   │           └── ppv-lite86 feature "std"
+│   │   │               └── ppv-lite86 v0.2.17
+│   │   └── ed25519-dalek feature "u64_backend"
+│   │       ├── ed25519-dalek v1.0.1 (*)
+│   │       └── curve25519-dalek feature "u64_backend"
+│   │           └── curve25519-dalek v3.2.0 (*)
+│   ├── zeroize feature "default" (*)
+│   ├── zeroize feature "zeroize_derive" (*)
+│   ├── rand feature "default"
+│   │   ├── rand v0.7.3 (*)
+│   │   └── rand feature "std" (*)
+│   ├── k256 feature "default" (*)
+│   ├── k256 feature "ecdsa" (*)
+│   ├── lazy_static feature "default" (*)
+│   ├── num-bigint feature "default"
+│   │   ├── num-bigint v0.4.3
+│   │   │   ├── num-traits feature "i128"
+│   │   │   │   └── num-traits v0.2.16 (*)
+│   │   │   └── num-integer feature "i128"
+│   │   │       ├── num-integer v0.1.45
+│   │   │       │   └── num-traits v0.2.16 (*)
+│   │   │       └── num-traits feature "i128" (*)
+│   │   └── num-bigint feature "std"
+│   │       ├── num-bigint v0.4.3 (*)
+│   │       ├── num-traits feature "std" (*)
+│   │       └── num-integer feature "std"
+│   │           ├── num-integer v0.1.45 (*)
+│   │           └── num-traits feature "std" (*)
+│   ├── num-derive feature "default"
+│   │   └── num-derive v0.3.3 (proc-macro)
+│   │       ├── proc-macro2 feature "default" (*)
+│   │       ├── quote feature "default" (*)
+│   │       └── syn feature "default" (*)
+│   ├── p256 feature "default"
+│   │   ├── p256 v0.11.1
+│   │   │   ├── sha2 v0.10.7 (*)
+│   │   │   ├── ecdsa feature "der" (*)
+│   │   │   ├── elliptic-curve feature "hazmat" (*)
+│   │   │   └── elliptic-curve feature "sec1" (*)
+│   │   ├── p256 feature "arithmetic"
+│   │   │   ├── p256 v0.11.1 (*)
+│   │   │   └── elliptic-curve feature "arithmetic" (*)
+│   │   ├── p256 feature "ecdsa"
+│   │   │   ├── p256 v0.11.1 (*)
+│   │   │   ├── ecdsa feature "sign" (*)
+│   │   │   ├── ecdsa feature "verify" (*)
+│   │   │   ├── p256 feature "arithmetic" (*)
+│   │   │   ├── p256 feature "ecdsa-core"
+│   │   │   │   └── p256 v0.11.1 (*)
+│   │   │   └── p256 feature "sha256"
+│   │   │       ├── p256 v0.11.1 (*)
+│   │   │       ├── p256 feature "digest"
+│   │   │       │   ├── p256 v0.11.1 (*)
+│   │   │       │   ├── ecdsa feature "digest" (*)
+│   │   │       │   ├── ecdsa feature "hazmat" (*)
+│   │   │       │   └── p256 feature "ecdsa-core" (*)
+│   │   │       └── p256 feature "sha2"
+│   │   │           └── p256 v0.11.1 (*)
+│   │   ├── p256 feature "pkcs8"
+│   │   │   ├── p256 v0.11.1 (*)
+│   │   │   ├── ecdsa feature "pkcs8" (*)
+│   │   │   ├── elliptic-curve feature "pkcs8" (*)
+│   │   │   └── p256 feature "ecdsa-core" (*)
+│   │   └── p256 feature "std"
+│   │       ├── p256 v0.11.1 (*)
+│   │       ├── ecdsa feature "std" (*)
+│   │       ├── elliptic-curve feature "std" (*)
+│   │       └── p256 feature "ecdsa-core" (*)
+│   ├── p256 feature "ecdsa" (*)
+│   ├── rand feature "default"
+│   │   ├── rand v0.8.5
+│   │   │   ├── rand_chacha v0.3.1
+│   │   │   │   ├── rand_core feature "default" (*)
+│   │   │   │   └── ppv-lite86 feature "simd" (*)
+│   │   │   └── rand_core feature "default" (*)
+│   │   ├── rand feature "std"
+│   │   │   ├── rand v0.8.5 (*)
+│   │   │   ├── rand_core feature "std" (*)
+│   │   │   ├── rand feature "alloc"
+│   │   │   │   ├── rand v0.8.5 (*)
+│   │   │   │   └── rand_core feature "alloc" (*)
+│   │   │   ├── rand feature "getrandom"
+│   │   │   │   ├── rand v0.8.5 (*)
+│   │   │   │   └── rand_core feature "getrandom" (*)
+│   │   │   ├── rand feature "libc"
+│   │   │   │   └── rand v0.8.5 (*)
+│   │   │   ├── rand feature "rand_chacha"
+│   │   │   │   └── rand v0.8.5 (*)
+│   │   │   └── rand_chacha feature "std"
+│   │   │       ├── rand_chacha v0.3.1 (*)
+│   │   │       └── ppv-lite86 feature "std" (*)
+│   │   └── rand feature "std_rng"
+│   │       ├── rand v0.8.5 (*)
+│   │       └── rand feature "rand_chacha" (*)
+│   ├── rsa feature "default"
+│   │   ├── rsa v0.6.1
+│   │   │   ├── byteorder v1.4.3
+│   │   │   ├── num-integer v0.1.45 (*)
+│   │   │   ├── num-iter v0.1.43
+│   │   │   │   ├── num-integer v0.1.45 (*)
+│   │   │   │   └── num-traits v0.2.16 (*)
+│   │   │   ├── rand_core v0.6.4 (*)
+│   │   │   ├── smallvec v1.11.0
+│   │   │   ├── subtle v2.5.0
+│   │   │   ├── num-traits feature "libm"
+│   │   │   │   └── num-traits v0.2.16 (*)
+│   │   │   ├── zeroize feature "alloc" (*)
+│   │   │   ├── zeroize feature "default" (*)
+│   │   │   ├── digest feature "alloc" (*)
+│   │   │   ├── num-bigint-dig feature "i128"
+│   │   │   │   └── num-bigint-dig v0.8.4
+│   │   │   │       ├── byteorder v1.4.3
+│   │   │   │       ├── num-iter v0.1.43 (*)
+│   │   │   │       ├── rand v0.8.5 (*)
+│   │   │   │       ├── smallvec v1.11.0
+│   │   │   │       ├── zeroize v1.6.0 (*)
+│   │   │   │       ├── num-traits feature "i128" (*)
+│   │   │   │       ├── libm feature "default" (*)
+│   │   │   │       ├── lazy_static feature "spin_no_std"
+│   │   │   │       │   ├── lazy_static v1.4.0 (*)
+│   │   │   │       │   └── lazy_static feature "spin"
+│   │   │   │       │       └── lazy_static v1.4.0 (*)
+│   │   │   │       └── num-integer feature "i128" (*)
+│   │   │   ├── num-bigint-dig feature "prime"
+│   │   │   │   ├── num-bigint-dig v0.8.4 (*)
+│   │   │   │   ├── rand feature "std_rng" (*)
+│   │   │   │   └── num-bigint-dig feature "rand"
+│   │   │   │       └── num-bigint-dig v0.8.4 (*)
+│   │   │   ├── num-bigint-dig feature "u64_digit"
+│   │   │   │   └── num-bigint-dig v0.8.4 (*)
+│   │   │   ├── num-bigint-dig feature "zeroize"
+│   │   │   │   └── num-bigint-dig v0.8.4 (*)
+│   │   │   ├── pkcs1 feature "alloc"
+│   │   │   │   ├── pkcs1 v0.3.3
+│   │   │   │   │   ├── pkcs8 v0.8.0
+│   │   │   │   │   │   ├── zeroize feature "alloc" (*)
+│   │   │   │   │   │   ├── der feature "default"
+│   │   │   │   │   │   │   └── der v0.5.1
+│   │   │   │   │   │   │       ├── const-oid feature "default"
+│   │   │   │   │   │   │       │   └── const-oid v0.7.1
+│   │   │   │   │   │   │       ├── crypto-bigint feature "generic-array"
+│   │   │   │   │   │   │       │   └── crypto-bigint v0.3.2
+│   │   │   │   │   │   │       │       ├── subtle v2.5.0
+│   │   │   │   │   │   │       │       └── generic-array feature "default" (*)
+│   │   │   │   │   │   │       └── pem-rfc7468 feature "default"
+│   │   │   │   │   │   │           └── pem-rfc7468 v0.3.1
+│   │   │   │   │   │   │               └── base64ct feature "default"
+│   │   │   │   │   │   │                   └── base64ct v1.6.0
+│   │   │   │   │   │   ├── der feature "oid"
+│   │   │   │   │   │   │   ├── der v0.5.1 (*)
+│   │   │   │   │   │   │   └── der feature "const-oid"
+│   │   │   │   │   │   │       └── der v0.5.1 (*)
+│   │   │   │   │   │   └── spki feature "default"
+│   │   │   │   │   │       └── spki v0.5.4
+│   │   │   │   │   │           ├── base64ct v1.6.0
+│   │   │   │   │   │           ├── der feature "default" (*)
+│   │   │   │   │   │           └── der feature "oid" (*)
+│   │   │   │   │   ├── zeroize v1.6.0 (*)
+│   │   │   │   │   ├── der feature "bigint"
+│   │   │   │   │   │   ├── der v0.5.1 (*)
+│   │   │   │   │   │   └── der feature "crypto-bigint"
+│   │   │   │   │   │       └── der v0.5.1 (*)
+│   │   │   │   │   ├── der feature "default" (*)
+│   │   │   │   │   └── der feature "oid" (*)
+│   │   │   │   ├── zeroize feature "alloc" (*)
+│   │   │   │   ├── pkcs1 feature "pkcs8"
+│   │   │   │   │   └── pkcs1 v0.3.3 (*)
+│   │   │   │   ├── pkcs1 feature "zeroize"
+│   │   │   │   │   └── pkcs1 v0.3.3 (*)
+│   │   │   │   ├── der feature "alloc"
+│   │   │   │   │   └── der v0.5.1 (*)
+│   │   │   │   └── pkcs8 feature "alloc"
+│   │   │   │       ├── pkcs8 v0.8.0 (*)
+│   │   │   │       ├── der feature "alloc" (*)
+│   │   │   │       ├── pkcs8 feature "zeroize"
+│   │   │   │       │   └── pkcs8 v0.8.0 (*)
+│   │   │   │       └── spki feature "alloc"
+│   │   │   │           ├── spki v0.5.4 (*)
+│   │   │   │           ├── base64ct feature "alloc" (*)
+│   │   │   │           ├── der feature "alloc" (*)
+│   │   │   │           └── spki feature "base64ct"
+│   │   │   │               └── spki v0.5.4 (*)
+│   │   │   ├── pkcs1 feature "pkcs8" (*)
+│   │   │   └── pkcs8 feature "alloc" (*)
+│   │   ├── rsa feature "pem"
+│   │   │   ├── rsa v0.6.1 (*)
+│   │   │   ├── pkcs1 feature "pem"
+│   │   │   │   ├── pkcs1 v0.3.3 (*)
+│   │   │   │   ├── pkcs1 feature "alloc" (*)
+│   │   │   │   ├── pkcs1 feature "pkcs8" (*)
+│   │   │   │   ├── der feature "pem"
+│   │   │   │   │   ├── der v0.5.1 (*)
+│   │   │   │   │   ├── der feature "alloc" (*)
+│   │   │   │   │   ├── der feature "pem-rfc7468"
+│   │   │   │   │   │   └── der v0.5.1 (*)
+│   │   │   │   │   └── pem-rfc7468 feature "alloc"
+│   │   │   │   │       └── pem-rfc7468 v0.3.1 (*)
+│   │   │   │   └── pkcs8 feature "pem"
+│   │   │   │       ├── pkcs8 v0.8.0 (*)
+│   │   │   │       ├── der feature "pem" (*)
+│   │   │   │       ├── pkcs8 feature "alloc" (*)
+│   │   │   │       └── spki feature "pem"
+│   │   │   │           ├── spki v0.5.4 (*)
+│   │   │   │           ├── der feature "pem" (*)
+│   │   │   │           └── spki feature "alloc" (*)
+│   │   │   └── pkcs8 feature "pem" (*)
+│   │   └── rsa feature "std"
+│   │       ├── rsa v0.6.1 (*)
+│   │       ├── digest feature "std" (*)
+│   │       ├── rand_core feature "std" (*)
+│   │       ├── pkcs1 feature "std"
+│   │       │   ├── pkcs1 v0.3.3 (*)
+│   │       │   └── der feature "std"
+│   │       │       ├── der v0.5.1 (*)
+│   │       │       └── der feature "alloc" (*)
+│   │       └── pkcs8 feature "std"
+│   │           ├── pkcs8 v0.8.0 (*)
+│   │           ├── der feature "std" (*)
+│   │           ├── pkcs8 feature "alloc" (*)
+│   │           └── spki feature "std"
+│   │               ├── spki v0.5.4 (*)
+│   │               └── der feature "std" (*)
+│   ├── simple_asn1 feature "default"
+│   │   └── simple_asn1 v0.6.2
+│   │       ├── num-bigint v0.4.3 (*)
+│   │       ├── num-traits v0.2.16 (*)
+│   │       ├── thiserror v1.0.44 (*)
+│   │       ├── time feature "formatting"
+│   │       │   ├── time v0.3.24
+│   │       │   │   ├── deranged v0.3.6
+│   │       │   │   ├── itoa feature "default"
+│   │       │   │   │   └── itoa v1.0.9
+│   │       │   │   ├── time-core feature "default"
+│   │       │   │   │   └── time-core v0.1.1
+│   │       │   │   └── time-macros feature "default"
+│   │       │   │       └── time-macros v0.2.11 (proc-macro)
+│   │       │   │           └── time-core feature "default"
+│   │       │   │               └── time-core v0.1.1
+│   │       │   ├── time feature "std"
+│   │       │   │   ├── time v0.3.24 (*)
+│   │       │   │   ├── time feature "alloc"
+│   │       │   │   │   └── time v0.3.24 (*)
+│   │       │   │   └── deranged feature "std"
+│   │       │   │       ├── deranged v0.3.6
+│   │       │   │       └── deranged feature "alloc"
+│   │       │   │           └── deranged v0.3.6
+│   │       │   └── time-macros feature "formatting"
+│   │       │       └── time-macros v0.2.11 (proc-macro) (*)
+│   │       ├── time feature "macros"
+│   │       │   └── time v0.3.24 (*)
+│   │       └── time feature "parsing"
+│   │           ├── time v0.3.24 (*)
+│   │           └── time-macros feature "parsing"
+│   │               └── time-macros v0.2.11 (proc-macro) (*)
+│   └── ssi-crypto feature "default" (*)
 ├── ssi-jws v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-jws)
+│   ├── base64 feature "default" (*)
+│   ├── serde feature "default" (*)
+│   ├── serde feature "derive" (*)
+│   ├── thiserror feature "default" (*)
 │   ├── serde_json feature "default"
 │   │   ├── serde_json v1.0.104
 │   │   │   ├── serde v1.0.179 (*)
@@ -1405,8 +1258,6 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │   └── serde_json feature "std"
 │   │       ├── serde_json v1.0.104 (*)
 │   │       └── serde feature "std" (*)
-│   ├── serde feature "default" (*)
-│   ├── serde feature "derive" (*)
 │   ├── ssi-jwk feature "default"
 │   │   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
 │   │   ├── ssi-jwk feature "ed25519"
@@ -1442,7 +1293,6 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       ├── ssi-jwk feature "p256"
 │   │       │   └── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
 │   │       └── ssi-jwk feature "rand" (*)
-│   ├── base64 feature "default" (*)
 │   ├── ed25519-dalek feature "default" (*)
 │   ├── k256 feature "default" (*)
 │   ├── k256 feature "ecdsa" (*)
@@ -1451,7 +1301,6 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   ├── p256 feature "ecdsa" (*)
 │   ├── rand feature "default" (*)
 │   ├── rsa feature "default" (*)
-│   ├── thiserror feature "default" (*)
 │   ├── ssi-crypto feature "default" (*)
 │   ├── blake2 feature "default"
 │   │   ├── blake2 v0.10.6
@@ -1462,29 +1311,26 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       └── digest feature "std" (*)
 │   ├── clear_on_drop feature "default"
 │   │   └── clear_on_drop v0.2.5
-│   │       [build-dependencies]
-│   │       └── cc feature "default"
-│   │           └── cc v1.0.79
 │   └── clear_on_drop feature "no_cc"
-│       └── clear_on_drop v0.2.5 (*)
+│       └── clear_on_drop v0.2.5
 ├── ssi-jwt v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwt)
 │   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
 │   ├── ssi-jws v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-jws) (*)
-│   ├── serde_json feature "default" (*)
-│   ├── serde feature "default" (*)
-│   ├── serde feature "derive" (*)
-│   ├── thiserror feature "default" (*)
 │   ├── chrono feature "serde"
 │   │   └── chrono v0.4.26
 │   │       ├── num-traits v0.2.16 (*)
 │   │       └── serde v1.0.179 (*)
+│   ├── serde feature "default" (*)
+│   ├── serde feature "derive" (*)
+│   ├── thiserror feature "default" (*)
+│   ├── serde_json feature "default" (*)
 │   └── serde_with feature "default"
 │       ├── serde_with v2.3.3
 │       │   ├── serde feature "derive" (*)
 │       │   └── serde_with_macros feature "default"
 │       │       └── serde_with_macros v2.3.3 (proc-macro)
-│       │           ├── quote feature "default" (*)
 │       │           ├── proc-macro2 feature "default" (*)
+│       │           ├── quote feature "default" (*)
 │       │           ├── syn feature "default" (*)
 │       │           ├── syn feature "full" (*)
 │       │           ├── syn feature "parsing" (*)
@@ -1492,8 +1338,8 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │       │               ├── darling v0.20.3
 │       │               │   ├── darling_core feature "default"
 │       │               │   │   └── darling_core v0.20.3
-│       │               │   │       ├── quote feature "default" (*)
 │       │               │   │       ├── proc-macro2 feature "default" (*)
+│       │               │   │       ├── quote feature "default" (*)
 │       │               │   │       ├── syn feature "default" (*)
 │       │               │   │       ├── syn feature "extra-traits" (*)
 │       │               │   │       ├── syn feature "full" (*)
@@ -1526,81 +1372,66 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │               └── serde feature "alloc"
 │                   └── serde v1.0.179 (*)
 ├── ssi-ldp v0.3.0 (/Users/frederik/repos/ssi-fork/ssi-ldp)
-│   ├── serde_json feature "default" (*)
+│   ├── async-trait feature "default"
+│   │   └── async-trait v0.1.72 (proc-macro)
+│   │       ├── proc-macro2 feature "default" (*)
+│   │       ├── quote feature "default" (*)
+│   │       ├── syn feature "default" (*)
+│   │       ├── syn feature "full" (*)
+│   │       └── syn feature "visit-mut"
+│   │           └── syn v2.0.28 (*)
+│   ├── chrono feature "serde" (*)
 │   ├── serde feature "default" (*)
 │   ├── serde feature "derive" (*)
-│   ├── ssi-caips feature "default"
-│   │   ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips) (*)
-│   │   ├── ssi-caips feature "eip"
-│   │   │   ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips) (*)
-│   │   │   └── ssi-jwk feature "eip" (*)
-│   │   ├── ssi-caips feature "ripemd-160"
-│   │   │   ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips) (*)
-│   │   │   └── ssi-jwk feature "ripemd-160" (*)
-│   │   └── ssi-jwk feature "secp256k1" (*)
-│   ├── bs58 feature "check" (*)
-│   ├── bs58 feature "default" (*)
-│   ├── ssi-jwk feature "default" (*)
-│   ├── k256 feature "default" (*)
-│   ├── k256 feature "ecdsa" (*)
-│   ├── sha2 feature "default" (*)
-│   ├── lazy_static feature "default" (*)
-│   ├── p256 feature "default" (*)
-│   ├── p256 feature "ecdsa" (*)
+│   ├── iref feature "default" (*)
+│   ├── iref feature "hashbrown"
+│   │   └── iref v2.2.3 (*)
 │   ├── thiserror feature "default" (*)
-│   ├── ssi-crypto feature "default" (*)
-│   ├── keccak-hash feature "default" (*)
-│   ├── hex feature "default"
-│   │   ├── hex v0.4.3
-│   │   └── hex feature "std"
-│   │       ├── hex v0.4.3
-│   │       └── hex feature "alloc"
-│   │           └── hex v0.4.3
+│   ├── serde_json feature "default" (*)
 │   ├── ssi-core feature "default"
 │   │   └── ssi-core v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-core)
+│   │       ├── async-trait feature "default" (*)
 │   │       ├── serde feature "default" (*)
 │   │       ├── serde feature "derive" (*)
-│   │       ├── thiserror feature "default" (*)
-│   │       └── async-trait feature "default"
-│   │           └── async-trait v0.1.72 (proc-macro)
-│   │               ├── quote feature "default" (*)
-│   │               ├── proc-macro2 feature "default" (*)
-│   │               ├── syn feature "default" (*)
-│   │               ├── syn feature "full" (*)
-│   │               └── syn feature "visit-mut"
-│   │                   └── syn v2.0.28 (*)
-│   ├── async-trait feature "default" (*)
+│   │       └── thiserror feature "default" (*)
 │   ├── ssi-dids feature "default"
 │   │   └── ssi-dids v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-dids)
-│   │       ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips) (*)
+│   │       ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips)
+│   │       │   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
+│   │       │   ├── thiserror feature "default" (*)
+│   │       │   ├── bs58 feature "check" (*)
+│   │       │   └── bs58 feature "default" (*)
 │   │       ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
-│   │       ├── serde_json feature "default" (*)
+│   │       ├── async-trait feature "default" (*)
+│   │       ├── chrono feature "serde" (*)
 │   │       ├── serde feature "default" (*)
 │   │       ├── serde feature "derive" (*)
-│   │       ├── bs58 feature "check" (*)
-│   │       ├── bs58 feature "default" (*)
-│   │       ├── thiserror feature "default" (*)
-│   │       ├── hex feature "default" (*)
-│   │       ├── ssi-core feature "default" (*)
-│   │       ├── async-trait feature "default" (*)
+│   │       ├── iref feature "default" (*)
+│   │       ├── iref feature "serde"
+│   │       │   └── iref v2.2.3 (*)
 │   │       ├── anyhow feature "default"
 │   │       │   ├── anyhow v1.0.72
 │   │       │   └── anyhow feature "std"
 │   │       │       └── anyhow v1.0.72
-│   │       ├── chrono feature "serde" (*)
+│   │       ├── thiserror feature "default" (*)
+│   │       ├── serde_json feature "default" (*)
+│   │       ├── ssi-core feature "default" (*)
+│   │       ├── bs58 feature "check" (*)
+│   │       ├── bs58 feature "default" (*)
 │   │       ├── derive_builder feature "default"
 │   │       │   └── derive_builder v0.9.0 (proc-macro)
-│   │       │       ├── quote feature "default" (*)
 │   │       │       ├── proc-macro2 feature "default" (*)
+│   │       │       ├── quote feature "default" (*)
 │   │       │       ├── syn feature "default" (*)
 │   │       │       ├── syn feature "extra-traits" (*)
-│   │       │       ├── syn feature "full" (*)
+│   │       │       ├── syn feature "full"
+│   │       │       │   └── syn v1.0.109 (*)
 │   │       │       ├── darling feature "default"
 │   │       │       │   ├── darling v0.10.2
 │   │       │       │   │   ├── darling_core feature "default"
 │   │       │       │   │   │   └── darling_core v0.10.2
-│   │       │       │   │   │       ├── quote feature "default" (*)
 │   │       │       │   │   │       ├── proc-macro2 feature "default" (*)
+│   │       │       │   │   │       ├── quote feature "default" (*)
 │   │       │       │   │   │       ├── syn feature "default" (*)
 │   │       │       │   │   │       ├── syn feature "extra-traits" (*)
 │   │       │       │   │   │       ├── syn feature "full" (*)
@@ -1621,15 +1452,18 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       │       │               └── darling_core v0.10.2 (*)
 │   │       │       └── derive_builder_core feature "default"
 │   │       │           └── derive_builder_core v0.9.0
-│   │       │               ├── quote feature "default" (*)
 │   │       │               ├── proc-macro2 feature "default" (*)
+│   │       │               ├── quote feature "default" (*)
 │   │       │               ├── syn feature "default" (*)
 │   │       │               ├── syn feature "extra-traits" (*)
 │   │       │               ├── syn feature "full" (*)
 │   │       │               └── darling feature "default" (*)
-│   │       ├── iref feature "default" (*)
-│   │       ├── iref feature "serde"
-│   │       │   └── iref v2.2.3 (*)
+│   │       ├── hex feature "default"
+│   │       │   ├── hex v0.4.3
+│   │       │   └── hex feature "std"
+│   │       │       ├── hex v0.4.3
+│   │       │       └── hex feature "alloc"
+│   │       │           └── hex v0.4.3
 │   │       ├── multibase feature "default"
 │   │       │   └── multibase v0.8.0
 │   │       │       ├── base-x feature "default"
@@ -1642,9 +1476,9 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       │       └── data-encoding-macro feature "default" (*)
 │   │       ├── serde_urlencoded feature "default"
 │   │       │   └── serde_urlencoded v0.7.1
+│   │       │       ├── serde feature "default" (*)
 │   │       │       ├── itoa feature "default" (*)
 │   │       │       ├── ryu feature "default" (*)
-│   │       │       ├── serde feature "default" (*)
 │   │       │       └── form_urlencoded feature "default"
 │   │       │           ├── form_urlencoded v1.2.0
 │   │       │           │   └── percent-encoding v2.3.0
@@ -1660,11 +1494,23 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       ├── ssi-json-ld feature "default"
 │   │       │   └── ssi-json-ld v0.2.2 (/Users/frederik/repos/ssi-fork/ssi-json-ld) (*)
 │   │       └── static-iref feature "default" (*)
-│   ├── chrono feature "serde" (*)
-│   ├── iref feature "default" (*)
-│   ├── iref feature "hashbrown"
-│   │   └── iref v2.2.3 (*)
+│   ├── bs58 feature "check" (*)
+│   ├── bs58 feature "default" (*)
+│   ├── hex feature "default" (*)
 │   ├── multibase feature "default" (*)
+│   ├── ssi-caips feature "default"
+│   │   ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips) (*)
+│   │   ├── ssi-caips feature "eip"
+│   │   │   ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips) (*)
+│   │   │   └── ssi-jwk feature "eip" (*)
+│   │   ├── ssi-caips feature "ripemd-160"
+│   │   │   ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips) (*)
+│   │   │   └── ssi-jwk feature "ripemd-160" (*)
+│   │   └── ssi-jwk feature "secp256k1" (*)
+│   ├── ssi-jwk feature "default" (*)
+│   ├── sha2 feature "default" (*)
+│   ├── lazy_static feature "default" (*)
+│   ├── ssi-crypto feature "default" (*)
 │   ├── ssi-json-ld feature "default" (*)
 │   ├── grdf feature "default" (*)
 │   ├── rdf-types feature "default" (*)
@@ -1713,485 +1559,198 @@ ssi v0.7.0 (/Users/frederik/repos/ssi-fork)
 │   │       ├── ssi-jws feature "blake2" (*)
 │   │       └── ssi-jws feature "p256"
 │   │           └── ssi-jws v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-jws) (*)
-│   ├── serde_jcs feature "default"
-│   │   └── serde_jcs v0.1.0
-│   │       ├── ryu-js v0.2.2
-│   │       ├── serde v1.0.179 (*)
-│   │       ├── serde_json feature "float_roundtrip"
-│   │       │   └── serde_json v1.0.104 (*)
-│   │       └── serde_json feature "std" (*)
-│   └── ssi-tzkey feature "default"
-│       └── ssi-tzkey v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-tzkey)
-│           ├── bs58 feature "check" (*)
-│           ├── bs58 feature "default" (*)
-│           ├── ssi-jwk feature "tezos"
-│           │   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
-│           │   ├── ssi-jwk feature "blake2b_simd"
-│           │   │   └── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
-│           │   ├── ssi-jwk feature "bs58"
-│           │   │   └── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
-│           │   ├── ssi-jwk feature "secp256k1" (*)
-│           │   └── ssi-jwk feature "secp256r1" (*)
-│           ├── ed25519-dalek feature "default" (*)
-│           ├── thiserror feature "default" (*)
-│           └── ssi-jws feature "tezos"
-│               ├── ssi-jws v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-jws) (*)
-│               ├── ssi-jwk feature "tezos" (*)
-│               ├── ssi-jws feature "ed25519" (*)
-│               ├── ssi-jws feature "secp256k1" (*)
-│               └── ssi-jws feature "secp256r1" (*)
-├── ssi-ssh v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-ssh)
-│   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
-│   ├── thiserror feature "default" (*)
-│   └── sshkeys feature "default"
-│       └── sshkeys v0.3.2
-│           ├── base64 feature "default" (*)
-│           ├── byteorder feature "default"
-│           │   ├── byteorder v1.4.3
-│           │   └── byteorder feature "std"
-│           │       └── byteorder v1.4.3
-│           └── sha2 feature "default"
-│               ├── sha2 v0.8.2
-│               │   ├── block-buffer feature "default"
-│               │   │   └── block-buffer v0.7.3
-│               │   │       ├── byteorder v1.4.3
-│               │   │       ├── block-padding feature "default"
-│               │   │       │   └── block-padding v0.1.5
-│               │   │       │       └── byte-tools feature "default"
-│               │   │       │           └── byte-tools v0.3.1
-│               │   │       ├── byte-tools feature "default" (*)
-│               │   │       └── generic-array feature "default"
-│               │   │           └── generic-array v0.12.4
-│               │   │               └── typenum feature "default" (*)
-│               │   ├── digest feature "default"
-│               │   │   └── digest v0.8.1
-│               │   │       └── generic-array feature "default" (*)
-│               │   ├── fake-simd feature "default"
-│               │   │   └── fake-simd v0.1.2
-│               │   └── opaque-debug feature "default"
-│               │       └── opaque-debug v0.2.3
-│               └── sha2 feature "std"
-│                   ├── sha2 v0.8.2 (*)
-│                   └── digest feature "std"
-│                       └── digest v0.8.1 (*)
-├── ssi-tzkey v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-tzkey) (*)
-├── ssi-core feature "default" (*)
-├── ssi-dids feature "default" (*)
-├── ssi-ucan feature "default"
-│   └── ssi-ucan v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-ucan)
-│       ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips) (*)
-│       ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
-│       ├── ssi-jws v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-jws) (*)
-│       ├── ssi-jwt v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwt) (*)
-│       ├── serde_json feature "default" (*)
-│       ├── serde feature "default" (*)
-│       ├── serde feature "derive" (*)
-│       ├── base64 feature "default" (*)
-│       ├── thiserror feature "default" (*)
-│       ├── ssi-core feature "default" (*)
-│       ├── ssi-dids feature "default" (*)
-│       ├── chrono feature "serde" (*)
-│       ├── libipld feature "dag-cbor"
-│       │   ├── libipld v0.14.0
-│       │   │   ├── cached v0.30.0
-│       │   │   │   ├── once_cell feature "default" (*)
-│       │   │   │   └── hashbrown feature "raw"
-│       │   │   │       └── hashbrown v0.11.2
-│       │   │   ├── log feature "default" (*)
-│       │   │   ├── thiserror feature "default" (*)
-│       │   │   ├── async-trait feature "default" (*)
-│       │   │   ├── fnv feature "default"
-│       │   │   │   ├── fnv v1.0.7
-│       │   │   │   └── fnv feature "std"
-│       │   │   │       └── fnv v1.0.7
-│       │   │   ├── libipld-cbor feature "default"
-│       │   │   │   └── libipld-cbor v0.14.0
-│       │   │   │       ├── byteorder feature "default" (*)
-│       │   │   │       ├── thiserror feature "default" (*)
-│       │   │   │       └── libipld-core feature "default"
-│       │   │   │           ├── libipld-core v0.14.0
-│       │   │   │           │   ├── anyhow v1.0.72
-│       │   │   │           │   ├── multibase v0.9.1 (*)
-│       │   │   │           │   ├── serde feature "alloc" (*)
-│       │   │   │           │   ├── thiserror feature "default" (*)
-│       │   │   │           │   ├── cid feature "alloc"
-│       │   │   │           │   │   ├── cid v0.8.6
-│       │   │   │           │   │   │   ├── core2 v0.4.0
-│       │   │   │           │   │   │   │   └── memchr v2.5.0
-│       │   │   │           │   │   │   ├── multibase v0.9.1 (*)
-│       │   │   │           │   │   │   ├── multihash v0.16.3
-│       │   │   │           │   │   │   │   ├── blake2b_simd v1.0.1
-│       │   │   │           │   │   │   │   │   ├── arrayvec v0.7.4
-│       │   │   │           │   │   │   │   │   ├── arrayref feature "default" (*)
-│       │   │   │           │   │   │   │   │   └── constant_time_eq feature "default"
-│       │   │   │           │   │   │   │   │       └── constant_time_eq v0.2.6
-│       │   │   │           │   │   │   │   ├── blake2s_simd v1.0.1
-│       │   │   │           │   │   │   │   │   ├── arrayvec v0.7.4
-│       │   │   │           │   │   │   │   │   ├── arrayref feature "default" (*)
-│       │   │   │           │   │   │   │   │   └── constant_time_eq feature "default" (*)
-│       │   │   │           │   │   │   │   ├── blake3 v1.4.1
-│       │   │   │           │   │   │   │   │   ├── arrayvec v0.7.4
-│       │   │   │           │   │   │   │   │   ├── cfg-if feature "default" (*)
-│       │   │   │           │   │   │   │   │   ├── arrayref feature "default" (*)
-│       │   │   │           │   │   │   │   │   └── constant_time_eq feature "default"
-│       │   │   │           │   │   │   │   │       └── constant_time_eq v0.3.0
-│       │   │   │           │   │   │   │   │   [build-dependencies]
-│       │   │   │           │   │   │   │   │   └── cc feature "default" (*)
-│       │   │   │           │   │   │   │   ├── core2 v0.4.0 (*)
-│       │   │   │           │   │   │   │   ├── digest v0.10.7 (*)
-│       │   │   │           │   │   │   │   ├── multihash-derive v0.8.1 (proc-macro)
-│       │   │   │           │   │   │   │   │   ├── quote feature "default" (*)
-│       │   │   │           │   │   │   │   │   ├── proc-macro2 feature "default" (*)
-│       │   │   │           │   │   │   │   │   ├── proc-macro2 feature "span-locations"
-│       │   │   │           │   │   │   │   │   │   └── proc-macro2 v1.0.66 (*)
-│       │   │   │           │   │   │   │   │   ├── syn feature "default" (*)
-│       │   │   │           │   │   │   │   │   ├── proc-macro-error feature "default" (*)
-│       │   │   │           │   │   │   │   │   ├── proc-macro-crate feature "default"
-│       │   │   │           │   │   │   │   │   │   └── proc-macro-crate v1.1.3
-│       │   │   │           │   │   │   │   │   │       ├── thiserror feature "default"
-│       │   │   │           │   │   │   │   │   │       │   └── thiserror v1.0.44
-│       │   │   │           │   │   │   │   │   │       │       └── thiserror-impl feature "default" (*)
-│       │   │   │           │   │   │   │   │   │       └── toml feature "default"
-│       │   │   │           │   │   │   │   │   │           └── toml v0.5.11
-│       │   │   │           │   │   │   │   │   │               └── serde feature "default"
-│       │   │   │           │   │   │   │   │   │                   ├── serde v1.0.179
-│       │   │   │           │   │   │   │   │   │                   └── serde feature "std"
-│       │   │   │           │   │   │   │   │   │                       └── serde v1.0.179
-│       │   │   │           │   │   │   │   │   └── synstructure feature "default"
-│       │   │   │           │   │   │   │   │       ├── synstructure v0.12.6
-│       │   │   │           │   │   │   │   │       │   ├── proc-macro2 v1.0.66 (*)
-│       │   │   │           │   │   │   │   │       │   ├── quote v1.0.32 (*)
-│       │   │   │           │   │   │   │   │       │   ├── syn feature "clone-impls" (*)
-│       │   │   │           │   │   │   │   │       │   ├── syn feature "derive" (*)
-│       │   │   │           │   │   │   │   │       │   ├── syn feature "extra-traits" (*)
-│       │   │   │           │   │   │   │   │       │   ├── syn feature "parsing" (*)
-│       │   │   │           │   │   │   │   │       │   ├── syn feature "printing" (*)
-│       │   │   │           │   │   │   │   │       │   ├── syn feature "visit" (*)
-│       │   │   │           │   │   │   │   │       │   └── unicode-xid feature "default"
-│       │   │   │           │   │   │   │   │       │       └── unicode-xid v0.2.4
-│       │   │   │           │   │   │   │   │       └── synstructure feature "proc-macro"
-│       │   │   │           │   │   │   │   │           ├── synstructure v0.12.6 (*)
-│       │   │   │           │   │   │   │   │           ├── quote feature "proc-macro" (*)
-│       │   │   │           │   │   │   │   │           ├── proc-macro2 feature "proc-macro" (*)
-│       │   │   │           │   │   │   │   │           └── syn feature "proc-macro" (*)
-│       │   │   │           │   │   │   │   ├── sha2 v0.10.7 (*)
-│       │   │   │           │   │   │   │   ├── sha3 v0.10.8 (*)
-│       │   │   │           │   │   │   │   ├── unsigned-varint v0.7.1
-│       │   │   │           │   │   │   │   ├── serde feature "derive" (*)
-│       │   │   │           │   │   │   │   ├── serde-big-array feature "const-generics"
-│       │   │   │           │   │   │   │   │   └── serde-big-array v0.3.3
-│       │   │   │           │   │   │   │   │       └── serde v1.0.179 (*)
-│       │   │   │           │   │   │   │   └── serde-big-array feature "default"
-│       │   │   │           │   │   │   │       └── serde-big-array v0.3.3 (*)
-│       │   │   │           │   │   │   ├── serde v1.0.179 (*)
-│       │   │   │           │   │   │   ├── unsigned-varint v0.7.1
-│       │   │   │           │   │   │   └── serde_bytes feature "default"
-│       │   │   │           │   │   │       ├── serde_bytes v0.11.12
-│       │   │   │           │   │   │       │   └── serde v1.0.179 (*)
-│       │   │   │           │   │   │       └── serde_bytes feature "std"
-│       │   │   │           │   │   │           ├── serde_bytes v0.11.12 (*)
-│       │   │   │           │   │   │           └── serde feature "std" (*)
-│       │   │   │           │   │   ├── serde feature "alloc" (*)
-│       │   │   │           │   │   ├── cid feature "multibase"
-│       │   │   │           │   │   │   └── cid v0.8.6 (*)
-│       │   │   │           │   │   ├── cid feature "serde"
-│       │   │   │           │   │   │   └── cid v0.8.6 (*)
-│       │   │   │           │   │   ├── core2 feature "alloc"
-│       │   │   │           │   │   │   └── core2 v0.4.0 (*)
-│       │   │   │           │   │   └── multihash feature "alloc"
-│       │   │   │           │   │       ├── multihash v0.16.3 (*)
-│       │   │   │           │   │       └── core2 feature "alloc" (*)
-│       │   │   │           │   ├── core2 feature "alloc" (*)
-│       │   │   │           │   └── multihash feature "alloc" (*)
-│       │   │   │           └── libipld-core feature "std"
-│       │   │   │               ├── libipld-core v0.14.0 (*)
-│       │   │   │               ├── multibase feature "std" (*)
-│       │   │   │               ├── anyhow feature "std" (*)
-│       │   │   │               ├── libipld-core feature "multibase"
-│       │   │   │               │   └── libipld-core v0.14.0 (*)
-│       │   │   │               ├── libipld-core feature "thiserror"
-│       │   │   │               │   └── libipld-core v0.14.0 (*)
-│       │   │   │               ├── cid feature "std"
-│       │   │   │               │   ├── cid v0.8.6 (*)
-│       │   │   │               │   ├── multibase feature "std" (*)
-│       │   │   │               │   ├── unsigned-varint feature "std"
-│       │   │   │               │   │   └── unsigned-varint v0.7.1
-│       │   │   │               │   ├── cid feature "alloc" (*)
-│       │   │   │               │   ├── cid feature "multibase" (*)
-│       │   │   │               │   └── multihash feature "std"
-│       │   │   │               │       ├── multihash v0.16.3 (*)
-│       │   │   │               │       ├── unsigned-varint feature "std" (*)
-│       │   │   │               │       ├── multihash feature "alloc" (*)
-│       │   │   │               │       ├── multihash feature "multihash-derive"
-│       │   │   │               │       │   └── multihash v0.16.3 (*)
-│       │   │   │               │       └── multihash-derive feature "std"
-│       │   │   │               │           └── multihash-derive v0.8.1 (proc-macro) (*)
-│       │   │   │               └── multihash feature "std" (*)
-│       │   │   ├── libipld-core feature "default" (*)
-│       │   │   ├── multihash feature "multihash-impl"
-│       │   │   │   ├── multihash v0.16.3 (*)
-│       │   │   │   └── multihash feature "derive"
-│       │   │   │       ├── multihash v0.16.3 (*)
-│       │   │   │       └── multihash feature "multihash-derive" (*)
-│       │   │   ├── libipld-cbor-derive feature "default"
-│       │   │   │   └── libipld-cbor-derive v0.14.0 (proc-macro)
-│       │   │   │       ├── quote feature "default" (*)
-│       │   │   │       ├── proc-macro2 feature "default" (*)
-│       │   │   │       ├── syn feature "default" (*)
-│       │   │   │       ├── proc-macro-crate feature "default" (*)
-│       │   │   │       └── synstructure feature "default" (*)
-│       │   │   ├── libipld-json feature "default"
-│       │   │   │   └── libipld-json v0.14.0
-│       │   │   │       ├── serde_json feature "default" (*)
-│       │   │   │       ├── serde_json feature "float_roundtrip" (*)
-│       │   │   │       ├── serde feature "default" (*)
-│       │   │   │       ├── serde feature "derive" (*)
-│       │   │   │       ├── libipld-core feature "default" (*)
-│       │   │   │       └── multihash feature "default"
-│       │   │   │           ├── multihash v0.16.3 (*)
-│       │   │   │           ├── multihash feature "derive" (*)
-│       │   │   │           ├── multihash feature "multihash-impl" (*)
-│       │   │   │           ├── multihash feature "secure-hashes"
-│       │   │   │           │   ├── multihash v0.16.3 (*)
-│       │   │   │           │   ├── multihash feature "blake2b"
-│       │   │   │           │   │   ├── multihash v0.16.3 (*)
-│       │   │   │           │   │   └── multihash feature "blake2b_simd"
-│       │   │   │           │   │       └── multihash v0.16.3 (*)
-│       │   │   │           │   ├── multihash feature "blake2s"
-│       │   │   │           │   │   ├── multihash v0.16.3 (*)
-│       │   │   │           │   │   └── multihash feature "blake2s_simd"
-│       │   │   │           │   │       └── multihash v0.16.3 (*)
-│       │   │   │           │   ├── multihash feature "blake3"
-│       │   │   │           │   │   └── multihash v0.16.3 (*)
-│       │   │   │           │   ├── multihash feature "sha2"
-│       │   │   │           │   │   ├── multihash v0.16.3 (*)
-│       │   │   │           │   │   ├── multihash feature "digest"
-│       │   │   │           │   │   │   └── multihash v0.16.3 (*)
-│       │   │   │           │   │   └── multihash feature "sha-2"
-│       │   │   │           │   │       └── multihash v0.16.3 (*)
-│       │   │   │           │   └── multihash feature "sha3"
-│       │   │   │           │       ├── multihash v0.16.3 (*)
-│       │   │   │           │       ├── multihash feature "digest" (*)
-│       │   │   │           │       └── multihash feature "sha-3"
-│       │   │   │           │           └── multihash v0.16.3 (*)
-│       │   │   │           └── multihash feature "std" (*)
-│       │   │   ├── libipld-macro feature "default"
-│       │   │   │   └── libipld-macro v0.14.0
-│       │   │   │       └── libipld-core feature "default" (*)
-│       │   │   └── parking_lot feature "default"
-│       │   │       └── parking_lot v0.12.1
-│       │   │           ├── lock_api feature "default"
-│       │   │           │   ├── lock_api v0.4.10
-│       │   │           │   │   └── scopeguard v1.2.0
-│       │   │           │   │   [build-dependencies]
-│       │   │           │   │   └── autocfg feature "default" (*)
-│       │   │           │   └── lock_api feature "atomic_usize"
-│       │   │           │       └── lock_api v0.4.10 (*)
-│       │   │           └── parking_lot_core feature "default"
-│       │   │               └── parking_lot_core v0.9.8
-│       │   │                   ├── cfg-if feature "default" (*)
-│       │   │                   └── smallvec feature "default" (*)
-│       │   └── libipld feature "libipld-cbor"
-│       │       └── libipld v0.14.0 (*)
-│       ├── libipld feature "dag-json"
-│       │   ├── libipld v0.14.0 (*)
-│       │   └── libipld feature "libipld-json"
-│       │       └── libipld v0.14.0 (*)
-│       ├── libipld feature "derive"
-│       │   ├── libipld v0.14.0 (*)
-│       │   └── libipld feature "libipld-cbor-derive"
-│       │       └── libipld v0.14.0 (*)
-│       ├── libipld feature "serde-codec"
-│       │   ├── libipld v0.14.0 (*)
-│       │   └── libipld-core feature "serde-codec"
-│       │       ├── libipld-core v0.14.0 (*)
-│       │       ├── libipld-core feature "serde"
-│       │       │   └── libipld-core v0.14.0 (*)
-│       │       └── cid feature "serde-codec"
-│       │           ├── cid v0.8.6 (*)
-│       │           ├── cid feature "alloc" (*)
-│       │           ├── cid feature "serde" (*)
-│       │           ├── cid feature "serde_bytes"
-│       │           │   └── cid v0.8.6 (*)
-│       │           └── multihash feature "serde-codec"
-│       │               ├── multihash v0.16.3 (*)
-│       │               ├── multihash feature "serde"
-│       │               │   └── multihash v0.16.3 (*)
-│       │               └── multihash feature "serde-big-array"
-│       │                   └── multihash v0.16.3 (*)
-│       ├── serde_with feature "base64"
-│       │   ├── serde_with v1.14.0
-│       │   │   ├── serde feature "default" (*)
-│       │   │   ├── serde feature "derive" (*)
-│       │   │   ├── base64 feature "default"
-│       │   │   │   ├── base64 v0.13.1
-│       │   │   │   └── base64 feature "std"
-│       │   │   │       └── base64 v0.13.1
-│       │   │   └── serde_with_macros feature "default"
-│       │   │       └── serde_with_macros v1.5.2 (proc-macro)
-│       │   │           ├── quote feature "default" (*)
-│       │   │           ├── proc-macro2 feature "default" (*)
-│       │   │           ├── syn feature "default" (*)
-│       │   │           ├── syn feature "full" (*)
-│       │   │           ├── syn feature "parsing" (*)
-│       │   │           └── darling feature "default"
-│       │   │               ├── darling v0.13.4
-│       │   │               │   ├── darling_core feature "default"
-│       │   │               │   │   └── darling_core v0.13.4
-│       │   │               │   │       ├── quote feature "default" (*)
-│       │   │               │   │       ├── proc-macro2 feature "default" (*)
-│       │   │               │   │       ├── syn feature "default" (*)
-│       │   │               │   │       ├── syn feature "extra-traits" (*)
-│       │   │               │   │       ├── syn feature "full" (*)
-│       │   │               │   │       ├── fnv feature "default" (*)
-│       │   │               │   │       ├── ident_case feature "default" (*)
-│       │   │               │   │       └── strsim feature "default" (*)
-│       │   │               │   └── darling_macro feature "default"
-│       │   │               │       └── darling_macro v0.13.4 (proc-macro)
-│       │   │               │           ├── quote feature "default" (*)
-│       │   │               │           ├── syn feature "default" (*)
-│       │   │               │           └── darling_core feature "default" (*)
-│       │   │               └── darling feature "suggestions"
-│       │   │                   ├── darling v0.13.4 (*)
-│       │   │                   └── darling_core feature "suggestions"
-│       │   │                       ├── darling_core v0.13.4 (*)
-│       │   │                       └── darling_core feature "strsim"
-│       │   │                           └── darling_core v0.13.4 (*)
-│       │   └── serde_with feature "base64_crate"
-│       │       └── serde_with v1.14.0 (*)
-│       └── serde_with feature "default"
-│           ├── serde_with v1.14.0 (*)
-│           └── serde_with feature "macros"
-│               ├── serde_with v1.14.0 (*)
-│               └── serde_with feature "serde_with_macros"
-│                   └── serde_with v1.14.0 (*)
-├── ssi-vc feature "default"
-│   └── ssi-vc v0.2.0 (/Users/frederik/repos/ssi-fork/ssi-vc)
-│       ├── ssi-json-ld v0.2.2 (/Users/frederik/repos/ssi-fork/ssi-json-ld) (*)
-│       ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
-│       ├── ssi-jws v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-jws) (*)
-│       ├── ssi-jwt v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwt) (*)
-│       ├── ssi-ldp v0.3.0 (/Users/frederik/repos/ssi-fork/ssi-ldp) (*)
-│       ├── serde_json feature "default" (*)
-│       ├── serde feature "default" (*)
-│       ├── serde feature "derive" (*)
-│       ├── base64 feature "default" (*)
-│       ├── thiserror feature "default" (*)
-│       ├── ssi-core feature "default" (*)
-│       ├── async-trait feature "default" (*)
-│       ├── ssi-dids feature "default" (*)
-│       ├── chrono feature "serde" (*)
-│       ├── iref feature "default" (*)
-│       ├── libipld feature "dag-cbor" (*)
-│       ├── libipld feature "derive" (*)
-│       ├── multihash feature "blake3" (*)
-│       ├── bitvec feature "default"
-│       │   ├── bitvec v0.20.4
-│       │   │   ├── funty v1.1.0
-│       │   │   ├── wyz v0.2.0
-│       │   │   ├── radium feature "default"
-│       │   │   │   └── radium v0.6.2
-│       │   │   └── tap feature "default"
-│       │   │       └── tap v1.0.1
-│       │   ├── bitvec feature "atomic"
-│       │   │   └── bitvec v0.20.4 (*)
-│       │   └── bitvec feature "std"
-│       │       ├── bitvec v0.20.4 (*)
-│       │       └── bitvec feature "alloc"
-│       │           ├── bitvec v0.20.4 (*)
-│       │           └── wyz feature "alloc"
-│       │               └── wyz v0.2.0
-│       └── flate2 feature "default"
-│           ├── flate2 v1.0.26
-│           │   ├── crc32fast feature "default"
-│           │   │   ├── crc32fast v1.3.2
-│           │   │   │   └── cfg-if feature "default" (*)
-│           │   │   └── crc32fast feature "std"
-│           │   │       └── crc32fast v1.3.2 (*)
-│           │   └── miniz_oxide feature "with-alloc"
-│           │       └── miniz_oxide v0.7.1
-│           │           └── adler v1.0.2
-│           └── flate2 feature "rust_backend"
-│               ├── flate2 v1.0.26 (*)
-│               └── flate2 feature "miniz_oxide"
-│                   └── flate2 v1.0.26 (*)
-└── ssi-zcap-ld feature "default"
-    └── ssi-zcap-ld v0.1.2 (/Users/frederik/repos/ssi-fork/ssi-zcap-ld)
-        ├── ssi-json-ld v0.2.2 (/Users/frederik/repos/ssi-fork/ssi-json-ld) (*)
-        ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
-        ├── ssi-ldp v0.3.0 (/Users/frederik/repos/ssi-fork/ssi-ldp) (*)
-        ├── serde_json feature "default" (*)
-        ├── serde feature "default" (*)
-        ├── serde feature "derive" (*)
-        ├── thiserror feature "default" (*)
-        ├── ssi-core feature "default" (*)
-        ├── async-trait feature "default" (*)
-        ├── ssi-dids feature "default" (*)
-        └── iref feature "default" (*)
-[dev-dependencies]
-├── async-std feature "attributes"
-│   ├── async-std v1.12.0 (*)
-│   └── async-std feature "async-attributes"
-│       └── async-std v1.12.0 (*)
-├── async-std feature "default"
-│   ├── async-std v1.12.0 (*)
-│   ├── async-std feature "async-global-executor"
-│   │   └── async-std v1.12.0 (*)
-│   ├── async-std feature "async-io"
-│   │   └── async-std v1.12.0 (*)
-│   ├── async-std feature "futures-lite"
-│   │   └── async-std v1.12.0 (*)
-│   ├── async-std feature "gloo-timers"
-│   │   └── async-std v1.12.0 (*)
-│   ├── async-std feature "kv-log-macro"
-│   │   └── async-std v1.12.0 (*)
-│   ├── async-std feature "log"
-│   │   └── async-std v1.12.0 (*)
-│   ├── async-std feature "pin-project-lite"
-│   │   └── async-std v1.12.0 (*)
-│   └── async-std feature "std"
-│       ├── async-std v1.12.0 (*)
-│       ├── async-std feature "alloc"
-│       │   ├── async-std v1.12.0 (*)
-│       │   ├── async-std feature "futures-core"
-│       │   │   └── async-std v1.12.0 (*)
-│       │   ├── async-std feature "pin-project-lite" (*)
-│       │   └── futures-core feature "alloc" (*)
-│       ├── async-std feature "async-channel"
-│       │   └── async-std v1.12.0 (*)
-│       ├── async-std feature "async-lock"
-│       │   └── async-std v1.12.0 (*)
-│       ├── async-std feature "crossbeam-utils"
-│       │   └── async-std v1.12.0 (*)
-│       ├── async-std feature "futures-channel"
-│       │   └── async-std v1.12.0 (*)
-│       ├── async-std feature "futures-core" (*)
-│       ├── async-std feature "futures-io"
-│       │   └── async-std v1.12.0 (*)
-│       ├── async-std feature "memchr"
-│       │   └── async-std v1.12.0 (*)
-│       ├── async-std feature "once_cell"
-│       │   └── async-std v1.12.0 (*)
-│       ├── async-std feature "pin-utils"
-│       │   └── async-std v1.12.0 (*)
-│       ├── async-std feature "slab"
-│       │   └── async-std v1.12.0 (*)
-│       ├── async-std feature "wasm-bindgen-futures"
-│       │   └── async-std v1.12.0 (*)
-│       └── futures-core feature "std" (*)
+│   └── serde_jcs feature "default"
+│       └── serde_jcs v0.1.0
+│           ├── ryu-js v0.2.2
+│           ├── serde v1.0.179 (*)
+│           ├── serde_json feature "float_roundtrip"
+│           │   └── serde_json v1.0.104 (*)
+│           └── serde_json feature "std" (*)
+├── async-trait feature "default" (*)
+├── base64 feature "default" (*)
+├── bitvec feature "default"
+│   ├── bitvec v0.20.4
+│   │   ├── funty v1.1.0
+│   │   ├── wyz v0.2.0
+│   │   ├── radium feature "default"
+│   │   │   └── radium v0.6.2
+│   │   └── tap feature "default"
+│   │       └── tap v1.0.1
+│   ├── bitvec feature "atomic"
+│   │   └── bitvec v0.20.4 (*)
+│   └── bitvec feature "std"
+│       ├── bitvec v0.20.4 (*)
+│       └── bitvec feature "alloc"
+│           ├── bitvec v0.20.4 (*)
+│           └── wyz feature "alloc"
+│               └── wyz v0.2.0
+├── chrono feature "serde" (*)
+├── serde feature "default" (*)
+├── serde feature "derive" (*)
+├── flate2 feature "default"
+│   ├── flate2 v1.0.26
+│   │   ├── crc32fast feature "default"
+│   │   │   ├── crc32fast v1.3.2
+│   │   │   │   └── cfg-if feature "default" (*)
+│   │   │   └── crc32fast feature "std"
+│   │   │       └── crc32fast v1.3.2 (*)
+│   │   └── miniz_oxide feature "with-alloc"
+│   │       └── miniz_oxide v0.7.1
+│   │           └── adler v1.0.2
+│   └── flate2 feature "rust_backend"
+│       ├── flate2 v1.0.26 (*)
+│       └── flate2 feature "miniz_oxide"
+│           └── flate2 v1.0.26 (*)
+├── iref feature "default" (*)
+├── libipld feature "dag-cbor"
+│   ├── libipld v0.14.0
+│   │   ├── cached v0.30.0
+│   │   │   ├── once_cell feature "default" (*)
+│   │   │   └── hashbrown feature "raw"
+│   │   │       └── hashbrown v0.11.2
+│   │   ├── async-trait feature "default" (*)
+│   │   ├── fnv feature "default"
+│   │   │   ├── fnv v1.0.7
+│   │   │   └── fnv feature "std"
+│   │   │       └── fnv v1.0.7
+│   │   ├── libipld-cbor feature "default"
+│   │   │   └── libipld-cbor v0.14.0
+│   │   │       ├── byteorder feature "default"
+│   │   │       │   ├── byteorder v1.4.3
+│   │   │       │   └── byteorder feature "std"
+│   │   │       │       └── byteorder v1.4.3
+│   │   │       ├── libipld-core feature "default"
+│   │   │       │   ├── libipld-core v0.14.0
+│   │   │       │   │   ├── anyhow v1.0.72
+│   │   │       │   │   ├── multibase v0.9.1 (*)
+│   │   │       │   │   ├── cid feature "alloc"
+│   │   │       │   │   │   ├── cid v0.8.6
+│   │   │       │   │   │   │   ├── core2 v0.4.0
+│   │   │       │   │   │   │   │   └── memchr v2.5.0
+│   │   │       │   │   │   │   ├── multibase v0.9.1 (*)
+│   │   │       │   │   │   │   ├── multihash v0.16.3
+│   │   │       │   │   │   │   │   ├── blake3 v1.4.1
+│   │   │       │   │   │   │   │   │   ├── arrayvec v0.7.4
+│   │   │       │   │   │   │   │   │   ├── cfg-if feature "default" (*)
+│   │   │       │   │   │   │   │   │   ├── arrayref feature "default"
+│   │   │       │   │   │   │   │   │   │   └── arrayref v0.3.7
+│   │   │       │   │   │   │   │   │   └── constant_time_eq feature "default"
+│   │   │       │   │   │   │   │   │       └── constant_time_eq v0.3.0
+│   │   │       │   │   │   │   │   ├── core2 v0.4.0 (*)
+│   │   │       │   │   │   │   │   ├── multihash-derive v0.8.1 (proc-macro)
+│   │   │       │   │   │   │   │   │   ├── proc-macro2 feature "default" (*)
+│   │   │       │   │   │   │   │   │   ├── proc-macro2 feature "span-locations"
+│   │   │       │   │   │   │   │   │   │   └── proc-macro2 v1.0.66 (*)
+│   │   │       │   │   │   │   │   │   ├── quote feature "default" (*)
+│   │   │       │   │   │   │   │   │   ├── syn feature "default" (*)
+│   │   │       │   │   │   │   │   │   ├── proc-macro-crate feature "default"
+│   │   │       │   │   │   │   │   │   │   └── proc-macro-crate v1.1.3
+│   │   │       │   │   │   │   │   │   │       ├── thiserror feature "default"
+│   │   │       │   │   │   │   │   │   │       │   └── thiserror v1.0.44
+│   │   │       │   │   │   │   │   │   │       │       └── thiserror-impl feature "default" (*)
+│   │   │       │   │   │   │   │   │   │       └── toml feature "default"
+│   │   │       │   │   │   │   │   │   │           └── toml v0.5.11
+│   │   │       │   │   │   │   │   │   │               └── serde feature "default"
+│   │   │       │   │   │   │   │   │   │                   ├── serde v1.0.179
+│   │   │       │   │   │   │   │   │   │                   └── serde feature "std"
+│   │   │       │   │   │   │   │   │   │                       └── serde v1.0.179
+│   │   │       │   │   │   │   │   │   ├── proc-macro-error feature "default" (*)
+│   │   │       │   │   │   │   │   │   └── synstructure feature "default"
+│   │   │       │   │   │   │   │   │       ├── synstructure v0.12.6
+│   │   │       │   │   │   │   │   │       │   ├── proc-macro2 v1.0.66 (*)
+│   │   │       │   │   │   │   │   │       │   ├── quote v1.0.32 (*)
+│   │   │       │   │   │   │   │   │       │   ├── syn feature "clone-impls" (*)
+│   │   │       │   │   │   │   │   │       │   ├── syn feature "derive" (*)
+│   │   │       │   │   │   │   │   │       │   ├── syn feature "extra-traits" (*)
+│   │   │       │   │   │   │   │   │       │   ├── syn feature "parsing" (*)
+│   │   │       │   │   │   │   │   │       │   ├── syn feature "printing" (*)
+│   │   │       │   │   │   │   │   │       │   ├── syn feature "visit" (*)
+│   │   │       │   │   │   │   │   │       │   └── unicode-xid feature "default"
+│   │   │       │   │   │   │   │   │       │       └── unicode-xid v0.2.4
+│   │   │       │   │   │   │   │   │       └── synstructure feature "proc-macro"
+│   │   │       │   │   │   │   │   │           ├── synstructure v0.12.6 (*)
+│   │   │       │   │   │   │   │   │           ├── proc-macro2 feature "proc-macro" (*)
+│   │   │       │   │   │   │   │   │           ├── quote feature "proc-macro" (*)
+│   │   │       │   │   │   │   │   │           └── syn feature "proc-macro" (*)
+│   │   │       │   │   │   │   │   └── unsigned-varint v0.7.1
+│   │   │       │   │   │   │   ├── serde v1.0.179 (*)
+│   │   │       │   │   │   │   └── unsigned-varint v0.7.1
+│   │   │       │   │   │   ├── serde feature "alloc" (*)
+│   │   │       │   │   │   ├── cid feature "multibase"
+│   │   │       │   │   │   │   └── cid v0.8.6 (*)
+│   │   │       │   │   │   ├── cid feature "serde"
+│   │   │       │   │   │   │   └── cid v0.8.6 (*)
+│   │   │       │   │   │   ├── core2 feature "alloc"
+│   │   │       │   │   │   │   └── core2 v0.4.0 (*)
+│   │   │       │   │   │   └── multihash feature "alloc"
+│   │   │       │   │   │       ├── multihash v0.16.3 (*)
+│   │   │       │   │   │       └── core2 feature "alloc" (*)
+│   │   │       │   │   ├── core2 feature "alloc" (*)
+│   │   │       │   │   ├── multihash feature "alloc" (*)
+│   │   │       │   │   └── thiserror feature "default" (*)
+│   │   │       │   └── libipld-core feature "std"
+│   │   │       │       ├── libipld-core v0.14.0 (*)
+│   │   │       │       ├── libipld-core feature "multibase"
+│   │   │       │       │   └── libipld-core v0.14.0 (*)
+│   │   │       │       ├── libipld-core feature "thiserror"
+│   │   │       │       │   └── libipld-core v0.14.0 (*)
+│   │   │       │       ├── anyhow feature "std" (*)
+│   │   │       │       ├── cid feature "std"
+│   │   │       │       │   ├── cid v0.8.6 (*)
+│   │   │       │       │   ├── cid feature "alloc" (*)
+│   │   │       │       │   ├── cid feature "multibase" (*)
+│   │   │       │       │   ├── multibase feature "std" (*)
+│   │   │       │       │   ├── multihash feature "std"
+│   │   │       │       │   │   ├── multihash v0.16.3 (*)
+│   │   │       │       │   │   ├── multihash feature "alloc" (*)
+│   │   │       │       │   │   ├── multihash feature "multihash-derive"
+│   │   │       │       │   │   │   └── multihash v0.16.3 (*)
+│   │   │       │       │   │   ├── multihash-derive feature "std"
+│   │   │       │       │   │   │   └── multihash-derive v0.8.1 (proc-macro) (*)
+│   │   │       │       │   │   └── unsigned-varint feature "std"
+│   │   │       │       │   │       └── unsigned-varint v0.7.1
+│   │   │       │       │   └── unsigned-varint feature "std" (*)
+│   │   │       │       ├── multibase feature "std" (*)
+│   │   │       │       └── multihash feature "std" (*)
+│   │   │       └── thiserror feature "default" (*)
+│   │   ├── libipld-core feature "default" (*)
+│   │   ├── multihash feature "multihash-impl"
+│   │   │   ├── multihash v0.16.3 (*)
+│   │   │   └── multihash feature "derive"
+│   │   │       ├── multihash v0.16.3 (*)
+│   │   │       └── multihash feature "multihash-derive" (*)
+│   │   ├── thiserror feature "default" (*)
+│   │   ├── libipld-cbor-derive feature "default"
+│   │   │   └── libipld-cbor-derive v0.14.0 (proc-macro)
+│   │   │       ├── proc-macro2 feature "default" (*)
+│   │   │       ├── quote feature "default" (*)
+│   │   │       ├── syn feature "default" (*)
+│   │   │       ├── proc-macro-crate feature "default" (*)
+│   │   │       └── synstructure feature "default" (*)
+│   │   ├── libipld-macro feature "default"
+│   │   │   └── libipld-macro v0.14.0
+│   │   │       └── libipld-core feature "default" (*)
+│   │   ├── log feature "default" (*)
+│   │   └── parking_lot feature "default"
+│   │       └── parking_lot v0.12.1
+│   │           ├── lock_api feature "default"
+│   │           │   ├── lock_api v0.4.10
+│   │           │   │   └── scopeguard v1.2.0
+│   │           │   └── lock_api feature "atomic_usize"
+│   │           │       └── lock_api v0.4.10 (*)
+│   │           └── parking_lot_core feature "default"
+│   │               └── parking_lot_core v0.9.8
+│   │                   ├── cfg-if feature "default" (*)
+│   │                   └── smallvec feature "default" (*)
+│   └── libipld feature "libipld-cbor"
+│       └── libipld v0.14.0 (*)
+├── libipld feature "derive"
+│   ├── libipld v0.14.0 (*)
+│   └── libipld feature "libipld-cbor-derive"
+│       └── libipld v0.14.0 (*)
+├── multihash feature "blake3"
+│   └── multihash v0.16.3 (*)
+├── thiserror feature "default" (*)
 ├── serde_json feature "default" (*)
-├── ssi-dids feature "default" (*)
-├── ssi-dids feature "example"
-│   └── ssi-dids v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-dids) (*)
-├── uuid feature "default"
-│   ├── uuid v0.8.2
-│   │   ├── serde v1.0.179 (*)
-│   │   └── getrandom feature "default" (*)
-│   └── uuid feature "std"
-│       └── uuid v0.8.2 (*)
-├── uuid feature "serde"
-│   └── uuid v0.8.2 (*)
-└── uuid feature "v4"
-    ├── uuid v0.8.2 (*)
-    └── uuid feature "getrandom"
-        └── uuid v0.8.2 (*)
+├── ssi-core feature "default" (*)
+└── ssi-dids feature "default" (*)
