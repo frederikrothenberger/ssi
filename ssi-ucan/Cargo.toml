@@ -27,7 +27,7 @@ libipld = { version = "0.14", default-features = false, features = ["dag-cbor", 
 chrono = { version = "0.4", features = ["serde"] }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-chrono = { version = "0.4", features = ["serde", "wasmbind"] }
+chrono = { version = "0.4", features = ["serde"] }
 
 [dev-dependencies]
 async-std = { version = "1.9", features = ["attributes"] }
