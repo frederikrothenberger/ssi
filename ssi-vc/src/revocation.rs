@@ -580,10 +580,6 @@ impl CredentialStatus for StatusList2021Entry {
 
 #[derive(Error, Debug)]
 pub enum LoadResourceError {
-    #[error("Error building HTTP client: {0}")]
-    Build(reqwest::Error),
-    #[error("Error sending HTTP request: {0}")]
-    Request(reqwest::Error),
     #[error("Parse error: {0}")]
     Response(String),
     #[error("Not found")]
@@ -606,98 +602,7 @@ pub enum LoadResourceError {
 }
 
 async fn load_resource(url: &str) -> Result<Vec<u8>, LoadResourceError> {
-    #[cfg(test)]
-    match url {
-        crate::tests::EXAMPLE_REVOCATION_2020_LIST_URL => {
-            return Ok(crate::tests::EXAMPLE_REVOCATION_2020_LIST.to_vec());
-        }
-        crate::tests::EXAMPLE_STATUS_LIST_2021_URL => {
-            return Ok(crate::tests::EXAMPLE_STATUS_LIST_2021.to_vec());
-        }
-        _ => {}
-    }
-    let mut headers = reqwest::header::HeaderMap::new();
-    headers.insert(
-        "User-Agent",
-        reqwest::header::HeaderValue::from_static(USER_AGENT),
-    );
-    let client = reqwest::Client::builder()
-        .default_headers(headers)
-        .build()
-        .map_err(LoadResourceError::Build)?;
-    let accept = "application/json".to_string();
-    let resp = client
-        .get(url)
-        .header("Accept", accept)
-        .send()
-        .await
-        .map_err(LoadResourceError::Request)?;
-    if let Err(err) = resp.error_for_status_ref() {
-        if err.status() == Some(reqwest::StatusCode::NOT_FOUND) {
-            return Err(LoadResourceError::NotFound);
-        }
-        return Err(LoadResourceError::HTTP(err.to_string()));
-    }
-    #[allow(unused_variables)]
-    let content_length_opt = if let Some(content_length) = resp.content_length() {
-        let len =
-            usize::try_from(content_length).map_err(LoadResourceError::ContentLengthConversion)?;
-        if len > MAX_RESPONSE_LENGTH {
-            // Fail early if content-length header indicates body is too large.
-            return Err(LoadResourceError::TooLarge {
-                size: len,
-                max: MAX_RESPONSE_LENGTH,
-            });
-        }
-        Some(len)
-    } else {
-        None
-    };
-    #[cfg(target_arch = "wasm32")]
-    {
-        // Reqwest's WASM backend doesn't offer streamed/chunked response reading.
-        // So we cannot check the response size while reading the response here.
-        // Relevant issue: https://github.com/seanmonstar/reqwest/issues/1234
-        // Instead, we hope that the content-length is correct, read the body all at once,
-        // and apply the length check afterwards, for consistency.
-        let bytes = resp
-            .bytes()
-            .await
-            .map_err(|e| LoadResourceError::Response(e.to_string()))?
-            .to_vec();
-        if bytes.len() > MAX_RESPONSE_LENGTH {
-            return Err(LoadResourceError::TooLarge {
-                size: bytes.len(),
-                max: MAX_RESPONSE_LENGTH,
-            });
-        }
-        Ok(bytes)
-    }
-    #[cfg(not(target_arch = "wasm32"))]
-    {
-        // For non-WebAssembly, read the response up to the allowed maximimum size.
-        let mut bytes = if let Some(len) = content_length_opt {
-            Vec::with_capacity(len)
-        } else {
-            Vec::new()
-        };
-        let mut resp = resp;
-        while let Some(chunk) = resp
-            .chunk()
-            .await
-            .map_err(|e| LoadResourceError::Response(e.to_string()))?
-        {
-            let len = bytes.len() + chunk.len();
-            if len > MAX_RESPONSE_LENGTH {
-                return Err(LoadResourceError::TooLarge {
-                    size: len,
-                    max: MAX_RESPONSE_LENGTH,
-                });
-            }
-            bytes.append(&mut chunk.to_vec());
-        }
-        Ok(bytes)
-    }
+    todo!(Not implemented);
 }
 
 #[derive(Error, Debug)]
