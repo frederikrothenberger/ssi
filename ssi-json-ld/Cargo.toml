@@ -10,7 +10,7 @@ documentation = "https://docs.rs/ssi-json-ld/"
 
 [dependencies]
 thiserror = "1.0"
-async-std = { version = "1.12.0", default-features = false }
+async-std = { version = "1.12.0", default-features = false, features = ["std"] }
 json-ld = "0.12.1"
 iref = "^2.0.3"
 static-iref = "2"
