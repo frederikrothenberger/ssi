@@ -4,10 +4,10 @@ use std::str::FromStr;
 
 pub mod error;
 pub use error::Error;
-mod cacao;
+// mod cacao;
 pub mod revocation;
 
-use cacao::BindingDelegation;
+// use cacao::BindingDelegation;
 pub use ssi_core::{one_or_many::OneOrMany, uri::URI};
 use ssi_dids::did_resolve::{resolve_key, DIDResolver};
 pub use ssi_dids::VerificationRelationship as ProofPurpose;
@@ -270,8 +270,8 @@ pub enum HolderBinding {
         from: String,
         // proof: String,
     },
-    #[serde(rename_all = "camelCase")]
-    CacaoDelegationHolderBinding2022 { cacao_delegation: BindingDelegation },
+    // #[serde(rename_all = "camelCase")]
+    // CacaoDelegationHolderBinding2022 { cacao_delegation: BindingDelegation },
     #[serde(other)]
     Unknown,
 }
@@ -1641,19 +1641,19 @@ impl Presentation {
                     // let signature = base64::decode_config(proof, base64::URL_SAFE_NO_PAD)?;
                     holders.push(to.to_string());
                 }
-                HolderBinding::CacaoDelegationHolderBinding2022 { cacao_delegation } => {
-                    match cacao_delegation
-                        .validate_presentation(
-                            self.verifiable_credential.as_ref(),
-                            self.holder.as_ref(),
-                        )
-                        .await
-                    {
-                        Ok(Some(h)) => holders.push(h),
-                        Ok(None) => continue,
-                        Err(e) => Err(e)?,
-                    }
-                }
+                // HolderBinding::CacaoDelegationHolderBinding2022 { cacao_delegation } => {
+                //     match cacao_delegation
+                //         .validate_presentation(
+                //             self.verifiable_credential.as_ref(),
+                //             self.holder.as_ref(),
+                //         )
+                //         .await
+                //     {
+                //         Ok(Some(h)) => holders.push(h),
+                //         Ok(None) => continue,
+                //         Err(e) => Err(e)?,
+                //     }
+                // }
                 HolderBinding::Unknown => {
                     // TODO: return warning or error for unknown holder binding?
                     return Err(Error::UnsupportedHolderBinding);
