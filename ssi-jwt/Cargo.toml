@@ -16,9 +16,4 @@ ssi-jwk = { path = "../ssi-jwk", version = "0.1", default-features = false }
 ssi-jws = { path = "../ssi-jws", version = "0.1", default-features = false }
 serde_with = "2.3.2"
 
-
-[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-chrono = { version = "0.4", features = ["serde"] }
-
-[target.'cfg(target_arch = "wasm32")'.dependencies]
-chrono = { version = "0.4", features = ["serde"] }
+chrono = { version = "0.4", features = ["serde"], default-features = false }
