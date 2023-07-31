@@ -1,0 +1,648 @@
+ssi-vc v0.2.0 (/Users/frederik/repos/ssi-fork/ssi-vc)
+├── async-trait v0.1.72 (proc-macro)
+│   ├── proc-macro2 v1.0.66
+│   │   └── unicode-ident v1.0.11
+│   ├── quote v1.0.32
+│   │   └── proc-macro2 v1.0.66 (*)
+│   └── syn v2.0.28
+│       ├── proc-macro2 v1.0.66 (*)
+│       ├── quote v1.0.32 (*)
+│       └── unicode-ident v1.0.11
+├── base64 v0.12.3
+├── bitvec v0.20.4
+│   ├── funty v1.1.0
+│   ├── radium v0.6.2
+│   ├── tap v1.0.1
+│   └── wyz v0.2.0
+├── chrono v0.4.26
+│   ├── js-sys v0.3.64
+│   │   └── wasm-bindgen v0.2.87
+│   │       ├── cfg-if v1.0.0
+│   │       └── wasm-bindgen-macro v0.2.87 (proc-macro)
+│   │           ├── quote v1.0.32 (*)
+│   │           └── wasm-bindgen-macro-support v0.2.87
+│   │               ├── proc-macro2 v1.0.66 (*)
+│   │               ├── quote v1.0.32 (*)
+│   │               ├── syn v2.0.28 (*)
+│   │               ├── wasm-bindgen-backend v0.2.87
+│   │               │   ├── bumpalo v3.13.0
+│   │               │   ├── log v0.4.19
+│   │               │   ├── once_cell v1.18.0
+│   │               │   ├── proc-macro2 v1.0.66 (*)
+│   │               │   ├── quote v1.0.32 (*)
+│   │               │   ├── syn v2.0.28 (*)
+│   │               │   └── wasm-bindgen-shared v0.2.87
+│   │               └── wasm-bindgen-shared v0.2.87
+│   ├── num-traits v0.2.16
+│   │   └── libm v0.2.7
+│   ├── serde v1.0.179
+│   │   └── serde_derive v1.0.179 (proc-macro)
+│   │       ├── proc-macro2 v1.0.66 (*)
+│   │       ├── quote v1.0.32 (*)
+│   │       └── syn v2.0.28 (*)
+│   ├── time v0.1.45
+│   │   └── libc v0.2.147
+│   └── wasm-bindgen v0.2.87 (*)
+├── flate2 v1.0.26
+│   ├── crc32fast v1.3.2
+│   │   └── cfg-if v1.0.0
+│   └── miniz_oxide v0.7.1
+│       └── adler v1.0.2
+├── iref v2.2.3
+│   ├── hashbrown v0.13.2
+│   │   └── ahash v0.8.3
+│   │       ├── cfg-if v1.0.0
+│   │       └── once_cell v1.18.0
+│   ├── pct-str v1.2.0
+│   │   └── utf8-decode v1.0.1
+│   ├── serde v1.0.179 (*)
+│   └── smallvec v1.11.0
+├── libipld v0.14.0
+│   ├── async-trait v0.1.72 (proc-macro) (*)
+│   ├── cached v0.30.0
+│   │   ├── hashbrown v0.11.2
+│   │   └── once_cell v1.18.0
+│   ├── fnv v1.0.7
+│   ├── libipld-cbor v0.14.0
+│   │   ├── byteorder v1.4.3
+│   │   ├── libipld-core v0.14.0
+│   │   │   ├── anyhow v1.0.72
+│   │   │   ├── cid v0.8.6
+│   │   │   │   ├── core2 v0.4.0
+│   │   │   │   │   └── memchr v2.5.0
+│   │   │   │   ├── multibase v0.9.1
+│   │   │   │   │   ├── base-x v0.2.11
+│   │   │   │   │   ├── data-encoding v2.4.0
+│   │   │   │   │   └── data-encoding-macro v0.1.13
+│   │   │   │   │       ├── data-encoding v2.4.0
+│   │   │   │   │       └── data-encoding-macro-internal v0.1.11 (proc-macro)
+│   │   │   │   │           ├── data-encoding v2.4.0
+│   │   │   │   │           └── syn v1.0.109
+│   │   │   │   │               ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   │               ├── quote v1.0.32 (*)
+│   │   │   │   │               └── unicode-ident v1.0.11
+│   │   │   │   ├── multihash v0.16.3
+│   │   │   │   │   ├── blake3 v1.4.1
+│   │   │   │   │   │   ├── arrayref v0.3.7
+│   │   │   │   │   │   ├── arrayvec v0.7.4
+│   │   │   │   │   │   ├── cfg-if v1.0.0
+│   │   │   │   │   │   └── constant_time_eq v0.3.0
+│   │   │   │   │   ├── core2 v0.4.0 (*)
+│   │   │   │   │   ├── multihash-derive v0.8.1 (proc-macro)
+│   │   │   │   │   │   ├── proc-macro-crate v1.1.3
+│   │   │   │   │   │   │   ├── thiserror v1.0.44
+│   │   │   │   │   │   │   │   └── thiserror-impl v1.0.44 (proc-macro)
+│   │   │   │   │   │   │   │       ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   │   │   │   │       ├── quote v1.0.32 (*)
+│   │   │   │   │   │   │   │       └── syn v2.0.28 (*)
+│   │   │   │   │   │   │   └── toml v0.5.11
+│   │   │   │   │   │   │       └── serde v1.0.179
+│   │   │   │   │   │   ├── proc-macro-error v1.0.4
+│   │   │   │   │   │   │   ├── proc-macro-error-attr v1.0.4 (proc-macro)
+│   │   │   │   │   │   │   │   ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   │   │   │   │   └── quote v1.0.32 (*)
+│   │   │   │   │   │   │   ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   │   │   │   ├── quote v1.0.32 (*)
+│   │   │   │   │   │   │   └── syn v1.0.109 (*)
+│   │   │   │   │   │   ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   │   │   ├── quote v1.0.32 (*)
+│   │   │   │   │   │   ├── syn v1.0.109 (*)
+│   │   │   │   │   │   └── synstructure v0.12.6
+│   │   │   │   │   │       ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   │   │       ├── quote v1.0.32 (*)
+│   │   │   │   │   │       ├── syn v1.0.109 (*)
+│   │   │   │   │   │       └── unicode-xid v0.2.4
+│   │   │   │   │   └── unsigned-varint v0.7.1
+│   │   │   │   ├── serde v1.0.179 (*)
+│   │   │   │   └── unsigned-varint v0.7.1
+│   │   │   ├── core2 v0.4.0 (*)
+│   │   │   ├── multibase v0.9.1 (*)
+│   │   │   ├── multihash v0.16.3 (*)
+│   │   │   └── thiserror v1.0.44
+│   │   │       └── thiserror-impl v1.0.44 (proc-macro) (*)
+│   │   └── thiserror v1.0.44 (*)
+│   ├── libipld-cbor-derive v0.14.0 (proc-macro)
+│   │   ├── proc-macro-crate v1.1.3 (*)
+│   │   ├── proc-macro2 v1.0.66 (*)
+│   │   ├── quote v1.0.32 (*)
+│   │   ├── syn v1.0.109 (*)
+│   │   └── synstructure v0.12.6 (*)
+│   ├── libipld-core v0.14.0 (*)
+│   ├── libipld-macro v0.14.0
+│   │   └── libipld-core v0.14.0 (*)
+│   ├── log v0.4.19
+│   ├── multihash v0.16.3 (*)
+│   ├── parking_lot v0.12.1
+│   │   ├── lock_api v0.4.10
+│   │   │   └── scopeguard v1.2.0
+│   │   └── parking_lot_core v0.9.8
+│   │       ├── cfg-if v1.0.0
+│   │       └── smallvec v1.11.0
+│   └── thiserror v1.0.44 (*)
+├── multihash v0.16.3 (*)
+├── serde v1.0.179 (*)
+├── serde_json v1.0.104
+│   ├── itoa v1.0.9
+│   ├── ryu v1.0.15
+│   └── serde v1.0.179 (*)
+├── ssi-core v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-core)
+│   ├── async-trait v0.1.72 (proc-macro) (*)
+│   ├── serde v1.0.179 (*)
+│   └── thiserror v1.0.44 (*)
+├── ssi-dids v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-dids)
+│   ├── anyhow v1.0.72
+│   ├── async-trait v0.1.72 (proc-macro) (*)
+│   ├── bs58 v0.4.0
+│   │   └── sha2 v0.9.9
+│   │       ├── block-buffer v0.9.0
+│   │       │   └── generic-array v0.14.7
+│   │       │       └── typenum v1.16.0
+│   │       ├── cfg-if v1.0.0
+│   │       ├── digest v0.9.0
+│   │       │   └── generic-array v0.14.7 (*)
+│   │       └── opaque-debug v0.3.0
+│   ├── chrono v0.4.26 (*)
+│   ├── derive_builder v0.9.0 (proc-macro)
+│   │   ├── darling v0.10.2
+│   │   │   ├── darling_core v0.10.2
+│   │   │   │   ├── fnv v1.0.7
+│   │   │   │   ├── ident_case v1.0.1
+│   │   │   │   ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   ├── quote v1.0.32 (*)
+│   │   │   │   ├── strsim v0.9.3
+│   │   │   │   └── syn v1.0.109 (*)
+│   │   │   └── darling_macro v0.10.2 (proc-macro)
+│   │   │       ├── darling_core v0.10.2 (*)
+│   │   │       ├── quote v1.0.32 (*)
+│   │   │       └── syn v1.0.109 (*)
+│   │   ├── derive_builder_core v0.9.0
+│   │   │   ├── darling v0.10.2 (*)
+│   │   │   ├── proc-macro2 v1.0.66 (*)
+│   │   │   ├── quote v1.0.32 (*)
+│   │   │   └── syn v1.0.109 (*)
+│   │   ├── proc-macro2 v1.0.66 (*)
+│   │   ├── quote v1.0.32 (*)
+│   │   └── syn v1.0.109 (*)
+│   ├── hex v0.4.3
+│   ├── iref v2.2.3 (*)
+│   ├── multibase v0.8.0
+│   │   ├── base-x v0.2.11
+│   │   ├── data-encoding v2.4.0
+│   │   └── data-encoding-macro v0.1.13 (*)
+│   ├── serde v1.0.179 (*)
+│   ├── serde_json v1.0.104 (*)
+│   ├── serde_urlencoded v0.7.1
+│   │   ├── form_urlencoded v1.2.0
+│   │   │   └── percent-encoding v2.3.0
+│   │   ├── itoa v1.0.9
+│   │   ├── ryu v1.0.15
+│   │   └── serde v1.0.179 (*)
+│   ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips)
+│   │   ├── bs58 v0.4.0 (*)
+│   │   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk)
+│   │   │   ├── base64 v0.12.3
+│   │   │   ├── ed25519-dalek v1.0.1
+│   │   │   │   ├── curve25519-dalek v3.2.0
+│   │   │   │   │   ├── byteorder v1.4.3
+│   │   │   │   │   ├── digest v0.9.0 (*)
+│   │   │   │   │   ├── rand_core v0.5.1
+│   │   │   │   │   │   └── getrandom v0.1.16
+│   │   │   │   │   │       └── cfg-if v1.0.0
+│   │   │   │   │   ├── subtle v2.5.0
+│   │   │   │   │   └── zeroize v1.6.0
+│   │   │   │   │       └── zeroize_derive v1.4.2 (proc-macro)
+│   │   │   │   │           ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   │           ├── quote v1.0.32 (*)
+│   │   │   │   │           └── syn v2.0.28 (*)
+│   │   │   │   ├── ed25519 v1.5.3
+│   │   │   │   │   └── signature v1.6.4
+│   │   │   │   │       ├── digest v0.10.7
+│   │   │   │   │       │   ├── block-buffer v0.10.4
+│   │   │   │   │       │   │   └── generic-array v0.14.7 (*)
+│   │   │   │   │       │   ├── crypto-common v0.1.6
+│   │   │   │   │       │   │   ├── generic-array v0.14.7 (*)
+│   │   │   │   │       │   │   └── typenum v1.16.0
+│   │   │   │   │       │   └── subtle v2.5.0
+│   │   │   │   │       └── rand_core v0.6.4
+│   │   │   │   │           └── getrandom v0.2.10
+│   │   │   │   │               ├── cfg-if v1.0.0
+│   │   │   │   │               ├── js-sys v0.3.64 (*)
+│   │   │   │   │               └── wasm-bindgen v0.2.87 (*)
+│   │   │   │   ├── rand v0.7.3
+│   │   │   │   │   ├── getrandom v0.1.16 (*)
+│   │   │   │   │   ├── rand_chacha v0.2.2
+│   │   │   │   │   │   ├── ppv-lite86 v0.2.17
+│   │   │   │   │   │   └── rand_core v0.5.1 (*)
+│   │   │   │   │   └── rand_core v0.5.1 (*)
+│   │   │   │   ├── serde v1.0.179 (*)
+│   │   │   │   ├── sha2 v0.9.9 (*)
+│   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   ├── getrandom v0.2.10 (*)
+│   │   │   ├── k256 v0.11.6
+│   │   │   │   ├── cfg-if v1.0.0
+│   │   │   │   ├── ecdsa v0.14.8
+│   │   │   │   │   ├── der v0.6.1
+│   │   │   │   │   │   ├── const-oid v0.9.4
+│   │   │   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   │   │   ├── elliptic-curve v0.12.3
+│   │   │   │   │   │   ├── base16ct v0.1.1
+│   │   │   │   │   │   ├── crypto-bigint v0.4.9
+│   │   │   │   │   │   │   ├── generic-array v0.14.7 (*)
+│   │   │   │   │   │   │   ├── rand_core v0.6.4 (*)
+│   │   │   │   │   │   │   ├── subtle v2.5.0
+│   │   │   │   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   │   │   │   ├── der v0.6.1 (*)
+│   │   │   │   │   │   ├── digest v0.10.7 (*)
+│   │   │   │   │   │   ├── ff v0.12.1
+│   │   │   │   │   │   │   ├── rand_core v0.6.4 (*)
+│   │   │   │   │   │   │   └── subtle v2.5.0
+│   │   │   │   │   │   ├── generic-array v0.14.7 (*)
+│   │   │   │   │   │   ├── group v0.12.1
+│   │   │   │   │   │   │   ├── ff v0.12.1 (*)
+│   │   │   │   │   │   │   ├── rand_core v0.6.4 (*)
+│   │   │   │   │   │   │   └── subtle v2.5.0
+│   │   │   │   │   │   ├── pkcs8 v0.9.0
+│   │   │   │   │   │   │   ├── der v0.6.1 (*)
+│   │   │   │   │   │   │   └── spki v0.6.0
+│   │   │   │   │   │   │       ├── base64ct v1.6.0
+│   │   │   │   │   │   │       └── der v0.6.1 (*)
+│   │   │   │   │   │   ├── rand_core v0.6.4 (*)
+│   │   │   │   │   │   ├── sec1 v0.3.0
+│   │   │   │   │   │   │   ├── base16ct v0.1.1
+│   │   │   │   │   │   │   ├── der v0.6.1 (*)
+│   │   │   │   │   │   │   ├── generic-array v0.14.7 (*)
+│   │   │   │   │   │   │   ├── pkcs8 v0.9.0 (*)
+│   │   │   │   │   │   │   ├── subtle v2.5.0
+│   │   │   │   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   │   │   │   ├── subtle v2.5.0
+│   │   │   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   │   │   ├── rfc6979 v0.3.1
+│   │   │   │   │   │   ├── crypto-bigint v0.4.9 (*)
+│   │   │   │   │   │   ├── hmac v0.12.1
+│   │   │   │   │   │   │   └── digest v0.10.7 (*)
+│   │   │   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   │   │   └── signature v1.6.4 (*)
+│   │   │   │   ├── elliptic-curve v0.12.3 (*)
+│   │   │   │   ├── sha2 v0.10.7
+│   │   │   │   │   ├── cfg-if v1.0.0
+│   │   │   │   │   └── digest v0.10.7 (*)
+│   │   │   │   └── sha3 v0.10.8
+│   │   │   │       ├── digest v0.10.7 (*)
+│   │   │   │       └── keccak v0.1.4
+│   │   │   ├── lazy_static v1.4.0
+│   │   │   │   └── spin v0.5.2
+│   │   │   ├── multibase v0.9.1 (*)
+│   │   │   ├── num-bigint v0.4.3
+│   │   │   │   ├── num-integer v0.1.45
+│   │   │   │   │   └── num-traits v0.2.16 (*)
+│   │   │   │   └── num-traits v0.2.16 (*)
+│   │   │   ├── num-derive v0.3.3 (proc-macro)
+│   │   │   │   ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   ├── quote v1.0.32 (*)
+│   │   │   │   └── syn v1.0.109 (*)
+│   │   │   ├── num-traits v0.2.16 (*)
+│   │   │   ├── p256 v0.11.1
+│   │   │   │   ├── ecdsa v0.14.8 (*)
+│   │   │   │   ├── elliptic-curve v0.12.3 (*)
+│   │   │   │   └── sha2 v0.10.7 (*)
+│   │   │   ├── rand v0.7.3 (*)
+│   │   │   ├── rand v0.8.5
+│   │   │   │   ├── rand_chacha v0.3.1
+│   │   │   │   │   ├── ppv-lite86 v0.2.17
+│   │   │   │   │   └── rand_core v0.6.4 (*)
+│   │   │   │   └── rand_core v0.6.4 (*)
+│   │   │   ├── rsa v0.6.1
+│   │   │   │   ├── byteorder v1.4.3
+│   │   │   │   ├── digest v0.10.7 (*)
+│   │   │   │   ├── num-bigint-dig v0.8.4
+│   │   │   │   │   ├── byteorder v1.4.3
+│   │   │   │   │   ├── lazy_static v1.4.0 (*)
+│   │   │   │   │   ├── libm v0.2.7
+│   │   │   │   │   ├── num-integer v0.1.45 (*)
+│   │   │   │   │   ├── num-iter v0.1.43
+│   │   │   │   │   │   ├── num-integer v0.1.45 (*)
+│   │   │   │   │   │   └── num-traits v0.2.16 (*)
+│   │   │   │   │   ├── num-traits v0.2.16 (*)
+│   │   │   │   │   ├── rand v0.8.5 (*)
+│   │   │   │   │   ├── smallvec v1.11.0
+│   │   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   │   ├── num-integer v0.1.45 (*)
+│   │   │   │   ├── num-iter v0.1.43 (*)
+│   │   │   │   ├── num-traits v0.2.16 (*)
+│   │   │   │   ├── pkcs1 v0.3.3
+│   │   │   │   │   ├── der v0.5.1
+│   │   │   │   │   │   ├── const-oid v0.7.1
+│   │   │   │   │   │   ├── crypto-bigint v0.3.2
+│   │   │   │   │   │   │   ├── generic-array v0.14.7 (*)
+│   │   │   │   │   │   │   └── subtle v2.5.0
+│   │   │   │   │   │   └── pem-rfc7468 v0.3.1
+│   │   │   │   │   │       └── base64ct v1.6.0
+│   │   │   │   │   ├── pkcs8 v0.8.0
+│   │   │   │   │   │   ├── der v0.5.1 (*)
+│   │   │   │   │   │   ├── spki v0.5.4
+│   │   │   │   │   │   │   ├── base64ct v1.6.0
+│   │   │   │   │   │   │   └── der v0.5.1 (*)
+│   │   │   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   │   ├── pkcs8 v0.8.0 (*)
+│   │   │   │   ├── rand_core v0.6.4 (*)
+│   │   │   │   ├── smallvec v1.11.0
+│   │   │   │   ├── subtle v2.5.0
+│   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   ├── serde v1.0.179 (*)
+│   │   │   ├── simple_asn1 v0.6.2
+│   │   │   │   ├── num-bigint v0.4.3 (*)
+│   │   │   │   ├── num-traits v0.2.16 (*)
+│   │   │   │   ├── thiserror v1.0.44 (*)
+│   │   │   │   └── time v0.3.24
+│   │   │   │       ├── deranged v0.3.6
+│   │   │   │       ├── itoa v1.0.9
+│   │   │   │       ├── time-core v0.1.1
+│   │   │   │       └── time-macros v0.2.11 (proc-macro)
+│   │   │   │           └── time-core v0.1.1
+│   │   │   ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto)
+│   │   │   │   ├── bs58 v0.4.0 (*)
+│   │   │   │   ├── digest v0.9.0 (*)
+│   │   │   │   ├── k256 v0.11.6 (*)
+│   │   │   │   ├── keccak-hash v0.7.0
+│   │   │   │   │   ├── primitive-types v0.9.1
+│   │   │   │   │   │   ├── fixed-hash v0.7.0
+│   │   │   │   │   │   │   └── static_assertions v1.1.0
+│   │   │   │   │   │   └── uint v0.9.5
+│   │   │   │   │   │       ├── byteorder v1.4.3
+│   │   │   │   │   │       ├── crunchy v0.2.2
+│   │   │   │   │   │       ├── hex v0.4.3
+│   │   │   │   │   │       └── static_assertions v1.1.0
+│   │   │   │   │   └── tiny-keccak v2.0.2
+│   │   │   │   │       └── crunchy v0.2.2
+│   │   │   │   ├── ripemd160 v0.9.1
+│   │   │   │   │   ├── block-buffer v0.9.0 (*)
+│   │   │   │   │   ├── digest v0.9.0 (*)
+│   │   │   │   │   └── opaque-debug v0.3.0
+│   │   │   │   ├── sha2 v0.10.7 (*)
+│   │   │   │   ├── thiserror v1.0.44 (*)
+│   │   │   │   └── zeroize v1.6.0 (*)
+│   │   │   ├── thiserror v1.0.44 (*)
+│   │   │   ├── unsigned-varint v0.7.1
+│   │   │   └── zeroize v1.6.0 (*)
+│   │   └── thiserror v1.0.44 (*)
+│   ├── ssi-core v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-core) (*)
+│   ├── ssi-json-ld v0.2.2 (/Users/frederik/repos/ssi-fork/ssi-json-ld)
+│   │   ├── async-std v1.12.0
+│   │   │   └── async-attributes v1.1.2 (proc-macro)
+│   │   │       ├── quote v1.0.32 (*)
+│   │   │       └── syn v1.0.109 (*)
+│   │   ├── combination v0.1.5
+│   │   ├── futures v0.3.28
+│   │   │   ├── futures-channel v0.3.28
+│   │   │   │   ├── futures-core v0.3.28
+│   │   │   │   └── futures-sink v0.3.28
+│   │   │   ├── futures-core v0.3.28
+│   │   │   ├── futures-executor v0.3.28
+│   │   │   │   ├── futures-core v0.3.28
+│   │   │   │   ├── futures-task v0.3.28
+│   │   │   │   └── futures-util v0.3.28
+│   │   │   │       ├── futures-channel v0.3.28 (*)
+│   │   │   │       ├── futures-core v0.3.28
+│   │   │   │       ├── futures-io v0.3.28
+│   │   │   │       ├── futures-macro v0.3.28 (proc-macro)
+│   │   │   │       │   ├── proc-macro2 v1.0.66 (*)
+│   │   │   │       │   ├── quote v1.0.32 (*)
+│   │   │   │       │   └── syn v2.0.28 (*)
+│   │   │   │       ├── futures-sink v0.3.28
+│   │   │   │       ├── futures-task v0.3.28
+│   │   │   │       ├── memchr v2.5.0
+│   │   │   │       ├── pin-project-lite v0.2.10
+│   │   │   │       ├── pin-utils v0.1.0
+│   │   │   │       └── slab v0.4.8
+│   │   │   ├── futures-io v0.3.28
+│   │   │   ├── futures-sink v0.3.28
+│   │   │   ├── futures-task v0.3.28
+│   │   │   └── futures-util v0.3.28 (*)
+│   │   ├── grdf v0.16.3
+│   │   │   ├── derivative v2.2.0 (proc-macro)
+│   │   │   │   ├── proc-macro2 v1.0.66 (*)
+│   │   │   │   ├── quote v1.0.32 (*)
+│   │   │   │   └── syn v1.0.109 (*)
+│   │   │   ├── hashbrown v0.13.2 (*)
+│   │   │   ├── iref v2.2.3 (*)
+│   │   │   └── rdf-types v0.12.19
+│   │   │       ├── contextual v0.1.6
+│   │   │       ├── iref v2.2.3 (*)
+│   │   │       ├── langtag v0.3.4
+│   │   │       ├── locspan v0.7.13
+│   │   │       │   ├── contextual v0.1.6
+│   │   │       │   └── hashbrown v0.13.2 (*)
+│   │   │       └── locspan-derive v0.6.0 (proc-macro)
+│   │   │           ├── proc-macro-error v1.0.4 (*)
+│   │   │           ├── proc-macro2 v1.0.66 (*)
+│   │   │           ├── quote v1.0.32 (*)
+│   │   │           └── syn v1.0.109 (*)
+│   │   ├── iref v2.2.3 (*)
+│   │   ├── json-ld v0.12.1
+│   │   │   ├── contextual v0.1.6
+│   │   │   ├── futures v0.3.28 (*)
+│   │   │   ├── json-ld-compaction v0.12.1
+│   │   │   │   ├── contextual v0.1.6
+│   │   │   │   ├── derivative v2.2.0 (proc-macro) (*)
+│   │   │   │   ├── futures v0.3.28 (*)
+│   │   │   │   ├── iref v2.2.3 (*)
+│   │   │   │   ├── json-ld-context-processing v0.12.1
+│   │   │   │   │   ├── contextual v0.1.6
+│   │   │   │   │   ├── futures v0.3.28 (*)
+│   │   │   │   │   ├── iref v2.2.3 (*)
+│   │   │   │   │   ├── json-ld-core v0.12.1
+│   │   │   │   │   │   ├── contextual v0.1.6
+│   │   │   │   │   │   ├── derivative v2.2.0 (proc-macro) (*)
+│   │   │   │   │   │   ├── futures v0.3.28 (*)
+│   │   │   │   │   │   ├── hashbrown v0.13.2 (*)
+│   │   │   │   │   │   ├── iref v2.2.3 (*)
+│   │   │   │   │   │   ├── json-ld-syntax v0.12.1
+│   │   │   │   │   │   │   ├── contextual v0.1.6
+│   │   │   │   │   │   │   ├── decoded-char v0.1.1
+│   │   │   │   │   │   │   ├── derivative v2.2.0 (proc-macro) (*)
+│   │   │   │   │   │   │   ├── hashbrown v0.13.2 (*)
+│   │   │   │   │   │   │   ├── indexmap v1.9.3
+│   │   │   │   │   │   │   │   └── hashbrown v0.12.3
+│   │   │   │   │   │   │   │       └── ahash v0.7.6
+│   │   │   │   │   │   │   │           └── once_cell v1.18.0
+│   │   │   │   │   │   │   ├── iref v2.2.3 (*)
+│   │   │   │   │   │   │   ├── json-syntax v0.9.4
+│   │   │   │   │   │   │   │   ├── contextual v0.1.6
+│   │   │   │   │   │   │   │   ├── decoded-char v0.1.1
+│   │   │   │   │   │   │   │   ├── hashbrown v0.12.3 (*)
+│   │   │   │   │   │   │   │   ├── indexmap v1.9.3 (*)
+│   │   │   │   │   │   │   │   ├── json-number v0.4.5
+│   │   │   │   │   │   │   │   │   ├── lexical v6.1.1
+│   │   │   │   │   │   │   │   │   │   └── lexical-core v0.8.5
+│   │   │   │   │   │   │   │   │   │       ├── lexical-parse-float v0.8.5
+│   │   │   │   │   │   │   │   │   │       │   ├── lexical-parse-integer v0.8.6
+│   │   │   │   │   │   │   │   │   │       │   │   ├── lexical-util v0.8.5
+│   │   │   │   │   │   │   │   │   │       │   │   │   └── static_assertions v1.1.0
+│   │   │   │   │   │   │   │   │   │       │   │   └── static_assertions v1.1.0
+│   │   │   │   │   │   │   │   │   │       │   ├── lexical-util v0.8.5 (*)
+│   │   │   │   │   │   │   │   │   │       │   └── static_assertions v1.1.0
+│   │   │   │   │   │   │   │   │   │       ├── lexical-parse-integer v0.8.6 (*)
+│   │   │   │   │   │   │   │   │   │       ├── lexical-util v0.8.5 (*)
+│   │   │   │   │   │   │   │   │   │       ├── lexical-write-float v0.8.5
+│   │   │   │   │   │   │   │   │   │       │   ├── lexical-util v0.8.5 (*)
+│   │   │   │   │   │   │   │   │   │       │   ├── lexical-write-integer v0.8.5
+│   │   │   │   │   │   │   │   │   │       │   │   ├── lexical-util v0.8.5 (*)
+│   │   │   │   │   │   │   │   │   │       │   │   └── static_assertions v1.1.0
+│   │   │   │   │   │   │   │   │   │       │   └── static_assertions v1.1.0
+│   │   │   │   │   │   │   │   │   │       └── lexical-write-integer v0.8.5 (*)
+│   │   │   │   │   │   │   │   │   ├── ryu-js v0.2.2
+│   │   │   │   │   │   │   │   │   ├── serde v1.0.179 (*)
+│   │   │   │   │   │   │   │   │   └── smallvec v1.11.0
+│   │   │   │   │   │   │   │   ├── locspan v0.7.13 (*)
+│   │   │   │   │   │   │   │   ├── locspan-derive v0.6.0 (proc-macro) (*)
+│   │   │   │   │   │   │   │   ├── ryu-js v0.2.2
+│   │   │   │   │   │   │   │   ├── serde v1.0.179 (*)
+│   │   │   │   │   │   │   │   ├── smallstr v0.3.0
+│   │   │   │   │   │   │   │   │   └── smallvec v1.11.0
+│   │   │   │   │   │   │   │   └── smallvec v1.11.0
+│   │   │   │   │   │   │   ├── langtag v0.3.4
+│   │   │   │   │   │   │   ├── locspan v0.7.13 (*)
+│   │   │   │   │   │   │   ├── locspan-derive v0.6.0 (proc-macro) (*)
+│   │   │   │   │   │   │   ├── rdf-types v0.12.19 (*)
+│   │   │   │   │   │   │   ├── smallvec v1.11.0
+│   │   │   │   │   │   │   └── thiserror v1.0.44 (*)
+│   │   │   │   │   │   ├── json-syntax v0.9.4 (*)
+│   │   │   │   │   │   ├── langtag v0.3.4
+│   │   │   │   │   │   ├── locspan v0.7.13 (*)
+│   │   │   │   │   │   ├── locspan-derive v0.6.0 (proc-macro) (*)
+│   │   │   │   │   │   ├── log v0.4.19
+│   │   │   │   │   │   ├── mime v0.3.17
+│   │   │   │   │   │   ├── mown v0.2.2
+│   │   │   │   │   │   ├── once_cell v1.18.0
+│   │   │   │   │   │   ├── permutohedron v0.2.4
+│   │   │   │   │   │   ├── pretty_dtoa v0.3.0
+│   │   │   │   │   │   │   └── ryu_floating_decimal v0.1.0
+│   │   │   │   │   │   ├── rdf-types v0.12.19 (*)
+│   │   │   │   │   │   ├── ryu-js v0.2.2
+│   │   │   │   │   │   ├── smallvec v1.11.0
+│   │   │   │   │   │   ├── static-iref v2.0.0 (proc-macro)
+│   │   │   │   │   │   │   └── iref v2.2.3
+│   │   │   │   │   │   │       ├── pct-str v1.2.0
+│   │   │   │   │   │   │       │   └── utf8-decode v1.0.1
+│   │   │   │   │   │   │       └── smallvec v1.11.0
+│   │   │   │   │   │   └── thiserror v1.0.44 (*)
+│   │   │   │   │   ├── json-ld-syntax v0.12.1 (*)
+│   │   │   │   │   ├── locspan v0.7.13 (*)
+│   │   │   │   │   ├── mown v0.2.2
+│   │   │   │   │   ├── rdf-types v0.12.19 (*)
+│   │   │   │   │   └── thiserror v1.0.44 (*)
+│   │   │   │   ├── json-ld-core v0.12.1 (*)
+│   │   │   │   ├── json-ld-expansion v0.12.1
+│   │   │   │   │   ├── contextual v0.1.6
+│   │   │   │   │   ├── derivative v2.2.0 (proc-macro) (*)
+│   │   │   │   │   ├── futures v0.3.28 (*)
+│   │   │   │   │   ├── iref v2.2.3 (*)
+│   │   │   │   │   ├── json-ld-context-processing v0.12.1 (*)
+│   │   │   │   │   ├── json-ld-core v0.12.1 (*)
+│   │   │   │   │   ├── json-ld-syntax v0.12.1 (*)
+│   │   │   │   │   ├── json-syntax v0.9.4 (*)
+│   │   │   │   │   ├── langtag v0.3.4
+│   │   │   │   │   ├── locspan v0.7.13 (*)
+│   │   │   │   │   ├── mown v0.2.2
+│   │   │   │   │   ├── rdf-types v0.12.19 (*)
+│   │   │   │   │   └── thiserror v1.0.44 (*)
+│   │   │   │   ├── json-ld-syntax v0.12.1 (*)
+│   │   │   │   ├── json-syntax v0.9.4 (*)
+│   │   │   │   ├── langtag v0.3.4
+│   │   │   │   ├── locspan v0.7.13 (*)
+│   │   │   │   ├── mown v0.2.2
+│   │   │   │   ├── rdf-types v0.12.19 (*)
+│   │   │   │   └── thiserror v1.0.44 (*)
+│   │   │   ├── json-ld-context-processing v0.12.1 (*)
+│   │   │   ├── json-ld-core v0.12.1 (*)
+│   │   │   ├── json-ld-expansion v0.12.1 (*)
+│   │   │   ├── json-ld-syntax v0.12.1 (*)
+│   │   │   ├── json-syntax v0.9.4 (*)
+│   │   │   ├── locspan v0.7.13 (*)
+│   │   │   ├── rdf-types v0.12.19 (*)
+│   │   │   └── thiserror v1.0.44 (*)
+│   │   ├── json-syntax v0.9.4 (*)
+│   │   ├── lazy_static v1.4.0 (*)
+│   │   ├── locspan v0.7.13 (*)
+│   │   ├── rdf-types v0.12.19 (*)
+│   │   ├── ssi-contexts v0.1.5 (/Users/frederik/repos/ssi-fork/contexts)
+│   │   ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   │   ├── static-iref v2.0.0 (proc-macro) (*)
+│   │   └── thiserror v1.0.44 (*)
+│   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
+│   ├── static-iref v2.0.0 (proc-macro) (*)
+│   └── thiserror v1.0.44 (*)
+├── ssi-json-ld v0.2.2 (/Users/frederik/repos/ssi-fork/ssi-json-ld) (*)
+├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
+├── ssi-jws v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-jws)
+│   ├── base64 v0.12.3
+│   ├── blake2 v0.10.6
+│   │   └── digest v0.10.7 (*)
+│   ├── clear_on_drop v0.2.5
+│   ├── ed25519-dalek v1.0.1 (*)
+│   ├── k256 v0.11.6 (*)
+│   ├── p256 v0.11.1 (*)
+│   ├── rand v0.8.5 (*)
+│   ├── rsa v0.6.1 (*)
+│   ├── serde v1.0.179 (*)
+│   ├── serde_json v1.0.104 (*)
+│   ├── sha2 v0.10.7 (*)
+│   ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
+│   └── thiserror v1.0.44 (*)
+├── ssi-jwt v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwt)
+│   ├── chrono v0.4.26 (*)
+│   ├── serde v1.0.179 (*)
+│   ├── serde_json v1.0.104 (*)
+│   ├── serde_with v2.3.3
+│   │   ├── serde v1.0.179 (*)
+│   │   └── serde_with_macros v2.3.3 (proc-macro)
+│   │       ├── darling v0.20.3
+│   │       │   ├── darling_core v0.20.3
+│   │       │   │   ├── fnv v1.0.7
+│   │       │   │   ├── ident_case v1.0.1
+│   │       │   │   ├── proc-macro2 v1.0.66 (*)
+│   │       │   │   ├── quote v1.0.32 (*)
+│   │       │   │   ├── strsim v0.10.0
+│   │       │   │   └── syn v2.0.28 (*)
+│   │       │   └── darling_macro v0.20.3 (proc-macro)
+│   │       │       ├── darling_core v0.20.3 (*)
+│   │       │       ├── quote v1.0.32 (*)
+│   │       │       └── syn v2.0.28 (*)
+│   │       ├── proc-macro2 v1.0.66 (*)
+│   │       ├── quote v1.0.32 (*)
+│   │       └── syn v2.0.28 (*)
+│   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
+│   ├── ssi-jws v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-jws) (*)
+│   └── thiserror v1.0.44 (*)
+├── ssi-ldp v0.3.0 (/Users/frederik/repos/ssi-fork/ssi-ldp)
+│   ├── async-trait v0.1.72 (proc-macro) (*)
+│   ├── bs58 v0.4.0 (*)
+│   ├── chrono v0.4.26 (*)
+│   ├── grdf v0.16.3 (*)
+│   ├── hex v0.4.3
+│   ├── iref v2.2.3 (*)
+│   ├── json-syntax v0.9.4 (*)
+│   ├── lazy_static v1.4.0 (*)
+│   ├── locspan v0.7.13 (*)
+│   ├── multibase v0.8.0 (*)
+│   ├── rdf-types v0.12.19 (*)
+│   ├── serde v1.0.179 (*)
+│   ├── serde_jcs v0.1.0
+│   │   ├── ryu-js v0.2.2
+│   │   ├── serde v1.0.179 (*)
+│   │   └── serde_json v1.0.104 (*)
+│   ├── serde_json v1.0.104 (*)
+│   ├── sha2 v0.10.7 (*)
+│   ├── ssi-caips v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-caips) (*)
+│   ├── ssi-contexts v0.1.5 (/Users/frederik/repos/ssi-fork/contexts)
+│   ├── ssi-core v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-core) (*)
+│   ├── ssi-crypto v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-crypto) (*)
+│   ├── ssi-dids v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-dids) (*)
+│   ├── ssi-json-ld v0.2.2 (/Users/frederik/repos/ssi-fork/ssi-json-ld) (*)
+│   ├── ssi-jwk v0.1.1 (/Users/frederik/repos/ssi-fork/ssi-jwk) (*)
+│   ├── ssi-jws v0.1.0 (/Users/frederik/repos/ssi-fork/ssi-jws) (*)
+│   ├── static-iref v2.0.0 (proc-macro) (*)
+│   └── thiserror v1.0.44 (*)
+└── thiserror v1.0.44 (*)
